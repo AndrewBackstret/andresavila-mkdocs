@@ -1,57 +1,136 @@
-/* Light theme custom colors */
+/* ── Andres Avila Brand — Metallic Ocean V3 ──────────────────────────────────
+   Metallic Blue  #2E6A98  ← primary accent / CTAs
+   Steel Blue     #1A3650  ← surfaces / cards
+   Deep Navy      #132335  ← dark bg secondary
+   Abyss          #0D1A28  ← dark bg primary
+   Ice Blue       #6898BA  ← secondary text / icons
+   ──────────────────────────────────────────────────────────────────────────*/
+
+/* ── Light theme ─────────────────────────────────────────────────────────── */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #000111;
-  --md-accent-fg-color: #2856f7;
-  --md-typeset-a-color: var(--md-accent-fg-color);
-  --md-footer-bg-color: var(--md-primary-fg-color);
+  --md-primary-fg-color:        #2E6A98;
+  --md-primary-fg-color--light: #6898BA;
+  --md-primary-fg-color--dark:  #1A3650;
+  --md-accent-fg-color:         #2E6A98;
+  --md-typeset-a-color:         #2E6A98;
 }
 
-/* Dark theme custom colors */
+/* ── Dark theme ──────────────────────────────────────────────────────────── */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #000111;
-  --md-default-bg-color: #090d1d;
-  --md-accent-fg-color: #8e92f8;
-  --md-typeset-a-color: var(--md-accent-fg-color);
+  --md-primary-fg-color:          #2E6A98;
+  --md-accent-fg-color:           #6898BA;
+  --md-typeset-a-color:           #6898BA;
+  --md-default-bg-color:          #0D1A28;
+  --md-default-bg-color--light:   #132335;
+  --md-default-bg-color--lighter: #1A3650;
 }
 
-/* Dark Theme Custom Button */
-[data-md-color-scheme="slate"] .md-button {
-  background-color: var(--md-accent-fg-color);
-  border-color: var(--md-accent-fg-color);
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.md-button--primary {
+  background-color: #2E6A98;
+  border-color:     #2E6A98;
+  color: #fff !important;
 }
 
-/* Optional: Custom hover effects */
-[data-md-color-scheme="slate"] .md-button:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #000000;
+.md-button--primary:hover {
+  background-color: #1A3650;
+  border-color:     #1A3650;
+  color: #fff !important;
 }
 
-/* Footer Section */
+[data-md-color-scheme="slate"] .md-button--primary:hover {
+  background-color: #6898BA;
+  border-color:     #6898BA;
+  color: #0D1A28 !important;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
 .md-footer {
-  background-color: #090d1d;
+  background-color: #0D1A28;
 }
 
 .md-footer-meta {
-  background-color: #000111;
+  background-color: #132335;
 }
 
-/* Testimonial cards */
+/* ── Testimonials (single column) ────────────────────────────────────────── */
 .grid.cards.testimonials {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-    margin: 1rem 0;
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem;
+  margin: 1rem 0;
 }
 
 .grid.cards.testimonials > * {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
 
-/* Style the author name and title */
 .grid.cards.testimonials p:nth-child(2) {
-    margin-top: -0.5rem;
-    color: var(--md-default-fg-color--light);
-    font-size: 0.9rem;
+  margin-top: -0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
 }
 
+/* ── Stats bar ───────────────────────────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin-top: 2rem;
+}
 
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2E6A98;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.25rem;
+}
+
+/* ── Availability badge ──────────────────────────────────────────────────── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #EBF3FA;
+  border: 1px solid #2E6A98;
+  color: #2E6A98;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+[data-md-color-scheme="slate"] .availability-badge {
+  background: #132335;
+  border-color: #2E6A98;
+  color: #6898BA;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2E6A98;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}

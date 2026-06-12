@@ -58,6 +58,18 @@ target/
 
 # DotEnv configuration
 .env
+.env.local
+.env.production
+
+# MkDocs build output
+site/
+
+# MkDocs cache (social cards, etc.) — large and auto-generated
+.cache/
+
+# Secrets — never commit these
+secrets.yml
+google_analytics.txt
 
 # Database
 *.db

@@ -1,31 +1,24 @@
 ---
-title: About Me
-description: Explore AI, data science, and entrepreneurship with Dave Ebbelaar. Learn about Datalumina, AI tutorials, freelancing, and innovative AI solutions for businesses.
-keywords: Dave Ebbelaar, AI entrepreneur, Datalumina, AI tutorials, Data Freelancer, GenAI Launchpad
-author: Dave Ebbelaar
-canonical_url: https://www.daveebbelaar.com/
+title: Andres Avila — Senior Data Engineer
+description: Senior Data Engineer specialized in AI-Powered Data Systems, Cloud Engineering, and LLM Integration. Available for Backend Contracts with enterprise teams.
+keywords: Andres Avila, Senior Data Engineer, AI Data Engineer, Cloud Engineering, dbt, BigQuery, LLM Integration, Data Freelancer, Mexico
+author: Andres Avila
+canonical_url: https://andresavila.io/
 ---
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Dave Ebbelaar",
-  "url": "https://www.daveebbelaar.com/",
-  "image": "https://avatars.githubusercontent.com/u/34709402?v=4",
+  "name": "Andres Avila",
+  "url": "https://andresavila.io/",
+  "email": "andres@andresavila.io",
   "sameAs": [
-    "https://www.youtube.com/channel/UCn8ujwUInbJkBhffxqAPBVQ",
-    "https://www.youtube.com/@daveebbelaar",
-    "https://www.linkedin.com/in/daveebbelaar/",
-    "https://github.com/daveebbelaar"
-    "https://www.skool.com/@daveebbelaar"
+    "https://www.linkedin.com/in/andresavila",
+    "https://github.com/andresavila"
   ],
-  "jobTitle": "Founder & CEO",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Datalumina",
-    "url": "https://www.datalumina.com/"
-  },
+  "jobTitle": "Senior Data Engineer",
+  "knowsAbout": ["Data Engineering", "Cloud Data Platforms", "LLM Integration", "Python", "dbt", "BigQuery", "Azure", "AWS"]
 }
 </script>
 
@@ -33,27 +26,48 @@ canonical_url: https://www.daveebbelaar.com/
 
 <div class="text-intro-grid" markdown>
 
-# Turn AI complexity into your competitive advantage
+<div class="availability-badge"><div class="availability-dot"></div>Available for new projects</div>
 
-### I have 5+ years experience doing just that
+# Build data systems that actually think
 
-- Are you struggling to keep up with the rapid pace of AI innovation?
+### Senior Data Engineer · AI-Powered Data Applications · Cloud
 
-- Do you need help translating AI hype into real business results?
+- Are your data pipelines slow, fragile, or impossible to maintain?
 
-- Want to implement AI effectively before competitors get ahead?
+- Do you need cloud infrastructure that scales without constant firefighting?
 
-- Looking for technical expertise and a clear roadmap for AI solutions?
+- Want to integrate LLMs into your data workflows — without the hype?
 
-- Need someone who understands both technical and business perspectives?
+- Looking for an engineer who understands both the data stack and the business?
 
-[Book Free Intro Call :material-arrow-top-right:](https://www.calendly.com){ .md-button .md-button--primary }
+- Need production-grade delivery, not just prototypes?
+
+[Book an Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-number">5+</span>
+    <span class="stat-label">years of experience</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">$750K</span>
+    <span class="stat-label">in costs reduced</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">2,000+</span>
+    <span class="stat-label">hours automated</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">5</span>
+    <span class="stat-label">cloud certifications</span>
+  </div>
+</div>
 
 </div>
 
 <div class="profile-image-grid" markdown>
 
-![Dave Ebbelaar, AI Entrepreneur and Educator](assets/@daveebbelaar.jpg){ .profile-image alt="Portrait of Dave Ebbelaar, AI entrepreneur and educator" }
+![Andres Avila — Senior Data Engineer](assets/headshot.jpg){ .profile-image alt="Portrait of Andres Avila, Senior Data Engineer" }
 
 </div>
 
@@ -61,109 +75,112 @@ canonical_url: https://www.daveebbelaar.com/
 
 ## About me
 
-Hi! I'm Dave, an entrepreneur and educator from the Netherlands. I work with technical professionals facing the overwhelming pace of AI innovation and businesses struggling to translate AI hype into competitive advantage. Whether you're a developer watching your skills becoming obsolete or a company unsure how to implement AI effectively—the challenge is the same: how to effectively use this technology before your competitors do.
+Hi, I'm Andres — a Senior Data Engineer based in México, with 5+ years designing and delivering high-impact cloud data systems for enterprise companies including Hershey's, EY/Microsoft, and Wizeline.
 
-My artificial intelligence journey spans over a decade, with bachelor's and master's degrees in the field and experience building custom data and AI systems across utilities, government, and e-commerce sectors. My tech stack includes Python, PostgreSQL, ML, FastAPI, OpenAI, Claude, Azure, vector databases, RAG, and LLM integration for enterprise applications.
+I specialize in **AI-powered data systems**: combining robust cloud pipeline engineering (Azure, AWS, Snowflake, dbt) with LLM integration to help teams move from raw data to operational intelligence. My work spans the full data lifecycle — from architecture and ingestion to transformation, orchestration, and business-facing analytics.
 
-## Why work with me?
+I'm currently open to **Backend Contracts** — long-term engagements with teams that need a senior data engineer without the overhead of a full-time hire.
 
-Here's what sets me apart and how I can help drive value for your business:
+## What I can help you with
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-building-user:{ .lg .middle } Proven Business Experience
+-   :material-pipe:{ .lg .middle } Cloud Data Engineering
 
     ---
 
-    As the founder of Datalumina, I bring entrepreneurial insight to every project. I understand both the technical and business sides of AI implementation, ensuring solutions that deliver real ROI and align with your business goals.
+    I design and build production-grade pipelines on Azure, AWS, and Snowflake. From raw ingestion to semantic modeling with dbt — clean, observable, maintainable infrastructure that scales with your business.
 
--   :material-youtube:{ .lg .middle } Educator & Communicator
-
-    ---
-
-    My experience as a content creator and educator means I can break down complex technical concepts into clear, actionable insights. You'll always understand the 'why' behind technical decisions and get clear progress updates.
-
--   :material-school:{ .lg .middle } Industry Expert
+-   :material-robot:{ .lg .middle } LLM Integration
 
     ---
 
-    With over a decade in AI and data science, including work across utilities, government, and e-commerce sectors, I bring battle-tested expertise to your projects. My solutions are built on real-world experience, not just theory.
+    I connect your structured data to language models to automate analysis, classification, and reporting. Real production experience — not just demo projects. See [biopanel.io](https://biopanel.io) for a live example.
 
--   :material-rocket:{ .lg .middle } Fast Implementation
+-   :material-chart-timeline-variant:{ .lg .middle } Analytics Engineering
 
     ---
 
-    I specialize in rapid development and deployment of AI solutions. Using modern tools and proven frameworks, I can help you move from concept to production faster, giving you a competitive edge in today's fast-paced market.
+    Semantic layers, metric definitions, and dashboards your entire team can trust. I've built reporting infrastructure used by analytics and data science teams at Fortune 500 companies.
+
+-   :material-file-document-edit:{ .lg .middle } Data Migration
+
+    ---
+
+    I've led client-specific migration workflows with full validation pipelines: extraction, transformation, profiling, defect detection, and deployment — with documentation your team can maintain.
 
 </div>
 
-## What my past clients say about my work
+## Why work with me?
 
-<div class="grid cards testimonials" markdown>
+<div class="grid cards" markdown>
 
--   :material-format-quote-open:{ .lg .middle } Adrian Dragomir
-    
-    Founder at Sferal
+-   :material-certificate:{ .lg .middle } Certified across all major clouds
 
     ---
 
-    "Dave is a true professional and my collaboration with him has been flawless. **He took his time and spent 3 days with me and my team in Mamaia, Romania where he was a guest for 3 sessions of my podcast Waves of AI**. He is one of the most competent people I know that has a real understanding of how AI works and how to integrate it quickly in your company."
+    AWS Data Engineer Associate · Databricks Certified Data Engineer Professional · Snowflake SnowPro Core · Azure Data Engineer Associate (DP-203) · Fabric Data Engineer Associate (DP-700)
 
--   :material-format-quote-open:{ .lg .middle } Barbara van den Bosch
-    
-    Founder at Viverve
+-   :material-trending-up:{ .lg .middle } Quantified, enterprise-scale impact
 
     ---
 
-    "Together with Datalumina, we developed a tailor-made program where I, as a school leader, can now bring together vast amounts of information in one place and automate key tasks. **Beyond the tremendous quality improvement for our organization, working with Datalumina was an extremely pleasant experience**."
+    I don't just build pipelines — I reduce $750K in vendor costs, cut 2,000+ hours of manual work, and optimize runtimes by 67%. Every engagement I've had has a measurable business outcome.
 
--   :material-format-quote-open:{ .lg .middle } Rene Raaphorst
-    
-    Founder at Crypto Insiders
+-   :material-code-braces:{ .lg .middle } Full-stack when it matters
 
     ---
 
-    "My experience with Datalumina has been excellent. **They think along with you every step of the way, from proof of concept to a fully functional product**. I was amazed by the quality of the results and found the collaboration very enjoyable. I highly recommend Dave and Datalumina to everyone!"
+    I built [biopanel.io](https://biopanel.io) end-to-end: FastAPI backend, Celery + Redis async pipeline, PostgreSQL, React frontend. I can talk to your product and engineering teams in the same language.
 
--   :material-format-quote-open:{ .lg .middle } Kelsen
-    
-    Founder at Datavisum
+-   :material-handshake:{ .lg .middle } Async-first, enterprise-grade delivery
 
     ---
 
-    "I am thankful for having come across Dave and Data Freelancer, it was one of the best investment decisions I've made in 2024. **From effective ways to create inbound marketing strategies using social media, through solution architecture design to address all kinds of business challenges**, you will extract a great deal of value from diverse perspectives."
+    I've worked remotely across EY, Microsoft, Hershey's, and Wizeline. Clear communication, weekly updates, detailed documentation — you always know where things stand.
 
 </div>
+
+## Tech stack
+
+**Cloud** · Azure (ADF, Synapse, Fabric, Functions) · AWS (S3, Glue, Redshift, Lambda) · Snowflake · GCP basics
+
+**Orchestration & Transformation** · Apache Airflow · dbt · PySpark · Azure Data Factory
+
+**AI / LLM** · OpenAI API · LangChain · Pinecone · Retrieval-Augmented Generation · Streamlit
+
+**Languages** · Python · SQL · DAX · Shell/Bash · YAML · TypeScript (basics)
+
+**DevOps** · Azure DevOps · GitHub Actions · Docker · Terraform · CI/CD pipelines
 
 ## Frequently asked questions
 
-??? note "How quickly can you start working on my project?"
-    I can typically begin new projects within 1-2 weeks of contract signing. For urgent matters, I maintain some flexibility for rapid response situations and can potentially start sooner - just let me know your timeline during our initial consultation.
+??? note "What kind of contracts are you available for?"
+    I'm primarily open to **Backend Contracts (BECs)** — long-term staff augmentation engagements (typically 20–32 hrs/week) where I embed as a senior data engineer in your team. I'm also open to well-scoped **project-based contracts** for data migrations, pipeline buildouts, or LLM integration work. Minimum engagement: 20 hours.
 
-??? note "Do you require a minimum project size or commitment?"
-    While I can accommodate projects of any size, I find that engagements of at least 20 hours allow for meaningful impact. This gives us enough time to understand your data, implement solutions, and deliver actionable results. We can start with a small pilot project to ensure we're a good fit.
+??? note "What industries have you worked in?"
+    Consumer goods (Hershey's), professional services and enterprise software (EY/Microsoft), technology (Wizeline), and health tech (biopanel.io — personal project). I'm most effective with enterprise teams that have complex data at scale — fintechs, SaaS platforms, and healthcare are strong fits.
 
-??? note "What industries do you have experience in?"
-    I've successfully delivered projects across e-commerce, manufacturing, healthcare, and financial services. While I specialize in data science fundamentals that apply across sectors, I particularly excel in projects involving customer behavior analysis, process optimization, and predictive modeling.
+??? note "How do you handle confidentiality?"
+    I sign NDAs before any project begins. All credentials and sensitive data are managed with enterprise-grade security practices — never hardcoded, always encrypted at rest and in transit. I can work within your existing security policies.
 
-??? note "How do you handle data security and confidentiality?"
-    I take data security extremely seriously. I sign comprehensive NDAs before starting any project, use enterprise-grade encryption for all data transfers, and follow industry best practices for data handling. I can also work within your existing security infrastructure and policies.
+??? note "What's your typical engagement structure?"
+    I prefer a short paid discovery phase (5–10 hours) to fully understand your architecture and data before committing to a full engagement. This eliminates surprises on both sides. From there, I work in weekly cycles with async updates and a standing check-in.
 
-??? note "What's your pricing structure?"
-    I offer both project-based and retainer pricing models. Project fees are based on scope, complexity, and value delivered rather than hours worked. For ongoing support, I offer flexible retainer packages. Let's discuss your specific needs during our consultation to determine the most cost-effective approach.
+??? note "Where are you based? Do you work with international clients?"
+    I'm based in Aguascalientes, México (UTC-6). I work remote-first and have experience with distributed teams across US, EU, and LATAM timezones. Fluent in English and Spanish.
 
-??? note "How do you communicate progress and results?"
-    I maintain clear communication through weekly progress updates and regular check-in meetings. You'll receive detailed documentation of all analyses, findings, and recommendations. For ongoing projects, I provide interactive dashboards and reports that allow you to track progress and results in real-time.
-
+??? note "What are your rates?"
+    I price based on scope and value delivered, not hours logged. Let's talk during our intro call — I'll be direct about what makes sense for your situation.
 
 <div class="grid cards" style="margin-top: 3rem" markdown>
 
--   :material-coffee:{ .lg .middle } Let's have a virtual coffee together!
+-   :material-calendar-check:{ .lg .middle } Let's see if we're a fit
 
     ---
-    
-    Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.
 
-    [Book Free Intro Call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    I take on a limited number of clients at a time to ensure quality. Book a free 30-minute call to discuss your data challenges and what an engagement could look like.
+
+    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
 
 </div>

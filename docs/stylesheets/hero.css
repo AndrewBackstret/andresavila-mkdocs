@@ -1,19 +1,20 @@
+/* ── Profile image ───────────────────────────────────────────────────────── */
 .profile-image {
   width: 280px;
   height: 380px;
   object-fit: cover;
+  object-position: top center;
   border-radius: 12px;
-  transform: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.18);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-image:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(46, 106, 152, 0.28);
 }
 
-/* Grid Layout on index page */
+/* ── Hero grid layout ────────────────────────────────────────────────────── */
 .grid-container {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -34,7 +35,7 @@
   align-items: center;
 }
 
-/* Mobile layout */
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -44,8 +45,8 @@
 
   .profile-image {
     width: 100%;
-    max-width: 350px;
-    height: 400px;
+    max-width: 300px;
+    height: 360px;
     margin: 0 auto;
   }
 
@@ -58,19 +59,23 @@
   .profile-image-grid {
     grid-row: 1;
     grid-column: 1;
-    justify-content: center; /* Center image on mobile */
+    justify-content: center;
+  }
+
+  .stats-bar {
+    gap: 1.5rem;
   }
 }
 
-/* Add styles for larger screens */
+/* ── Large screens ───────────────────────────────────────────────────────── */
 @media screen and (min-width: 1200px) {
   .grid-container {
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   .profile-image {
-    width: 400px;
-    height: 500px;
+    width: 360px;
+    height: 460px;
   }
 }
