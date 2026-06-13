@@ -715,3 +715,33 @@ body:has(.hero-band) .md-footer__inner {
 .md-nav--secondary .md-nav__link:hover {
   color: #2E6A98 !important;
 }
+
+/* ── Blog post: TOC relocated UNDER the metadata (left column) ───────────── */
+/* The TOC (.md-sidebar--secondary) and the metadata (.md-sidebar--post, nested */
+/* inside .md-content--post) live in different parents, so a small JS moves the */
+/* TOC nav into the metadata sidebar. Here we hide the now-empty right sidebar  */
+/* and style the relocated TOC. See docs/javascripts/blog-toc.js.               */
+.md-main__inner:has(.md-sidebar--post) > .md-sidebar--secondary {
+  display: none;
+}
+
+/* Relocated TOC, sitting below the metadata */
+.md-sidebar--post .md-nav--secondary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E8EEF3;
+}
+
+.md-sidebar--post .md-nav--secondary .md-nav__title {
+  padding-left: 0.6rem;
+}
+
+/* Don't glue the metadata/TOC panel to the left edge */
+.md-content--post {
+  padding-left: 2rem;
+}
+
+/* ── Visible left nav (e.g. blog index) — don't glue it to the edge ───────── */
+.md-sidebar--primary:not([hidden]) {
+  padding-left: 2rem;
+}
