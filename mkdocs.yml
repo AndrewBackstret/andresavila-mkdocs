@@ -19,7 +19,6 @@ theme:
   name: material
   features:
     - search.suggest
-    - toc.integrate
     - navigation.tabs
     - navigation.expand
     - navigation.sections

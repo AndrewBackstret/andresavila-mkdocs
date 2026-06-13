@@ -1,26 +1,68 @@
-/* ── Profile image — circular with metallic blue ring ─────────────────────── */
+/* ── Profile image ───────────────────────────────────────────────────────── */
 .profile-image {
   width: 200px;
   height: 200px;
   object-fit: cover;
   object-position: center top;
   border-radius: 14px;
-  outline: none;
-  box-shadow: 0 0 0 3px #2E6A98;
   display: block;
-  transition: outline-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.15);
+  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.20);
+  transition: box-shadow 0.3s ease;
 }
 
 .profile-image:hover {
-  box-shadow: 0 8px 32px rgba(46, 106, 152, 0.28);
+  box-shadow: 0 8px 32px rgba(46, 106, 152, 0.35);
 }
 
-/* ── Hero section: dark full-bleed ───────────────────────────────────────── */
-.hero-section {
+/* ── Full-bleed dark bands (hero + stats) ────────────────────────────────── */
+/* Robust edge-to-edge via negative margins — no clippable pseudo-elements.   */
+/* Works because extra.css forces .md-content__inner { margin:0 } (full width, */
+/* symmetric) and .md-main { overflow-x:hidden } clips the scrollbar overflow. */
+.hero-band,
+.stats-band {
+  width: 100vw;
+  margin-left:  calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background: #0D1A28;
-  margin: 0 -1.6rem;
-  padding: 0 1.6rem;
+}
+
+.hero-band {
+  margin-bottom: 0; /* no seam between the two dark bands */
+}
+
+.stats-band {
+  margin-top: 0;
+  border-top: 1px solid #1A3650;
+  border-bottom: 3px solid #2E6A98;
+}
+
+/* Inner content centered within the dark bands */
+.hero-band  > .hero-section,
+.stats-band > .stats-row {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+/* Kill Material's .4rem spacer that shows a white line between nav and hero  */
+/* (scoped to the home page via :has(.hero-band))                            */
+.md-content__inner:has(.hero-band)::before {
+  content: none;
+}
+
+/* Center the home content into the same 1200px column as the hero.           */
+/* The global full-width overrides (for portfolio) use !important, so we do    */
+/* too. The dark bands still break out edge-to-edge from this centered box.    */
+.md-content__inner:has(.hero-band) {
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0 !important; /* keep hero flush to nav (no white line) */
+  padding-bottom: 2.5rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 /* ── Hero grid layout ────────────────────────────────────────────────────── */
@@ -44,7 +86,7 @@
   align-items: center;
 }
 
-/* ── Hero text: override MkDocs typeset colors inside dark hero ──────────── */
+/* ── Hero text colors (on dark background) ───────────────────────────────── */
 .hero-section h1,
 .hero-section .md-typeset h1 {
   color: #ffffff !important;
@@ -54,7 +96,6 @@
   color: #6898BA !important;
 }
 
-/* Buttons stay styled by extra.css but we ensure visibility on dark bg */
 .hero-section .md-button:not(.md-button--primary) {
   border-color: #1A3650 !important;
   color: #6898BA !important;
@@ -66,7 +107,6 @@
   color: #fff !important;
 }
 
-/* Availability badge inside dark hero */
 .hero-section .availability-badge {
   background: #132335;
   border-color: #2E6A98;
@@ -88,17 +128,12 @@
   height: 2px;
   background: #2E6A98;
   margin-bottom: 0.9rem;
-  border-radius: 0;
 }
 
-/* ── Stats row — dark, extends the hero ──────────────────────────────────── */
+/* ── Stats row (inside .stats-band) ──────────────────────────────────────── */
 .stats-row {
   display: flex;
-  background: #0D1A28;
-  border-top: 1px solid #1A3650;
-  border-bottom: 3px solid #2E6A98;
-  margin: 0 -1.6rem;
-  padding: 0 1.6rem;
+  margin: 0;
 }
 
 .stats-row .stat-item {
@@ -112,9 +147,8 @@
   border-right: none;
 }
 
-/* Stats numbers and labels: visible on dark */
 .stats-row .stat-number {
-  color: #2E6A98;
+  color: #ffffff; /* was #2E6A98 — looked dim on #0D1A28 */
 }
 
 .stats-row .stat-label {
@@ -123,11 +157,6 @@
 
 /* ── Mobile ──────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 768px) {
-  .hero-section {
-    margin: 0 -0.8rem;
-    padding: 0 0.8rem;
-  }
-
   .grid-container {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -154,8 +183,6 @@
 
   .stats-row {
     flex-wrap: wrap;
-    margin: 0 -0.8rem;
-    padding: 0 0.8rem;
   }
 
   .stats-row .stat-item {
@@ -166,12 +193,8 @@
 }
 
 /* ── Large screens ───────────────────────────────────────────────────────── */
+/* .grid-container width/centering is handled by `.hero-band > .hero-section`. */
 @media screen and (min-width: 1200px) {
-  .grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   .profile-image {
     width: 240px;
     height: 240px;

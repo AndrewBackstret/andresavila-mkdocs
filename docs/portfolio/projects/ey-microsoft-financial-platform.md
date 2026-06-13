@@ -1,7 +1,11 @@
 ---
 title: EY / Microsoft — Financial Pipeline Optimization (67% Runtime Reduction)
 description: Reduced runtime of two critical Microsoft BizApps financial pipelines by 67% on Azure Fabric — from 12 hours combined to 4 hours — by diagnosing hidden failures and redesigning execution logic.
+hide:
+  - navigation
 ---
+
+[:material-arrow-left: Case Studies](../index.md){ .back-link }
 
 # EY / Microsoft — Financial Pipeline Optimization
 

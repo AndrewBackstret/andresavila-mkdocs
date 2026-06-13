@@ -135,60 +135,89 @@
   50%       { opacity: 0.3; }
 }
 
-/* ── Home page: full-width content area ──────────────────────────────────── */
-.md-content[hide-toc] .md-content__inner,
-[data-md-component="content"] .md-content__inner {
-  max-width: 100%;
-}
+/* (Removed obsolete full-width rule that forced .md-content__inner to max-width:100%
+   and broke the centered reading column on portfolio/article pages.) */
 
-/* ── Service / Why-work-with-me cards — left border style ────────────────── */
+/* ── Feature cards (What I can help / Why work with me) — premium ─────────── */
 .grid.cards > ul {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 0.75rem !important;
+  gap: 1rem !important;
 }
 
 .grid.cards > ul > li {
   border: 1px solid #E8EEF3 !important;
-  border-left: 3px solid #2E6A98 !important;
-  border-radius: 0 8px 8px 0 !important;
-  background: #FAFCFE !important;
-  padding: 1rem 1.25rem !important;
-  box-shadow: none !important;
-  transition: border-color 0.2s, background 0.2s !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  padding: 1.5rem 1.6rem !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.06) !important;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s !important;
   margin-top: 0 !important;
 }
 
 .grid.cards > ul > li:hover {
-  background: #EBF3FA !important;
-  border-left-color: #1A3650 !important;
-  box-shadow: 0 2px 8px rgba(46,106,152,0.10) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(46, 106, 152, 0.14) !important;
+  border-color: #C5DDF0 !important;
+  background: #ffffff !important;
 }
 
-/* Icon + title line */
+/* Icon tile + title row */
 .grid.cards > ul > li > p:first-child {
-  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+  font-weight: 700 !important;
   color: #0D1A28 !important;
-  font-size: 0.9rem !important;
-  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 0 !important;
+  line-height: 1.3 !important;
 }
 
-/* Card icon color */
+/* Monochrome blue icon tile */
+.grid.cards > ul > li .twemoji.lg.middle,
 .grid.cards > ul > li .lg.middle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #EBF3FA, #DBE9F6) !important;
   color: #2E6A98 !important;
+  flex-shrink: 0 !important;
 }
 
-/* Divider hr inside card */
+.grid.cards > ul > li .twemoji.lg.middle svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* Subtle divider */
 .grid.cards > ul > li hr {
-  border-color: #E8EEF3 !important;
-  margin: 0.5rem 0 0.6rem !important;
+  border: 0 !important;
+  border-top: 1px solid #EEF3F8 !important;
+  margin: 1rem 0 !important;
 }
 
 /* Card body text */
 .grid.cards > ul > li p:not(:first-child) {
   font-size: 0.82rem !important;
-  color: #6898BA !important;
+  color: #33506B !important; /* ~5.5:1 on white */
   line-height: 1.6 !important;
+}
+
+/* ── Rounded buttons ─────────────────────────────────────────────────────── */
+.md-button {
+  border-radius: 24px !important;
+}
+
+.md-button--primary {
+  border-radius: 24px !important;
+}
+
+.md-button:not(.md-button--primary) {
+  border-radius: 24px !important;
 }
 
 /* ── Secondary button — always visible blue outline ──────────────────────── */
@@ -242,10 +271,58 @@
   color: #2E6A98 !important;
 }
 
-/* Remove the colored left border on note type specifically */
-.md-typeset details.note,
-.md-typeset .admonition.note {
-  border-left: 3px solid #6898BA !important;
+/* ── FAQ (question) — premium accordion cards ────────────────────────────── */
+.md-typeset details.question {
+  border: 1px solid #E8EEF3 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.05) !important;
+  margin: 0 0 0.8rem !important;
+  overflow: hidden !important;
+  transition: box-shadow 0.2s, border-color 0.2s !important;
+}
+
+.md-typeset details.question:hover {
+  border-color: #C5DDF0 !important;
+  box-shadow: 0 6px 18px rgba(46, 106, 152, 0.10) !important;
+}
+
+.md-typeset details.question > summary {
+  background: #ffffff !important;
+  color: #0D1A28 !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  padding: 1rem 2.8rem 1rem 2.9rem !important;
+  cursor: pointer !important;
+  list-style: none !important;
+}
+
+/* "?" icon in brand blue (no tile) */
+.md-typeset details.question > summary::before {
+  background-color: #2E6A98 !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  top: 0.9rem !important;
+  left: 0.9rem !important;
+}
+
+/* Right-side chevron that rotates when open */
+.md-typeset details.question > summary::after {
+  color: #6898BA !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.md-typeset details.question[open] > summary {
+  border-bottom: 1px solid #EEF3F8 !important;
+}
+
+.md-typeset details.question > p {
+  padding: 0.9rem 1.4rem 1.1rem !important;
+  margin: 0 !important;
+  color: #33506B !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
 }
 
 /* ── CTA full-width card ─────────────────────────────────────────────────── */
@@ -275,6 +352,11 @@
   gap: 0.5rem !important;
 }
 
+/* CTA body copy — darker for readability on the #EBF3FA card */
+.grid.cards.cta-full > ul > li p:not(:first-child) {
+  color: #2A4A66 !important;
+}
+
 /* ── Footer — visible text and icons ─────────────────────────────────────── */
 .md-footer {
   background-color: #132335 !important;
@@ -283,6 +365,11 @@
 
 .md-footer-meta {
   background-color: #0D1A28 !important;
+}
+
+/* Hide prev/next pagination on the home/landing page (keeps copyright + social) */
+body:has(.hero-band) .md-footer__inner {
+  display: none;
 }
 
 .md-footer__link,
@@ -363,19 +450,33 @@
   background-color: #2E6A98 !important;
 }
 
+/* ── Layout: full-width containers, readable content column ──────────────── */
+/* Containers stay full so we control the measure at .md-content__inner level. */
+.md-main__inner {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
+
+.md-content {
+  max-width: 100% !important;
+}
+
+/* Default reading column for article/portfolio pages (centered). Home widens   */
+/* this to 1200px via `.md-content__inner:has(.hero-band)` (higher specificity). */
+.md-content__inner {
+  margin: 0 auto !important;
+  max-width: 52rem;
+  padding: 1.8rem 1.2rem 2.5rem;
+}
+
 /* ── Page main background ─────────────────────────────────────────────────── */
 .md-main {
   background-color: #F7FAFC;
+  overflow-x: hidden;
 }
 
-/* ── Cards white on #F7FAFC background ──────────────────────────────────── */
-.grid.cards > ul > li {
-  background: #ffffff !important;
-}
-
-.grid.cards > ul > li:hover {
-  background: #EBF3FA !important;
-}
+/* (Feature card background/hover handled in the premium block above.) */
 
 /* ── Admonitions/FAQ on #F7FAFC background ──────────────────────────────── */
 .md-typeset details,
@@ -387,4 +488,208 @@
 .grid.cards.cta-full > ul > li {
   background: #EBF3FA !important;
   border: 1px solid #C5DDF0 !important;
+}
+
+/* ── Tech stack — chips/pills grouped by category ────────────────────────── */
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.tech-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2E6A98;
+  margin-bottom: 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tech-cat p {
+  margin: 0 !important; /* md wraps the single line in a <p> */
+}
+
+/* .md-typeset prefix beats Material's `.md-typeset ul:not([hidden]){display:flow-root}` */
+.md-typeset .tech-chips ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-typeset .tech-chips li {
+  background: #ffffff;
+  border: 1px solid #C5DDF0;
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.78rem;
+  color: #1A3650;
+  margin: 0 !important;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.md-typeset .tech-chips li::before {
+  content: none !important; /* remove Material list bullet */
+}
+
+.md-typeset .tech-chips li:hover {
+  background: #EBF3FA;
+  border-color: #2E6A98;
+}
+
+/* ── Section headings — short accent line (matches .hero-divider) ─────────── */
+.md-content__inner h2 {
+  margin-top: 2.6rem;
+}
+
+.md-content__inner h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 0.5rem;
+  background: #2E6A98;
+  border-radius: 2px;
+}
+
+/* ── Case Studies index — rich cards ─────────────────────────────────────── */
+.case-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.md-typeset .case-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #E8EEF3;
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  color: inherit !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.06);
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.md-typeset .case-card:hover {
+  box-shadow: 0 14px 36px rgba(46, 106, 152, 0.15);
+  transform: translateY(-4px);
+  border-color: #C5DDF0;
+}
+
+.case-type {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2E6A98;
+  background: #EBF3FA;
+  border-radius: 12px;
+  padding: 0.2rem 0.6rem;
+}
+
+.md-typeset .case-card h3 {
+  margin: 0.7rem 0 0.45rem;
+  color: #0D1A28;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.md-typeset .case-card p {
+  color: #33506B;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0 0 0.9rem;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.case-tags span {
+  font-size: 0.72rem;
+  color: #1A3650;
+  background: #F0F5FA;
+  border: 1px solid #C5DDF0;
+  border-radius: 14px;
+  padding: 0.2rem 0.6rem;
+}
+
+.case-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #E8EEF3;
+  padding-top: 0.85rem;
+}
+
+.case-metric {
+  font-weight: 700;
+  color: #2E6A98;
+  font-size: 0.9rem;
+}
+
+.case-cta {
+  color: #2E6A98;
+  font-weight: 600;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.md-typeset .case-card:hover .case-cta {
+  color: #1A3650;
+}
+
+/* ── Article back-link ───────────────────────────────────────────────────── */
+.md-typeset .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2E6A98 !important;
+  text-decoration: none !important;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset .back-link:hover {
+  color: #1A3650 !important;
+}
+
+/* ── "Project Summary" abstract — brand-neutral styling ──────────────────── */
+.md-typeset details.abstract,
+.md-typeset .admonition.abstract {
+  border-color: #E8EEF3 !important;
+  border-left: 3px solid #2E6A98 !important;
+  background: #FAFCFE !important;
+}
+
+.md-typeset .abstract > .admonition-title,
+.md-typeset .abstract > summary {
+  background: #F0F5FA !important;
+  color: #0D1A28 !important;
+}
+
+.md-typeset .abstract > .admonition-title::before,
+.md-typeset .abstract > summary::before {
+  background-color: #2E6A98 !important;
+}
+
+/* ── Right-hand TOC — active item accent ─────────────────────────────────── */
+.md-nav--secondary .md-nav__link--active,
+.md-nav--secondary .md-nav__link:hover {
+  color: #2E6A98 !important;
 }

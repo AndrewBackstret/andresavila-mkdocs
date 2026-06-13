@@ -6,6 +6,7 @@ author: Andres Avila
 canonical_url: https://andresavila.io/
 hide:
   - toc
+  - navigation
 ---
 
 <script type="application/ld+json">
@@ -23,6 +24,8 @@ hide:
   "knowsAbout": ["Data Engineering", "Cloud Data Platforms", "LLM Integration", "Python", "dbt", "BigQuery", "Azure", "AWS"]
 }
 </script>
+
+<div class="hero-band" markdown>
 
 <div class="hero-section grid-container" markdown>
 
@@ -50,6 +53,9 @@ Specialized in AI-powered cloud pipelines and LLM integration for enterprise tea
 
 </div>
 
+</div>
+
+<div class="stats-band" markdown>
 <div class="stats-row">
   <div class="stat-item">
     <span class="stat-number">$750K</span>
@@ -67,6 +73,7 @@ Specialized in AI-powered cloud pipelines and LLM integration for enterprise tea
     <span class="stat-number">5</span>
     <span class="stat-label">Cloud Certifications</span>
   </div>
+</div>
 </div>
 
 ## About me
@@ -139,34 +146,82 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
 ## Tech stack
 
-**Cloud** · Azure (ADF, Synapse, Fabric, Functions) · AWS (S3, Glue, Redshift, Lambda) · Snowflake · GCP basics
+<div class="tech-stack" markdown>
 
-**Orchestration & Transformation** · Apache Airflow · dbt · PySpark · Azure Data Factory
+<div class="tech-group" markdown>
+<div class="tech-cat" markdown>:material-cloud: Cloud</div>
+<div class="tech-chips" markdown>
+- Azure (ADF, Synapse, Fabric, Functions)
+- AWS (S3, Glue, Redshift, Lambda)
+- Snowflake
+- GCP basics
+</div>
+</div>
 
-**AI / LLM** · OpenAI API · LangChain · Pinecone · Retrieval-Augmented Generation · Streamlit
+<div class="tech-group" markdown>
+<div class="tech-cat" markdown>:material-cog-sync: Orchestration & Transformation</div>
+<div class="tech-chips" markdown>
+- Apache Airflow
+- dbt
+- PySpark
+- Azure Data Factory
+</div>
+</div>
 
-**Languages** · Python · SQL · DAX · Shell/Bash · YAML · TypeScript (basics)
+<div class="tech-group" markdown>
+<div class="tech-cat" markdown>:material-robot: AI / LLM</div>
+<div class="tech-chips" markdown>
+- OpenAI API
+- LangChain
+- Pinecone
+- Retrieval-Augmented Generation
+- Streamlit
+</div>
+</div>
 
-**DevOps** · Azure DevOps · GitHub Actions · Docker · Terraform · CI/CD pipelines
+<div class="tech-group" markdown>
+<div class="tech-cat" markdown>:material-code-braces: Languages</div>
+<div class="tech-chips" markdown>
+- Python
+- SQL
+- DAX
+- Shell/Bash
+- YAML
+- TypeScript (basics)
+</div>
+</div>
+
+<div class="tech-group" markdown>
+<div class="tech-cat" markdown>:material-cog: DevOps</div>
+<div class="tech-chips" markdown>
+- Azure DevOps
+- GitHub Actions
+- Docker
+- Terraform
+- CI/CD pipelines
+</div>
+</div>
+
+</div>
 
 ## Frequently asked questions
 
-??? note "What kind of contracts are you available for?"
+??? question "What kind of contracts are you available for?"
     I'm primarily open to **Backend Contracts (BECs)** — long-term staff augmentation engagements (typically 20–32 hrs/week) where I embed as a senior data engineer in your team. I'm also open to well-scoped **project-based contracts** for data migrations, pipeline buildouts, or LLM integration work. Minimum engagement: 20 hours.
 
-??? note "What industries have you worked in?"
+??? question "What industries have you worked in?"
     Consumer goods (Hershey's), professional services and enterprise software (EY/Microsoft), technology (Wizeline), and health tech (biopanel.io — personal project). I'm most effective with enterprise teams that have complex data at scale — fintechs, SaaS platforms, and healthcare are strong fits.
 
-??? note "How do you handle confidentiality?"
+??? question "How do you handle confidentiality?"
     I sign NDAs before any project begins. All credentials and sensitive data are managed with enterprise-grade security practices — never hardcoded, always encrypted at rest and in transit. I can work within your existing security policies.
 
-??? note "What's your typical engagement structure?"
+??? question "What's your typical engagement structure?"
     I prefer a short paid discovery phase (5–10 hours) to fully understand your architecture and data before committing to a full engagement. This eliminates surprises on both sides. From there, I work in weekly cycles with async updates and a standing check-in.
 
-??? note "Where are you based? Do you work with international clients?"
+??? question "Where are you based? Do you work with international clients?"
     I'm based in Aguascalientes, México (UTC-6). I work remote-first and have experience with distributed teams across US, EU, and LATAM timezones. Fluent in English and Spanish.
 
-??? note "What are your rates?"
+??? question "What are your rates?"
     I price based on scope and value delivered, not hours logged. Let's talk during our intro call — I'll be direct about what makes sense for your situation.
 
 <div class="grid cards cta-full" style="margin-top: 3rem" markdown>

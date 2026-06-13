@@ -1,7 +1,11 @@
 ---
 title: biopanel.io — AI-Powered Health Analytics Platform
 description: Full-stack AI platform that extracts biomarkers from blood-test PDFs across any laboratory using LLMs — built and owned end-to-end by Andres Avila.
+hide:
+  - navigation
 ---
+
+[:material-arrow-left: Case Studies](../index.md){ .back-link }
 
 # biopanel.io — AI-Powered Health Analytics Platform
 

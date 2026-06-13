@@ -1,7 +1,11 @@
 ---
 title: Hershey's — $750K Pipeline Automation & ETL Modernization
 description: Led data engineering modernization at Hershey's Mexico Reporting CoE — saving 2,000+ hours annually and eliminating $750K in vendor costs through Azure and Databricks automation.
+hide:
+  - navigation
 ---
+
+[:material-arrow-left: Case Studies](../index.md){ .back-link }
 
 # Hershey's — Pipeline Automation & ETL Modernization
 
