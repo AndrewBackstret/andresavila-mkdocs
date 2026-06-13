@@ -1,16 +1,18 @@
-/* ── Profile image ───────────────────────────────────────────────────────── */
+/* ── Profile image — circular with metallic blue ring ─────────────────────── */
 .profile-image {
-  width: 280px;
-  height: 380px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  object-position: top center;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-position: center top;
+  border-radius: 50%;
+  outline: 3px solid #2E6A98;
+  outline-offset: 5px;
+  display: block;
+  transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.15);
 }
 
 .profile-image:hover {
-  transform: scale(1.02);
   box-shadow: 0 8px 32px rgba(46, 106, 152, 0.28);
 }
 
@@ -20,7 +22,7 @@
   grid-template-columns: 1.5fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 40px 0;
+  padding: 48px 0 36px;
 }
 
 .text-intro-grid {
@@ -31,22 +33,59 @@
 .profile-image-grid {
   grid-column: 2 / 3;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+}
+
+/* ── Hero eyebrow + divider ──────────────────────────────────────────────── */
+.hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2E6A98;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-divider {
+  width: 32px;
+  height: 2px;
+  background: #2E6A98;
+  margin-bottom: 0.9rem;
+  border-radius: 0;
+}
+
+/* ── Stats row — full width bar below hero ───────────────────────────────── */
+.stats-row {
+  display: flex;
+  border-top: 1px solid #E8EEF3;
+  border-bottom: 1px solid #E8EEF3;
+  margin: 0 -1.6rem;
+  padding: 0 1.6rem;
+}
+
+.stats-row .stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  border-right: 1px solid #E8EEF3;
+}
+
+.stats-row .stat-item:last-child {
+  border-right: none;
 }
 
 /* ── Mobile ──────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 24px;
+    padding: 24px 0 20px;
   }
 
   .profile-image {
-    width: 100%;
-    max-width: 300px;
-    height: 360px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto;
   }
 
@@ -62,8 +101,15 @@
     justify-content: center;
   }
 
-  .stats-bar {
-    gap: 1.5rem;
+  .stats-row {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .stats-row .stat-item {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid #E8EEF3;
   }
 }
 
@@ -75,7 +121,7 @@
   }
 
   .profile-image {
-    width: 360px;
-    height: 460px;
+    width: 240px;
+    height: 240px;
   }
 }

@@ -28,40 +28,15 @@ canonical_url: https://andresavila.io/
 
 <div class="availability-badge"><div class="availability-dot"></div>Available for new projects</div>
 
+<div class="hero-eyebrow">Senior Data Engineer</div>
+<div class="hero-divider"></div>
+
 # Build data systems that actually think
 
-### Senior Data Engineer · AI-Powered Data Applications · Cloud
+Specialized in AI-powered cloud pipelines and LLM integration for enterprise teams.
 
-- Are your data pipelines slow, fragile, or impossible to maintain?
-
-- Do you need cloud infrastructure that scales without constant firefighting?
-
-- Want to integrate LLMs into your data workflows — without the hype?
-
-- Looking for an engineer who understands both the data stack and the business?
-
-- Need production-grade delivery, not just prototypes?
-
-[Book an Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
-
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-number">5+</span>
-    <span class="stat-label">years of experience</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number">$750K</span>
-    <span class="stat-label">in costs reduced</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number">2,000+</span>
-    <span class="stat-label">hours automated</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number">5</span>
-    <span class="stat-label">cloud certifications</span>
-  </div>
-</div>
+[Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+[View Case Studies](portfolio/index.md){ .md-button .md-button--secondary }
 
 </div>
 
@@ -71,6 +46,25 @@ canonical_url: https://andresavila.io/
 
 </div>
 
+</div>
+
+<div class="stats-row">
+  <div class="stat-item">
+    <span class="stat-number">$750K</span>
+    <span class="stat-label">Costs Reduced</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">2,000+</span>
+    <span class="stat-label">Hours Automated</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">67%</span>
+    <span class="stat-label">Pipeline Speedup</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">5</span>
+    <span class="stat-label">Cloud Certifications</span>
+  </div>
 </div>
 
 ## About me

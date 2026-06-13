@@ -25,16 +25,16 @@
   --md-default-bg-color--lighter: #1A3650;
 }
 
-/* ── Buttons ─────────────────────────────────────────────────────────────── */
+/* ── Primary button ──────────────────────────────────────────────────────── */
 .md-button--primary {
-  background-color: #2E6A98;
-  border-color:     #2E6A98;
+  background-color: #2E6A98 !important;
+  border-color:     #2E6A98 !important;
   color: #fff !important;
 }
 
 .md-button--primary:hover {
-  background-color: #1A3650;
-  border-color:     #1A3650;
+  background-color: #1A3650 !important;
+  border-color:     #1A3650 !important;
   color: #fff !important;
 }
 
@@ -44,13 +44,98 @@
   color: #0D1A28 !important;
 }
 
-/* ── Footer ──────────────────────────────────────────────────────────────── */
+/* ── Secondary button (outlined blue) ───────────────────────────────────── */
+.md-button--secondary {
+  background-color: transparent !important;
+  border: 2px solid #2E6A98 !important;
+  color: #2E6A98 !important;
+}
+
+.md-button--secondary:hover {
+  background-color: #EBF3FA !important;
+  border-color: #1A3650 !important;
+  color: #1A3650 !important;
+}
+
+/* ── Footer — light gray ─────────────────────────────────────────────────── */
 .md-footer {
-  background-color: #0D1A28;
+  background-color: #F7FAFC;
+  border-top: 1px solid #E8EEF3;
+  color: #6898BA;
 }
 
 .md-footer-meta {
-  background-color: #132335;
+  background-color: #F0F5FA;
+  border-top: 1px solid #E8EEF3;
+}
+
+.md-footer__link,
+.md-footer-meta__inner,
+.md-footer-copyright {
+  color: #6898BA !important;
+}
+
+.md-footer__title {
+  color: #0D1A28;
+}
+
+/* ── Stats numbers ───────────────────────────────────────────────────────── */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2E6A98;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.3rem;
+}
+
+/* ── Availability badge ──────────────────────────────────────────────────── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #EBF3FA;
+  border: 1px solid #C5DDF0;
+  color: #2E6A98;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+[data-md-color-scheme="slate"] .availability-badge {
+  background: #132335;
+  border-color: #2E6A98;
+  color: #6898BA;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4CAF50;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 /* ── Testimonials (single column) ────────────────────────────────────────── */
@@ -68,69 +153,4 @@
   margin-top: -0.5rem;
   color: var(--md-default-fg-color--light);
   font-size: 0.9rem;
-}
-
-/* ── Stats bar ───────────────────────────────────────────────────────────── */
-.stats-bar {
-  display: flex;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--md-default-fg-color--lightest);
-  margin-top: 2rem;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-number {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2E6A98;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.78rem;
-  color: var(--md-default-fg-color--light);
-  margin-top: 0.25rem;
-}
-
-/* ── Availability badge ──────────────────────────────────────────────────── */
-.availability-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #EBF3FA;
-  border: 1px solid #2E6A98;
-  color: #2E6A98;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.3rem 0.85rem;
-  border-radius: 20px;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-[data-md-color-scheme="slate"] .availability-badge {
-  background: #132335;
-  border-color: #2E6A98;
-  color: #6898BA;
-}
-
-.availability-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2E6A98;
-  flex-shrink: 0;
-  animation: blink 2s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
 }
