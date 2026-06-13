@@ -138,6 +138,75 @@
   50%       { opacity: 0.3; }
 }
 
+/* ── Home page: full-width content area ──────────────────────────────────── */
+.md-content[hide-toc] .md-content__inner,
+[data-md-component="content"] .md-content__inner {
+  max-width: 100%;
+}
+
+/* ── Service / Why-work-with-me cards — left border style ────────────────── */
+.grid.cards > ul {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.75rem !important;
+}
+
+.grid.cards > ul > li {
+  border: 1px solid #E8EEF3 !important;
+  border-left: 3px solid #2E6A98 !important;
+  border-radius: 0 8px 8px 0 !important;
+  background: #FAFCFE !important;
+  padding: 1rem 1.25rem !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s, background 0.2s !important;
+  margin-top: 0 !important;
+}
+
+.grid.cards > ul > li:hover {
+  background: #EBF3FA !important;
+  border-left-color: #1A3650 !important;
+  box-shadow: 0 2px 8px rgba(46,106,152,0.10) !important;
+}
+
+/* Icon + title line */
+.grid.cards > ul > li > p:first-child {
+  font-weight: 600 !important;
+  color: #0D1A28 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Card icon color */
+.grid.cards > ul > li .lg.middle {
+  color: #2E6A98 !important;
+}
+
+/* Divider hr inside card */
+.grid.cards > ul > li hr {
+  border-color: #E8EEF3 !important;
+  margin: 0.5rem 0 0.6rem !important;
+}
+
+/* Card body text */
+.grid.cards > ul > li p:not(:first-child) {
+  font-size: 0.82rem !important;
+  color: #6898BA !important;
+  line-height: 1.6 !important;
+}
+
+/* ── Secondary button — always visible blue outline ──────────────────────── */
+.md-button:not(.md-button--primary) {
+  background-color: transparent !important;
+  border: 2px solid #2E6A98 !important;
+  color: #2E6A98 !important;
+}
+
+.md-button:not(.md-button--primary):hover {
+  background-color: #EBF3FA !important;
+  border-color: #1A3650 !important;
+  color: #1A3650 !important;
+}
+
 /* ── Testimonials (single column) ────────────────────────────────────────── */
 .grid.cards.testimonials {
   grid-template-columns: 1fr !important;
@@ -153,4 +222,95 @@
   margin-top: -0.5rem;
   color: var(--md-default-fg-color--light);
   font-size: 0.9rem;
+}
+
+/* ── FAQ admonitions — neutral gray, not blue ────────────────────────────── */
+.md-typeset details,
+.md-typeset .admonition {
+  border-color: #E8EEF3 !important;
+  border-left-color: #6898BA !important;
+  background: #FAFCFE !important;
+  box-shadow: none !important;
+}
+
+.md-typeset details > summary,
+.md-typeset .admonition-title {
+  background: #F0F5FA !important;
+  color: #0D1A28 !important;
+  font-weight: 600 !important;
+}
+
+.md-typeset details > summary::before,
+.md-typeset .admonition-title::before {
+  color: #2E6A98 !important;
+}
+
+/* Remove the colored left border on note type specifically */
+.md-typeset details.note,
+.md-typeset .admonition.note {
+  border-left: 3px solid #6898BA !important;
+}
+
+/* ── CTA full-width card ─────────────────────────────────────────────────── */
+.grid.cards.cta-full {
+  display: block !important;
+}
+
+.grid.cards.cta-full > ul {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+.grid.cards.cta-full > ul > li {
+  border-radius: 12px !important;
+  border: 1px solid #E8EEF3 !important;
+  border-left: 1px solid #E8EEF3 !important;
+  background: #EBF3FA !important;
+  text-align: center !important;
+  padding: 2rem !important;
+}
+
+.grid.cards.cta-full > ul > li > p:first-child {
+  font-size: 1.1rem !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* ── Footer — visible text and icons ─────────────────────────────────────── */
+.md-footer {
+  background-color: #132335 !important;
+  border-top: 1px solid #1A3650 !important;
+}
+
+.md-footer-meta {
+  background-color: #0D1A28 !important;
+}
+
+.md-footer__link,
+.md-footer-meta__inner,
+.md-footer-copyright,
+.md-footer-copyright__highlight {
+  color: #6898BA !important;
+}
+
+.md-social__link svg {
+  fill: #6898BA !important;
+}
+
+.md-social__link:hover svg {
+  fill: #fff !important;
+}
+
+.md-footer__title {
+  color: #fff !important;
+}
+
+/* ── Nav logo sizing ─────────────────────────────────────────────────────── */
+.md-header__button.md-logo img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  border-radius: 4px;
 }

@@ -4,6 +4,8 @@ description: Senior Data Engineer specialized in AI-Powered Data Systems, Cloud 
 keywords: Andres Avila, Senior Data Engineer, AI Data Engineer, Cloud Engineering, dbt, BigQuery, LLM Integration, Data Freelancer, Mexico
 author: Andres Avila
 canonical_url: https://andresavila.io/
+hide:
+  - toc
 ---
 
 <script type="application/ld+json">
@@ -167,7 +169,7 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 ??? note "What are your rates?"
     I price based on scope and value delivered, not hours logged. Let's talk during our intro call — I'll be direct about what makes sense for your situation.
 
-<div class="grid cards" style="margin-top: 3rem" markdown>
+<div class="grid cards cta-full" style="margin-top: 3rem" markdown>
 
 -   :material-calendar-check:{ .lg .middle } Let's see if we're a fit
 
