@@ -13,6 +13,9 @@
   --md-primary-fg-color--dark:  #1A3650;
   --md-accent-fg-color:         #2E6A98;
   --md-typeset-a-color:         #2E6A98;
+  --md-default-bg-color:        #F7FAFC;
+  --md-default-bg-color--light: #EBF3FA;
+  --md-default-bg-color--lighter: #F0F5FA;
 }
 
 /* ── Dark theme ──────────────────────────────────────────────────────────── */
@@ -36,12 +39,6 @@
   background-color: #1A3650 !important;
   border-color:     #1A3650 !important;
   color: #fff !important;
-}
-
-[data-md-color-scheme="slate"] .md-button--primary:hover {
-  background-color: #6898BA;
-  border-color:     #6898BA;
-  color: #0D1A28 !important;
 }
 
 /* ── Secondary button (outlined blue) ───────────────────────────────────── */
@@ -313,4 +310,81 @@
   width: 28px;
   object-fit: contain;
   border-radius: 4px;
+}
+
+/* ── Header / nav — always dark ──────────────────────────────────────────── */
+.md-header {
+  background-color: #0D1A28 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #1A3650 !important;
+}
+
+.md-header__title,
+.md-header__topic,
+.md-ellipsis {
+  color: #fff !important;
+}
+
+.md-header__button {
+  color: #6898BA !important;
+}
+
+.md-header__button:hover {
+  color: #fff !important;
+}
+
+/* Search input */
+.md-search__input {
+  background-color: #132335 !important;
+  color: #fff !important;
+}
+
+.md-search__input::placeholder {
+  color: #6898BA !important;
+}
+
+/* Navigation tabs — always dark */
+.md-tabs {
+  background-color: #132335 !important;
+  border-bottom: 1px solid #1A3650 !important;
+}
+
+.md-tabs__link {
+  color: #6898BA !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #fff !important;
+}
+
+.md-tabs__indicator {
+  background-color: #2E6A98 !important;
+}
+
+/* ── Page main background ─────────────────────────────────────────────────── */
+.md-main {
+  background-color: #F7FAFC;
+}
+
+/* ── Cards white on #F7FAFC background ──────────────────────────────────── */
+.grid.cards > ul > li {
+  background: #ffffff !important;
+}
+
+.grid.cards > ul > li:hover {
+  background: #EBF3FA !important;
+}
+
+/* ── Admonitions/FAQ on #F7FAFC background ──────────────────────────────── */
+.md-typeset details,
+.md-typeset .admonition {
+  background: #ffffff !important;
+}
+
+/* ── CTA card on #F7FAFC background ─────────────────────────────────────── */
+.grid.cards.cta-full > ul > li {
+  background: #EBF3FA !important;
+  border: 1px solid #C5DDF0 !important;
 }
