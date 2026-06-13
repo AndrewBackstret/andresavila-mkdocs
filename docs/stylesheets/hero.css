@@ -39,7 +39,7 @@
 /* Inner content centered within the dark bands */
 .hero-band  > .hero-section,
 .stats-band > .stats-row {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.2rem;
@@ -56,7 +56,7 @@
 /* The global full-width overrides (for portfolio) use !important, so we do    */
 /* too. The dark bands still break out edge-to-edge from this centered box.    */
 .md-content__inner:has(.hero-band) {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-top: 0 !important; /* keep hero flush to nav (no white line) */
@@ -196,7 +196,7 @@
 /* .grid-container width/centering is handled by `.hero-band > .hero-section`. */
 @media screen and (min-width: 1200px) {
   .profile-image {
-    width: 240px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
   }
 }

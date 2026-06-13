@@ -80,7 +80,7 @@ Diagnosed and resolved reliability issues across regional reporting pipelines, a
 | Pipeline runtime improvement | 35% |
 | Award recognition | HSY Awards Mexico nomination |
 
-<div class="grid cards" style="margin-top: 3rem" markdown>
+<div class="grid cards cta-full" style="margin-top: 3rem" markdown>
 
 -   :material-calendar-check:{ .lg .middle } Similar challenges in your organization?
 

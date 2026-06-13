@@ -30,18 +30,9 @@ theme:
     - navigation.footer
   language: en
   palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-      primary: custom
-      accent: custom
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-      primary: custom
-      accent: custom
+    scheme: default
+    primary: custom
+    accent: custom
   font:
     text: Inter
     code: Roboto Mono
@@ -62,8 +53,8 @@ extra:
       name: Email
 
 extra_css:
-  - stylesheets/extra.css
-  - stylesheets/hero.css
+  - stylesheets/extra.css?v=7
+  - stylesheets/hero.css?v=7
 
 plugins:
   - search

@@ -79,7 +79,7 @@ This project exists to prove a specific capability: I can take an idea from zero
 
 For data engineering clients: the same pipeline design patterns (async DAGs, typed stages, observability, fallback logic) are how I approach enterprise data workflows.
 
-<div class="grid cards" style="margin-top: 3rem" markdown>
+<div class="grid cards cta-full" style="margin-top: 3rem" markdown>
 
 -   :material-calendar-check:{ .lg .middle } Interested in AI-powered data systems?
 

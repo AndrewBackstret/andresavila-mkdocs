@@ -84,7 +84,7 @@ Managed production-grade deployment through **Azure DevOps**: pull requests, rel
 | Complete Revenue | 7.5 hours | 2.5 hours | **−67%** |
 | Combined | 12 hours | 4 hours | **−67%** |
 
-<div class="grid cards" style="margin-top: 3rem" markdown>
+<div class="grid cards cta-full" style="margin-top: 3rem" markdown>
 
 -   :material-calendar-check:{ .lg .middle } Slow or unreliable data pipelines?
 
