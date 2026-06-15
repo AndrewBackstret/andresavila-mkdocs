@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1145" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .tn  { fill:#f0f9ff; font-weight:700; font-size:14.5px; }
+      .tc  { fill:#cbd5e1; font-size:12.5px; }
+      .tt  { fill:#64748b; font-size:11.5px; }
+      .pk  { fill:#fbbf24; font-weight:700; }
+      .fk  { fill:#6898BA; font-weight:700; }
+      .uq  { fill:#34d399; font-weight:700; }
+      .dn  { fill:#a78bfa; }
+      .rel { stroke:#2E6A98; stroke-width:1.8; fill:none; }
+      .relg{ stroke:#34d399; stroke-width:1.8; fill:none; stroke-dasharray:5 4; }
+      .rl  { fill:#6898BA; font-size:11.5px; }
+      .rlg { fill:#34d399; font-size:11px; }
+    </style>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98"/>
+    </marker>
+    <marker id="mg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1145" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text font-family="'DM Serif Display',Georgia,serif" fill="#f0f9ff" x="70" y="40" font-size="32">Biopanel — Data Model</text>
+  <text fill="#2E6A98" font-weight="700" x="1330" y="36" font-size="16" text-anchor="end">biopanel.io</text>
+  <text fill="#94a3b8" x="71" y="62" font-size="13">PostgreSQL · SQLAlchemy · readings = FACT TABLE · lightweight dimensional schema</text>
+  <line x1="70" y1="75" x2="1330" y2="75" stroke="#1A3650"/>
+
+  <!-- LEGEND — text only, no boxes -->
+  <text x="70" y="96" font-size="12.5">
+    <tspan class="pk">PK</tspan><tspan fill="#94a3b8"> primary key    </tspan>
+    <tspan class="fk">FK</tspan><tspan fill="#94a3b8"> foreign key    </tspan>
+    <tspan class="uq">UNIQUE</tspan><tspan fill="#94a3b8"> unique constraint    </tspan>
+    <tspan class="dn">⚑</tspan><tspan fill="#94a3b8"> denormalized on purpose</tspan>
+  </text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: patients  (x=440 y=108 w=330 h=272)
+       ══════════════════════════════════════ -->
+  <rect x="440" y="108" width="330" height="272" rx="11" fill="#132335" stroke="rgba(46,106,152,0.4)" stroke-width="1.3"/>
+  <path d="M451,108 L759,108 Q770,108 770,119 L770,150 L440,150 L440,119 Q440,108 451,108 Z" fill="#1A3650"/>
+  <text class="tn" x="458" y="136">patients</text>
+
+  <text class="tc" x="458" y="170"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="756" y="170" text-anchor="end">UUID</text>
+  <text class="tc" x="458" y="196"><tspan class="uq">UNIQUE </tspan>supabase_user_id</text>
+  <text class="tt" x="756" y="196" text-anchor="end">text</text>
+  <text class="tc" x="458" y="222"><tspan class="uq">UNIQUE </tspan>username</text>
+  <text class="tt" x="756" y="222" text-anchor="end">text</text>
+  <text class="tc" x="458" y="248"><tspan class="uq">UNIQUE </tspan>email</text>
+  <text class="tt" x="756" y="248" text-anchor="end">text</text>
+  <text class="tc" x="458" y="274">name</text>
+  <text class="tt" x="756" y="274" text-anchor="end">text</text>
+  <text class="tc" x="458" y="300">biological_sex</text>
+  <text class="tt" x="756" y="300" text-anchor="end">enum</text>
+  <text class="tc" x="458" y="326">date_of_birth</text>
+  <text class="tt" x="756" y="326" text-anchor="end">date</text>
+  <text class="tc" x="458" y="352">created_at</text>
+  <text class="tt" x="756" y="352" text-anchor="end">timestamp</text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: lab_reports  (x=900 y=108 w=360 h=350)
+       ══════════════════════════════════════ -->
+  <rect x="900" y="108" width="360" height="350" rx="11" fill="#132335" stroke="rgba(46,106,152,0.4)" stroke-width="1.3"/>
+  <path d="M911,108 L1249,108 Q1260,108 1260,119 L1260,150 L900,150 L900,119 Q900,108 911,108 Z" fill="#1A3650"/>
+  <text class="tn" x="918" y="136">lab_reports</text>
+
+  <text class="tc" x="918" y="170"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="1246" y="170" text-anchor="end">UUID</text>
+  <text class="tc" x="918" y="196"><tspan class="fk">FK </tspan>patient_id</text>
+  <text class="tt" x="1246" y="196" text-anchor="end">UUID</text>
+  <text class="tc" x="918" y="222"><tspan class="uq">UNIQUE </tspan>file_hash</text>
+  <text class="tt" x="1246" y="222" text-anchor="end">text (SHA-256)</text>
+  <text class="tc" x="918" y="248">storage_url</text>
+  <text class="tt" x="1246" y="248" text-anchor="end">text</text>
+  <text class="tc" x="918" y="274">original_filename</text>
+  <text class="tt" x="1246" y="274" text-anchor="end">text</text>
+  <text class="tc" x="918" y="300">study_date</text>
+  <text class="tt" x="1246" y="300" text-anchor="end">date</text>
+  <text class="tc" x="918" y="326">study_type</text>
+  <text class="tt" x="1246" y="326" text-anchor="end">text</text>
+  <text class="tc" x="918" y="352">lab_name</text>
+  <text class="tt" x="1246" y="352" text-anchor="end">text</text>
+  <text class="tc" x="918" y="378">status</text>
+  <text class="tt" x="1246" y="378" text-anchor="end">enum</text>
+  <text class="tc" x="918" y="404">uploaded_at</text>
+  <text class="tt" x="1246" y="404" text-anchor="end">timestamp</text>
+  <text class="tc" x="918" y="430">confirmed_at</text>
+  <text class="tt" x="1246" y="430" text-anchor="end">timestamp</text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: readings (FACT)  (x=450 y=490 w=390 h=324)
+       ══════════════════════════════════════ -->
+  <rect x="450" y="490" width="390" height="324" rx="12" fill="#132335" stroke="rgba(52,211,153,0.35)" stroke-width="1.4"/>
+  <path d="M462,490 L828,490 Q840,490 840,502 L840,534 L450,534 L450,502 Q450,490 462,490 Z" fill="#0F2A1E"/>
+  <text class="tn" x="468" y="519">readings</text>
+  <!-- FACT badge -->
+  <rect x="698" y="499" width="130" height="26" rx="4" fill="rgba(10,30,18,0.95)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="763" y="517" text-anchor="middle" fill="#34d399" font-weight="700" font-size="11">FACT TABLE</text>
+
+  <text class="tc" x="468" y="554"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="826" y="554" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="580"><tspan class="fk">FK </tspan>lab_report_id</text>
+  <text class="tt" x="826" y="580" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="606"><tspan class="fk">FK </tspan><tspan class="dn">⚑ </tspan>patient_id</text>
+  <text class="tt" x="826" y="606" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="632"><tspan class="fk">FK </tspan>biomarker_id</text>
+  <text class="tt" x="826" y="632" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="658">value</text>
+  <text class="tt" x="826" y="658" text-anchor="end">NUMERIC(18,6)</text>
+  <text class="tc" x="468" y="684">unit</text>
+  <text class="tt" x="826" y="684" text-anchor="end">text</text>
+  <text class="tc" x="468" y="710">ref_min</text>
+  <text class="tt" x="826" y="710" text-anchor="end">NUMERIC(18,6)</text>
+  <text class="tc" x="468" y="736">ref_max</text>
+  <text class="tt" x="826" y="736" text-anchor="end">NUMERIC(18,6)</text>
+  <text class="tc" x="468" y="762"><tspan class="dn">⚑ </tspan>study_date</text>
+  <text class="tt" x="826" y="762" text-anchor="end">date</text>
+  <text class="tc" x="468" y="788">extracted_name</text>
+  <text class="tt" x="826" y="788" text-anchor="end">text</text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: biomarkers  (x=980 y=490 w=330 h=194)
+       ══════════════════════════════════════ -->
+  <rect x="980" y="490" width="330" height="194" rx="11" fill="#132335" stroke="rgba(52,211,153,0.35)" stroke-width="1.4"/>
+  <path d="M991,490 L1299,490 Q1310,490 1310,501 L1310,532 L980,532 L980,501 Q980,490 991,490 Z" fill="#0F2A1E"/>
+  <text class="tn" x="998" y="519">biomarkers</text>
+
+  <text class="tc" x="998" y="552"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="1296" y="552" text-anchor="end">UUID</text>
+  <text class="tc" x="998" y="578"><tspan class="uq">UNIQUE </tspan>canonical_name</text>
+  <text class="tt" x="1296" y="578" text-anchor="end">text</text>
+  <text class="tc" x="998" y="604">display_name</text>
+  <text class="tt" x="1296" y="604" text-anchor="end">text</text>
+  <text class="tc" x="998" y="630">category</text>
+  <text class="tt" x="1296" y="630" text-anchor="end">text</text>
+  <text class="tc" x="998" y="656">created_at</text>
+  <text class="tt" x="1296" y="656" text-anchor="end">timestamp</text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: insights  (x=40 y=400 w=350 h=402)
+       ══════════════════════════════════════ -->
+  <rect x="40" y="400" width="350" height="402" rx="11" fill="#132335" stroke="rgba(167,139,250,0.3)" stroke-width="1.3"/>
+  <path d="M51,400 L379,400 Q390,400 390,411 L390,442 L40,442 L40,411 Q40,400 51,400 Z" fill="#171430"/>
+  <text class="tn" x="58" y="429">insights</text>
+
+  <text class="tc" x="58" y="462"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="376" y="462" text-anchor="end">UUID</text>
+  <text class="tc" x="58" y="488"><tspan class="fk">FK </tspan>patient_id</text>
+  <text class="tt" x="376" y="488" text-anchor="end">UUID</text>
+  <text class="tc" x="58" y="514">content_markdown</text>
+  <text class="tt" x="376" y="514" text-anchor="end">text</text>
+  <text class="tc" x="58" y="540">bundle_json</text>
+  <text class="tt" x="376" y="540" text-anchor="end">JSONB</text>
+  <text class="tc" x="58" y="566">study_date_from</text>
+  <text class="tt" x="376" y="566" text-anchor="end">date</text>
+  <text class="tc" x="58" y="592">study_date_to</text>
+  <text class="tt" x="376" y="592" text-anchor="end">date</text>
+  <text class="tc" x="58" y="618">lab_report_ids</text>
+  <text class="tt" x="376" y="618" text-anchor="end">UUID[]</text>
+  <text class="tc" x="58" y="644">model_used</text>
+  <text class="tt" x="376" y="644" text-anchor="end">text</text>
+  <text class="tc" x="58" y="670">input_tokens</text>
+  <text class="tt" x="376" y="670" text-anchor="end">int</text>
+  <text class="tc" x="58" y="696">output_tokens</text>
+  <text class="tt" x="376" y="696" text-anchor="end">int</text>
+  <text class="tc" x="58" y="722">latency_ms</text>
+  <text class="tt" x="376" y="722" text-anchor="end">int</text>
+  <text class="tc" x="58" y="748">generated_at</text>
+  <text class="tt" x="376" y="748" text-anchor="end">timestamp</text>
+  <text class="tc" x="58" y="774">is_archived</text>
+  <text class="tt" x="376" y="774" text-anchor="end">bool</text>
+
+  <!-- ══════════════════════════════════════
+       TABLE: insight_evaluations  (x=450 y=890 w=400 h=240)
+       ══════════════════════════════════════ -->
+  <rect x="450" y="890" width="400" height="240" rx="11" fill="#132335" stroke="rgba(167,139,250,0.3)" stroke-width="1.3"/>
+  <path d="M461,890 L839,890 Q850,890 850,901 L850,932 L450,932 L450,901 Q450,890 461,890 Z" fill="#171430"/>
+  <text class="tn" x="468" y="919">insight_evaluations</text>
+
+  <text class="tc" x="468" y="952"><tspan class="pk">PK </tspan>id</text>
+  <text class="tt" x="836" y="952" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="978"><tspan class="fk">FK </tspan>insight_id</text>
+  <text class="tt" x="836" y="978" text-anchor="end">UUID</text>
+  <text class="tc" x="468" y="1004">judge_model</text>
+  <text class="tt" x="836" y="1004" text-anchor="end">text</text>
+  <text class="tc" x="468" y="1030">confidence</text>
+  <text class="tt" x="836" y="1030" text-anchor="end">int</text>
+  <text class="tc" x="468" y="1056">reasoning</text>
+  <text class="tt" x="836" y="1056" text-anchor="end">text</text>
+  <text class="tc" x="468" y="1082">issues</text>
+  <text class="tt" x="836" y="1082" text-anchor="end">JSONB</text>
+  <text class="tc" x="468" y="1108">created_at</text>
+  <text class="tt" x="836" y="1108" text-anchor="end">timestamp</text>
+
+  <!-- ══════════════════════════════════════
+       RELATIONSHIPS
+       ══════════════════════════════════════ -->
+
+  <!-- 1. patients → lab_reports  (1:N  owns) — horizontal right -->
+  <path class="rel" d="M770,244 L900,244" marker-end="url(#m)"/>
+  <text class="rl" x="835" y="235" text-anchor="middle">1:N  owns</text>
+
+  <!-- 2. patients → insights  (1:N)
+       Left from patients left edge, down the narrow corridor, into insights right edge -->
+  <path class="rel" d="M440,280 L415,280 L415,601 L390,601" marker-end="url(#m)"/>
+  <text class="rl" x="428" y="316">1:N</text>
+
+  <!-- 3. patients → readings  (1:N  redundant FK — dashed green)
+       Straight down centre column; label floats right in the clear gap -->
+  <path class="relg" d="M605,380 L605,490" marker-end="url(#mg)"/>
+  <text class="rlg" x="618" y="432">1:N (redundant FK)</text>
+
+  <!-- 4. lab_reports → readings  (1:N)
+       Left from lab_reports left edge, then down into readings top-right -->
+  <path class="rel" d="M900,400 L840,400 L840,490" marker-end="url(#m)"/>
+  <text class="rl" x="874" y="393" text-anchor="middle">1:N</text>
+
+  <!-- 5. biomarkers → readings  (1:N  classifies) — horizontal left -->
+  <path class="rel" d="M980,587 L840,587" marker-end="url(#m)"/>
+  <text class="rl" x="912" y="578" text-anchor="middle">1:N  classifies</text>
+
+  <!-- 6. insights → insight_evaluations  (1:N  ON DELETE CASCADE)
+       Down from insights bottom, right across the gap, down into top -->
+  <path class="rel" d="M215,802 L215,850 L450,850 L450,890" marker-end="url(#m)"/>
+  <text class="rl" x="332" y="843" text-anchor="middle">1:N  (ON DELETE CASCADE)</text>
+
+</svg>

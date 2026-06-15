@@ -10,8 +10,10 @@ nav:
     - Overview: portfolio/index.md
     - Projects:
       - portfolio/projects/biopanel.md
-      - portfolio/projects/hersheys-pipeline-automation.md
       - portfolio/projects/ey-microsoft-financial-platform.md
+      - portfolio/projects/hersheys-pipeline-automation.md
+      - portfolio/projects/8am-data-migration.md
+      - portfolio/projects/wizeline-ai-data-assistant.md
   - Blog:
     - blog/index.md
 
@@ -43,7 +45,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/andresavila
+      link: https://www.linkedin.com/in/andres-avilaa/
       name: LinkedIn
     - icon: fontawesome/brands/github
       link: https://github.com/andresavila
@@ -53,11 +55,12 @@ extra:
       name: Email
 
 extra_css:
-  - stylesheets/extra.css?v=9
-  - stylesheets/hero.css?v=9
+  - stylesheets/extra.css?v=12
+  - stylesheets/hero.css?v=12
 
 extra_javascript:
   - javascripts/blog-toc.js?v=1
+  - javascripts/lightbox.js?v=1
 
 plugins:
   - search

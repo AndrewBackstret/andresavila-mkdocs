@@ -18,28 +18,38 @@ hide:
     **Impact**:
 
     - **67% runtime reduction** across two critical financial pipelines
-    - TenantTPIDMapping: **4.5h → 1.5h** (−67%)
-    - Complete Revenue: **7.5h → 2.5h** (−67%)
+    - Tenant Mapping Pipeline: **4.5h → 1.5h** (−67%)
+    - Revenue Pipeline: **7.5h → 2.5h** (−67%)
     - Reusable observability framework deployed across data workflows
     - Production pipelines serving distributed Microsoft business teams worldwide
 
 ## Context
 
-The Microsoft BizApps Financial Data Platform processes large-scale enterprise financial data used by business teams globally. Two of its most critical pipelines — TenantTPIDMapping and Complete Revenue — were running far above acceptable execution times, with no clear visibility into why.
+The Microsoft BizApps Financial Data Platform processes large-scale enterprise financial data used by business teams globally. Two of its most critical pipelines — Tenant Mapping Pipeline and Revenue Pipeline — were running far above acceptable execution times, with no clear visibility into why.
 
-The problem wasn't obvious: standard profiling showed the pipelines were "working." The bottlenecks were hidden inside the execution graph.
+The problem wasn't obvious: standard profiling showed the pipelines were "working." The real bottlenecks were inside the execution graph.
+
+<figure class="diagram" markdown="span">
+  [![EY GDS / Microsoft BizApps financial data platform architecture](../../assets/EY/ey-architecture.svg)](../../assets/EY/ey-architecture.svg)
+  <figcaption><strong>Platform architecture.</strong> Two dependent pipelines — Tenant Mapping Pipeline (upstream) and Revenue Pipeline — running on Azure/Microsoft Fabric with a PySpark engine, an email alerting & validation framework for observability, and Azure DevOps for deployment. Both pipelines went from a combined 12h to 4h. Click to enlarge.</figcaption>
+</figure>
 
 ## Diagnosis
 
-I conducted a deep diagnostic pass across both pipelines, looking beyond surface-level metrics. What I found:
+I ran a diagnostic pass across both pipelines, looking past the surface metrics. What I found:
 
 - **Hidden processing failures** that were being silently retried rather than surfaced — consuming execution time without producing output
-- **Dependency design issues** that caused downstream stages to wait unnecessarily for upstream stages that had already completed their relevant work
-- **Suboptimal execution logic** where transformations were running sequentially when they could run in parallel, and where full-table scans were happening where partition pruning was possible
+- **Dependency design issues** that caused downstream stages to wait on upstream stages that had already finished their relevant work
+- **Suboptimal execution logic** where transformations ran sequentially when they could run in parallel, and where full-table scans happened where partition pruning was possible
+
+<figure class="diagram" markdown="span">
+  [![EY BizApps pipeline optimization flow: before, root cause, redesign, after](../../assets/EY/ey-flow.svg)](../../assets/EY/ey-flow.svg)
+  <figcaption><strong>Optimization flow.</strong> The before state (hidden failures, slow upstream, SQL-based bottlenecks) → root-cause analysis → redesign (failure diagnosis, dependency rebuild, SQL → PySpark) → the after state with alerting and CI/CD. Click to enlarge.</figcaption>
+</figure>
 
 ## What I changed
 
-### Pipeline redesign — TenantTPIDMapping & Complete Revenue
+### Pipeline redesign — Tenant Mapping Pipeline & Revenue Pipeline
 
 Redesigned the dependency graph and execution logic for both pipelines:
 
@@ -62,7 +72,7 @@ Built a **reusable email alerting and validation framework** that generates:
 - Pipeline status notifications (success / failure / SLA breach)
 - Custom data quality validation messages with row-level detail
 
-This framework was deployed across multiple data workflows — not just the two pipelines I optimized — giving the team full observability across the platform for the first time.
+This framework was reused across multiple data workflows — not just the two pipelines I optimized — improving visibility into pipeline runs across the platform.
 
 ### DevOps & deployment
 
@@ -80,9 +90,20 @@ Managed production-grade deployment through **Azure DevOps**: pull requests, rel
 
 | Pipeline | Before | After | Reduction |
 |---|---|---|---|
-| TenantTPIDMapping | 4.5 hours | 1.5 hours | **−67%** |
-| Complete Revenue | 7.5 hours | 2.5 hours | **−67%** |
+| Tenant Mapping Pipeline | 4.5 hours | 1.5 hours | **−67%** |
+| Revenue Pipeline | 7.5 hours | 2.5 hours | **−67%** |
 | Combined | 12 hours | 4 hours | **−67%** |
+
+## Recognition
+
+<div class="cert-note" markdown>
+<div class="cert-note__text" style="margin-left: 1rem" markdown>
+While at EY GDS on this Microsoft BizApps engagement, I received the firm's **Achiever Extraordinaire** recognition for my work
+</div>
+<a class="cert-note__img" href="../../assets/EY/E-Certificate.pdf" title="View certificate (PDF)" style="margin-right: 1rem">
+![EY GDS Achiever Extraordinaire certificate awarded to Andres Avila](../../assets/EY/ey-certificate.png)
+</a>
+</div>
 
 <div class="grid cards cta-full" style="margin-top: 3rem" markdown>
 
@@ -92,6 +113,6 @@ Managed production-grade deployment through **Azure DevOps**: pull requests, rel
 
     Pipeline performance problems are almost never where they first appear. I diagnose the real bottleneck and fix it properly.
 
-    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andres-andresavila/introduction-call){ .md-button .md-button--primary }
 
 </div>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 860" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .phase { fill:#2E6A98; letter-spacing:2.5px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:13px; }
+      .step  { fill:#6898BA; font-weight:700; font-size:13px; }
+      .edge  { stroke:#2E6A98; stroke-width:2; fill:none; opacity:.6; }
+      .call  { fill:#cbd5e1; font-style:italic; }
+      .elab  { fill:#6898BA; font-size:12.5px; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="860" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">AI Data Assistant — Query Flow</text>
+  <text class="sub" x="71" y="90" font-size="15">Natural language question → Genie AI NL→SQL → result table · zero SQL or Databricks access for end users</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">wizeline</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ============ PHASE 1: NL INPUT ============ -->
+  <text class="phase" x="70" y="144">1 · NL INPUT — BUSINESS USER</text>
+  <line class="band" x1="460" y1="139" x2="1430" y2="139"/>
+  <g>
+    <rect x="70" y="158" width="290" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="215" y="191" font-size="15" text-anchor="middle">Business User</text>
+    <text class="boxs" x="215" y="213" text-anchor="middle">types a question</text>
+    <text class="boxs" x="215" y="231" text-anchor="middle">in plain language</text>
+  </g>
+  <g>
+    <rect x="410" y="158" width="320" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="570" y="191" font-size="15" text-anchor="middle">Streamlit UI</text>
+    <text class="boxs" x="570" y="213" text-anchor="middle">Databricks Apps · managed hosting</text>
+    <text class="boxs" x="570" y="231" text-anchor="middle">NL text field · sends on submit</text>
+  </g>
+  <path class="edge" d="M360,204 L410,204" marker-end="url(#a)"/>
+  <text class="elab" x="385" y="195" text-anchor="middle">types</text>
+
+  <!-- ============ PHASE 2: API REQUEST ============ -->
+  <text class="phase" x="70" y="304">2 · API REQUEST — STREAMLIT → GENIE AI</text>
+  <line class="band" x1="600" y1="299" x2="1430" y2="299"/>
+  <g>
+    <rect x="70" y="318" width="310" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="225" y="350" font-size="15" text-anchor="middle">HTTP POST</text>
+    <text class="boxs" x="225" y="373" text-anchor="middle">.../genie/spaces/{space_id}</text>
+    <text class="boxs" x="225" y="393" text-anchor="middle">/conversations/{id}/messages</text>
+  </g>
+  <g>
+    <rect x="430" y="318" width="290" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="575" y="350" font-size="15" text-anchor="middle">PAT Bearer Token</text>
+    <text class="boxs" x="575" y="373" text-anchor="middle">Authorization header ·</text>
+    <text class="boxs" x="575" y="393" text-anchor="middle">calls run on user's behalf</text>
+  </g>
+  <g>
+    <rect x="770" y="318" width="300" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="920" y="350" font-size="15" text-anchor="middle">Async Polling</text>
+    <text class="boxs" x="920" y="373" text-anchor="middle">Streamlit polls message status</text>
+    <text class="boxs" x="920" y="393" text-anchor="middle">until result is ready</text>
+  </g>
+  <path class="edge" d="M380,368 L430,368" marker-end="url(#a)"/>
+  <path class="edge" d="M720,368 L770,368" marker-end="url(#a)"/>
+  <path class="edge" d="M920,418 C920,452 570,460 570,492" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 3: GENIE AI PROCESSING ============ -->
+  <text class="phase" x="70" y="476">3 · GENIE AI PROCESSING — NL → SQL → EXECUTION</text>
+  <rect x="70" y="492" width="1360" height="232" rx="16" fill="rgba(52,211,153,.04)" stroke="rgba(52,211,153,.28)" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <g>
+    <rect x="120" y="530" width="330" height="152" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="step" x="285" y="550" text-anchor="middle">STEP 1</text>
+    <text class="boxt" x="285" y="572" font-size="16" text-anchor="middle">NL → SQL Translation</text>
+    <text class="boxs" x="285" y="590" text-anchor="middle">Genie AI Space interprets</text>
+    <text class="boxs" x="285" y="610" text-anchor="middle">the natural language question</text>
+    <text class="boxs" x="285" y="630" text-anchor="middle">generates SQL scoped to</text>
+    <text class="boxs" x="285" y="650" text-anchor="middle">Unity Catalog tables</text>
+  </g>
+  <g>
+    <rect x="510" y="530" width="330" height="152" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="step" x="675" y="550" text-anchor="middle">STEP 2</text>
+    <text class="boxt" x="675" y="572" font-size="16" text-anchor="middle">SQL Warehouse Execution</text>
+    <text class="boxs" x="675" y="590" text-anchor="middle">Databricks SQL Warehouse</text>
+    <text class="boxs" x="675" y="610" text-anchor="middle">runs the generated SQL</text>
+    <text class="boxs" x="675" y="630" text-anchor="middle">against Unity Catalog</text>
+    <text class="boxs" x="675" y="650" text-anchor="middle">Delta Lake tables</text>
+  </g>
+  <g>
+    <rect x="900" y="530" width="380" height="152" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="step" x="1090" y="550" text-anchor="middle">STEP 3</text>
+    <text class="boxt" x="1090" y="572" font-size="16" text-anchor="middle">Result Construction</text>
+    <text class="boxs" x="1090" y="590" text-anchor="middle">structured tabular result built</text>
+    <text class="boxs" x="1090" y="610" text-anchor="middle">from query output · JSON response</text>
+    <text class="boxs" x="1090" y="630" text-anchor="middle">routed back through Genie API</text>
+    <text class="boxs" x="1090" y="650" text-anchor="middle">to Streamlit</text>
+  </g>
+  <path class="edge" d="M450,606 L510,606" marker-end="url(#a)"/>
+  <path class="edge" d="M840,606 L900,606" marker-end="url(#a)"/>
+  <text class="elab" x="479" y="597" text-anchor="middle">SQL</text>
+  <text class="elab" x="869" y="597" text-anchor="middle">rows</text>
+  <text class="call" x="750" y="716" font-size="13" text-anchor="middle" fill="#cbd5e1">Zero regex or per-report rules — Genie handles NL interpretation, SQL generation, and schema awareness automatically.</text>
+
+  <!-- ============ PHASE 4: RESULT DELIVERY ============ -->
+  <text class="phase" x="70" y="762">4 · RESULT DELIVERY — USER SEES TABLE</text>
+  <line class="band" x1="500" y1="757" x2="1430" y2="757"/>
+  <g>
+    <rect x="70"  y="774" width="270" height="70" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="205" y="805" font-size="14" text-anchor="middle">Streamlit renders table</text>
+    <text class="boxs" x="205" y="826" text-anchor="middle">interactive result grid</text>
+  </g>
+  <g>
+    <rect x="380" y="774" width="270" height="70" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="515" y="805" font-size="14" text-anchor="middle">CSV Download</text>
+    <text class="boxs" x="515" y="826" text-anchor="middle">one-click export · no SQL needed</text>
+  </g>
+  <g>
+    <rect x="700" y="774" width="340" height="70" rx="12" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.6"/>
+    <text class="boxt" x="870" y="805" font-size="14" text-anchor="middle">Before → After</text>
+    <text class="boxs" x="870" y="826" text-anchor="middle">Excel + pivot tables → type a question · get answer</text>
+  </g>
+  <path class="edge" d="M340,809 L380,809" marker-end="url(#a)"/>
+  <path class="edge" d="M650,809 L700,809" marker-end="url(#a)"/>
+
+  <!-- Down arrow from phase 3 to phase 4 -->
+  <path class="edge" d="M1090,724 C1090,748 205,748 205,774" marker-end="url(#a)"/>
+</svg>

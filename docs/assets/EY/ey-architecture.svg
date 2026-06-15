@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1060" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .layer { fill:#2E6A98; letter-spacing:3px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:12.5px; }
+      .edge  { stroke:#2E6A98; stroke-width:1.8; fill:none; opacity:.6; }
+      .edgef { stroke:#64748b; stroke-width:1.7; fill:none; opacity:.6; }
+      .elab  { fill:#6898BA; font-size:12px; }
+      .call  { fill:#cbd5e1; font-size:12.5px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="arrf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1060" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">EY GDS / Microsoft — BizApps Financial Data Platform</text>
+  <text class="sub" x="71" y="90" font-size="15">Azure · Microsoft Fabric · PySpark · Azure DevOps · Email Alerting &amp; Validation Framework</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">EY GDS</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ===== LAYER 1: SOURCE DATA ===== -->
+  <text class="layer" x="70" y="142">SOURCE DATA</text>
+  <line class="band" x1="237" y1="137" x2="1060" y2="137"/>
+
+  <rect x="70" y="154" width="420" height="80" rx="12" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="280" y="186" font-size="15" text-anchor="middle">Tenant Mapping Data</text>
+  <text class="boxs" x="280" y="210" text-anchor="middle">tenant mappings · Microsoft BizApps</text>
+
+  <rect x="510" y="154" width="420" height="80" rx="12" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="720" y="186" font-size="15" text-anchor="middle">BizApps Revenue Streams</text>
+  <text class="boxs" x="720" y="210" text-anchor="middle">enterprise financial data · multi-region revenue</text>
+
+  <!-- ===== LAYER 2: PIPELINES ===== -->
+  <text class="layer" x="70" y="290">PIPELINES</text>
+  <line class="band" x1="190" y1="285" x2="1060" y2="285"/>
+
+  <!-- Tenant Mapping Pipeline -->
+  <rect x="70" y="300" width="405" height="130" rx="13" fill="#132335" stroke="rgba(251,146,60,.55)" stroke-width="1.7"/>
+  <text x="273" y="330" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="13.5">Tenant Mapping Pipeline</text>
+  <text class="boxs" x="273" y="354" text-anchor="middle">resolves tenant mappings</text>
+  <text class="boxs" x="273" y="374" text-anchor="middle">dependency: upstream of revenue pipeline</text>
+  <text x="130" y="403" fill="#64748b" font-size="12" font-style="italic">Before: 4.5 h</text>
+  <text x="240" y="403" fill="#64748b" font-size="13">→</text>
+  <text x="260" y="403" fill="#34d399" font-weight="700" font-size="13.5">After: 1.5 h  (↓ 67%)</text>
+
+  <!-- Revenue Pipeline -->
+  <rect x="495" y="300" width="435" height="130" rx="13" fill="#132335" stroke="rgba(251,146,60,.55)" stroke-width="1.7"/>
+  <text x="713" y="330" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="13.5">Revenue Pipeline</text>
+  <text class="boxs" x="713" y="354" text-anchor="middle">aggregates enterprise financial revenue</text>
+  <text class="boxs" x="713" y="374" text-anchor="middle">blocked downstream by Tenant Mapping Pipeline</text>
+  <text x="560" y="403" fill="#64748b" font-size="12" font-style="italic">Before: 7.5 h</text>
+  <text x="672" y="403" fill="#64748b" font-size="13">→</text>
+  <text x="692" y="403" fill="#34d399" font-weight="700" font-size="13.5">After: 2.5 h  (↓ 67%)</text>
+
+  <!-- arrows: sources → pipelines -->
+  <path class="edge" d="M280,234 L280,300" marker-end="url(#arr)"/>
+  <path class="edge" d="M720,234 C720,264 713,284 713,300" marker-end="url(#arr)"/>
+  <path class="edgef" d="M475,365 L495,365" marker-end="url(#arrf)" stroke-dasharray="4 3"/>
+  <text class="elab" x="485" y="356" text-anchor="middle">feeds</text>
+
+  <!-- ===== LAYER 3: EXECUTION ENGINE ===== -->
+  <text class="layer" x="70" y="486">EXECUTION ENGINE</text>
+  <line class="band" x1="290" y1="481" x2="1060" y2="481"/>
+
+  <rect x="70" y="496" width="420" height="104" rx="13" fill="#132335" stroke="rgba(56,189,248,.35)" stroke-width="1.6"/>
+  <text class="boxt" x="280" y="528" font-size="16" text-anchor="middle">Azure / Microsoft Fabric</text>
+  <text class="boxs" x="280" y="552" text-anchor="middle">workload scheduling · execution orchestration</text>
+  <text class="boxs" x="280" y="572" text-anchor="middle">redesigned dependency graph · parallelized steps</text>
+
+  <rect x="510" y="496" width="420" height="104" rx="13" fill="#132335" stroke="rgba(56,189,248,.35)" stroke-width="1.6"/>
+  <text class="boxt" x="720" y="528" font-size="16" text-anchor="middle">PySpark Engine</text>
+  <text class="boxs" x="720" y="552" text-anchor="middle">migrated from SQL-based processing</text>
+  <text class="boxs" x="720" y="572" text-anchor="middle">scalable · maintainable · large enterprise datasets</text>
+
+  <path class="edge" d="M280,430 L280,496" marker-end="url(#arr)"/>
+  <path class="edge" d="M713,430 L720,496" marker-end="url(#arr)"/>
+
+  <!-- PySpark migration callout -->
+  <rect x="510" y="606" width="420" height="34" rx="7" fill="rgba(46,106,152,.12)" stroke="rgba(46,106,152,.35)" stroke-width="1"/>
+  <text x="720" y="628" text-anchor="middle" fill="#6898BA" font-size="12" font-weight="600">SQL-based → PySpark · scalability + maintainability + execution speed</text>
+
+  <!-- ===== LAYER 4: OBSERVABILITY &amp; DEPLOYMENT ===== -->
+  <text class="layer" x="70" y="664">OBSERVABILITY &amp; DEPLOYMENT</text>
+  <line class="band" x1="430" y1="659" x2="1060" y2="659"/>
+
+  <rect x="70" y="674" width="490" height="112" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="315" y="706" font-size="16" text-anchor="middle">Email Alerting &amp; Validation Framework</text>
+  <text class="boxs" x="315" y="730" text-anchor="middle">reusable · dynamic HTML execution reports</text>
+  <text class="boxs" x="315" y="750" text-anchor="middle">pipeline notifications · data quality validation messages</text>
+  <text class="boxs" x="315" y="770" text-anchor="middle">accelerated issue triage · improved observability</text>
+
+  <rect x="578" y="674" width="352" height="112" rx="13" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.5"/>
+  <text class="boxt" x="754" y="706" font-size="16" text-anchor="middle">Azure DevOps</text>
+  <text class="boxs" x="754" y="730" text-anchor="middle">pull request management</text>
+  <text class="boxs" x="754" y="750" text-anchor="middle">release coordination</text>
+  <text class="boxs" x="754" y="770" text-anchor="middle">dev → staging → prod promotion</text>
+
+  <path class="edge" d="M280,600 L315,674" marker-end="url(#arr)"/>
+  <path class="edge" d="M720,600 L754,674" marker-end="url(#arr)"/>
+
+  <!-- ===== LAYER 5: CONSUMERS ===== -->
+  <text class="layer" x="70" y="848">CONSUMERS</text>
+  <line class="band" x1="210" y1="843" x2="1060" y2="843"/>
+
+  <rect x="70" y="860" width="860" height="76" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="500" y="893" font-size="16" text-anchor="middle">Distributed Microsoft Business Teams</text>
+  <text class="boxs" x="500" y="917" text-anchor="middle">enterprise financial data · multi-region · revenue reporting, planning, and analytics</text>
+
+  <path class="edge" d="M315,786 C315,824 500,842 500,860" marker-end="url(#arr)"/>
+  <path class="edge" d="M754,786 C754,824 500,842 500,860" marker-end="url(#arr)"/>
+
+  <!-- LEGEND (below consumers, no overlap) -->
+  <line x1="70" y1="958" x2="1060" y2="958" stroke="#1A3650"/>
+  <g font-size="13">
+    <rect x="70" y="974" width="20" height="13" rx="3" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="sub" x="100" y="985">core platform</text>
+    <rect x="240" y="974" width="20" height="13" rx="3" fill="#132335" stroke="rgba(251,146,60,.55)" stroke-width="1.5"/>
+    <text class="sub" x="270" y="985">optimized pipelines</text>
+    <rect x="450" y="974" width="20" height="13" rx="3" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.5"/>
+    <text class="sub" x="480" y="985">observability / output</text>
+    <rect x="660" y="974" width="20" height="13" rx="3" fill="#132335" stroke="rgba(56,189,248,.35)" stroke-width="1.5"/>
+    <text class="sub" x="690" y="985">execution &amp; DevOps</text>
+  </g>
+
+  <!-- ===== IMPACT PANEL ===== -->
+  <rect x="1090" y="265" width="390" height="724" rx="16" fill="rgba(251,146,60,.03)" stroke="rgba(251,146,60,.4)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="1285" y="300" text-anchor="middle" fill="#fb923c" font-weight="600" font-size="11.5" letter-spacing="1.5">OPTIMIZATION IMPACT</text>
+  <line x1="1110" y1="310" x2="1460" y2="310" stroke="rgba(251,146,60,.2)"/>
+
+  <!-- Pipeline 1 metric -->
+  <rect x="1110" y="324" width="350" height="156" rx="11" fill="#132335" stroke="rgba(251,146,60,.35)" stroke-width="1.2"/>
+  <text x="1285" y="352" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="13">Tenant Mapping Pipeline</text>
+  <line x1="1130" y1="360" x2="1440" y2="360" stroke="rgba(251,146,60,.15)"/>
+  <text x="1175" y="398" text-anchor="middle" fill="#64748b" font-size="15">4.5 h</text>
+  <text x="1285" y="400" text-anchor="middle" fill="#64748b" font-size="22">→</text>
+  <text x="1395" y="400" text-anchor="middle" fill="#34d399" font-size="22" font-weight="700">1.5 h</text>
+  <text x="1285" y="436" text-anchor="middle" fill="#fbbf24" font-size="32" font-weight="700">↓ 67%</text>
+  <text x="1285" y="462" text-anchor="middle" fill="#94a3b8" font-size="11.5">hidden failures diagnosed · dependencies redesigned</text>
+
+  <!-- Pipeline 2 metric -->
+  <rect x="1110" y="496" width="350" height="156" rx="11" fill="#132335" stroke="rgba(251,146,60,.35)" stroke-width="1.2"/>
+  <text x="1285" y="524" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="13">Revenue Pipeline</text>
+  <line x1="1130" y1="532" x2="1440" y2="532" stroke="rgba(251,146,60,.15)"/>
+  <text x="1175" y="570" text-anchor="middle" fill="#64748b" font-size="15">7.5 h</text>
+  <text x="1285" y="572" text-anchor="middle" fill="#64748b" font-size="22">→</text>
+  <text x="1395" y="572" text-anchor="middle" fill="#34d399" font-size="22" font-weight="700">2.5 h</text>
+  <text x="1285" y="608" text-anchor="middle" fill="#fbbf24" font-size="32" font-weight="700">↓ 67%</text>
+  <text x="1285" y="634" text-anchor="middle" fill="#94a3b8" font-size="11.5">execution logic optimized · SQL → PySpark migration</text>
+
+  <!-- SQL → PySpark note -->
+  <rect x="1110" y="668" width="350" height="60" rx="9" fill="rgba(46,106,152,.12)" stroke="rgba(46,106,152,.35)" stroke-width="1"/>
+  <text x="1285" y="694" text-anchor="middle" fill="#6898BA" font-size="12.5" font-weight="600">SQL-based → PySpark</text>
+  <text x="1285" y="714" text-anchor="middle" fill="#94a3b8" font-size="11.5">scalability · maintainability · execution speed</text>
+
+  <!-- Achiever Extraordinaire award -->
+  <rect x="1110" y="746" width="350" height="126" rx="11" fill="rgba(251,192,45,.07)" stroke="rgba(251,192,45,.5)" stroke-width="1.4"/>
+  <!-- decorative top line in yellow -->
+  <line x1="1160" y1="768" x2="1240" y2="768" stroke="#fbbf24" stroke-width="1.5"/>
+  <circle cx="1155" cy="768" r="3" fill="#fbbf24"/>
+  <circle cx="1410" cy="768" r="3" fill="#fb923c"/>
+  <line x1="1255" y1="768" x2="1415" y2="768" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="1285" y="796" text-anchor="middle" fill="#fbbf24" font-size="17" font-weight="700">Achiever Extraordinaire</text>
+  <text x="1285" y="820" text-anchor="middle" fill="#94a3b8" font-size="12">EY GDS internal award</text>
+  <text x="1285" y="840" text-anchor="middle" fill="#94a3b8" font-size="12">recognized for dedication, perseverance</text>
+  <text x="1285" y="858" text-anchor="middle" fill="#94a3b8" font-size="12">and outstanding contributions</text>
+
+  <!-- Reusable framework note -->
+  <rect x="1110" y="890" width="350" height="84" rx="9" fill="#132335" stroke="rgba(52,211,153,.3)" stroke-width="1.1"/>
+  <text x="1285" y="916" text-anchor="middle" fill="#34d399" font-size="12" font-weight="600">Reusable Alerting Framework</text>
+  <text x="1285" y="936" text-anchor="middle" fill="#94a3b8" font-size="11.5">HTML execution reports · quality validation</text>
+  <text x="1285" y="956" text-anchor="middle" fill="#94a3b8" font-size="11.5">pipeline notifications · accelerated triage</text>
+</svg>

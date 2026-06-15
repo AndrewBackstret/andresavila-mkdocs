@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .phase { fill:#2E6A98; letter-spacing:2.5px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:12.5px; }
+      .step  { fill:#6898BA; font-weight:700; font-size:12px; }
+      .edge  { stroke:#2E6A98; stroke-width:2; fill:none; opacity:.6; }
+      .edgeo { stroke:#fb923c; stroke-width:1.8; fill:none; opacity:.6; }
+      .edgeg { stroke:#34d399; stroke-width:1.8; fill:none; opacity:.65; }
+      .elab  { fill:#6898BA; font-size:12px; }
+      .call  { fill:#cbd5e1; font-size:12.5px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="a"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c" opacity=".7"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399" opacity=".8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="900" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">BizApps Pipeline — Optimization Flow</text>
+  <text class="sub" x="71" y="90" font-size="15">Diagnose hidden failures · redesign dependencies · SQL → PySpark · 67% runtime reduction on both pipelines</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">EY GDS</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ============ PHASE 1: TRIGGER ============ -->
+  <text class="phase" x="70" y="144">1 · SCHEDULE &amp; TRIGGER</text>
+  <line class="band" x1="382" y1="139" x2="1430" y2="139"/>
+
+  <g>
+    <rect x="70" y="158" width="300" height="88" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="220" y="190" font-size="15" text-anchor="middle">Scheduled Run</text>
+    <text class="boxs" x="220" y="213" text-anchor="middle">Azure / Fabric trigger</text>
+    <text class="boxs" x="220" y="231" text-anchor="middle">initiates pipeline chain</text>
+  </g>
+  <g>
+    <rect x="410" y="158" width="360" height="88" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="590" y="190" font-size="15" text-anchor="middle">Tenant Mapping Pipeline first</text>
+    <text class="boxs" x="590" y="213" text-anchor="middle">must complete before revenue pipeline</text>
+    <text class="boxs" x="590" y="231" text-anchor="middle">critical upstream dependency</text>
+  </g>
+  <path class="edge" d="M370,202 L410,202" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 2: BEFORE STATE (problem) ============ -->
+  <text class="phase" x="70" y="304">2 · BEFORE — ORIGINAL STATE · UNDERPERFORMING</text>
+  <rect x="70" y="320" width="1360" height="200" rx="16" fill="rgba(251,146,60,.04)" stroke="rgba(251,146,60,.4)" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="760" y="346" text-anchor="middle" fill="#fb923c" font-size="11.5" font-weight="600" letter-spacing="1.5">PROBLEMS IDENTIFIED</text>
+
+  <g>
+    <rect x="110" y="356" width="340" height="148" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.4"/>
+    <text x="280" y="382" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="12">Tenant Mapping Pipeline</text>
+    <text class="boxs" x="280" y="407" text-anchor="middle">runtime: 4.5 h</text>
+    <text class="boxs" x="280" y="428" text-anchor="middle">hidden processing failures</text>
+    <text class="boxs" x="280" y="449" text-anchor="middle">not surfaced by monitoring</text>
+    <text class="boxs" x="280" y="470" text-anchor="middle">sequential step execution</text>
+    <text class="boxs" x="280" y="491" text-anchor="middle">SQL-based processing</text>
+  </g>
+  <g>
+    <rect x="490" y="356" width="340" height="148" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.4"/>
+    <text x="660" y="382" text-anchor="middle" fill="#fb923c" font-weight="700" font-size="12">Revenue Pipeline</text>
+    <text class="boxs" x="660" y="407" text-anchor="middle">runtime: 7.5 h</text>
+    <text class="boxs" x="660" y="428" text-anchor="middle">blocked by slow upstream</text>
+    <text class="boxs" x="660" y="449" text-anchor="middle">dependency cascade failures</text>
+    <text class="boxs" x="660" y="470" text-anchor="middle">full re-runs on any failure</text>
+    <text class="boxs" x="660" y="491" text-anchor="middle">SQL-based processing</text>
+  </g>
+  <g>
+    <rect x="880" y="356" width="520" height="148" rx="13" fill="#132335" stroke="rgba(251,146,60,.3)" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <text x="902" y="382" fill="#6898BA" font-size="11" font-weight="600">ROOT CAUSE ANALYSIS</text>
+    <text class="call" x="1140" y="410" text-anchor="middle">Hidden failures not propagating correctly</text>
+    <text class="call" x="1140" y="432" text-anchor="middle">through the dependency graph — jobs</text>
+    <text class="call" x="1140" y="454" text-anchor="middle">appeared to complete while silently</text>
+    <text class="call" x="1140" y="476" text-anchor="middle">skipping critical processing steps.</text>
+    <text class="call" x="1140" y="500" text-anchor="middle">SQL transforms creating bottlenecks at scale.</text>
+  </g>
+
+  <!-- ============ PHASE 3: OPTIMIZATION ============ -->
+  <text class="phase" x="70" y="584">3 · REDESIGN &amp; OPTIMIZATION</text>
+  <line class="band" x1="454" y1="579" x2="1430" y2="579"/>
+
+  <g>
+    <rect x="70" y="596" width="310" height="100" rx="12" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+    <text class="boxt" x="225" y="626" font-size="14" text-anchor="middle">Failure Diagnosis</text>
+    <text class="boxs" x="225" y="650" text-anchor="middle">traced hidden failures · mapped</text>
+    <text class="boxs" x="225" y="668" text-anchor="middle">broken dependency execution paths</text>
+  </g>
+  <g>
+    <rect x="410" y="596" width="310" height="100" rx="12" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+    <text class="boxt" x="565" y="626" font-size="14" text-anchor="middle">Dependency Redesign</text>
+    <text class="boxs" x="565" y="650" text-anchor="middle">rebuilt execution logic · eliminated</text>
+    <text class="boxs" x="565" y="668" text-anchor="middle">redundant blocking steps</text>
+  </g>
+  <g>
+    <rect x="750" y="596" width="340" height="100" rx="12" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+    <text class="boxt" x="920" y="626" font-size="14" text-anchor="middle">SQL → PySpark Migration</text>
+    <text class="boxs" x="920" y="650" text-anchor="middle">performance-sensitive transforms</text>
+    <text class="boxs" x="920" y="668" text-anchor="middle">rewritten · scalability + maintainability</text>
+  </g>
+  <path class="edge" d="M380,646 L410,646" marker-end="url(#a)"/>
+  <path class="edge" d="M720,646 L750,646" marker-end="url(#a)"/>
+
+  <!-- Arrow from phase 2 to phase 3 -->
+  <path class="edgeo" d="M280,520 L280,560 L225,580 L225,596" marker-end="url(#ao)"/>
+  <path class="edgeo" d="M660,520 L660,560 L565,580 L565,596" marker-end="url(#ao)"/>
+
+  <!-- ============ PHASE 4: AFTER + ALERTING + DEVOPS ============ -->
+  <text class="phase" x="70" y="758">4 · AFTER — OPTIMIZED EXECUTION · OBSERVABILITY · CI/CD</text>
+  <line class="band" x1="760" y1="753" x2="1430" y2="753"/>
+
+  <g>
+    <rect x="70"  y="770" width="258" height="100" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="199" y="798" font-size="13" text-anchor="middle">Tenant Mapping Pipeline</text>
+    <text x="199" y="824" text-anchor="middle" fill="#34d399" font-weight="700" font-size="20">1.5 h</text>
+    <text x="199" y="851" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="600">↓ 67% faster</text>
+  </g>
+  <g>
+    <rect x="348" y="770" width="258" height="100" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="477" y="798" font-size="13" text-anchor="middle">Revenue Pipeline</text>
+    <text x="477" y="824" text-anchor="middle" fill="#34d399" font-weight="700" font-size="20">2.5 h</text>
+    <text x="477" y="851" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="600">↓ 67% faster</text>
+  </g>
+  <g>
+    <rect x="636" y="770" width="340" height="100" rx="12" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.5"/>
+    <text class="boxt" x="806" y="798" font-size="13" text-anchor="middle">Alerting Framework</text>
+    <text class="boxs" x="806" y="820" text-anchor="middle">HTML execution reports · success/failure</text>
+    <text class="boxs" x="806" y="840" text-anchor="middle">data quality validation · issue triage</text>
+    <text class="boxs" x="806" y="860" text-anchor="middle">reusable across pipelines</text>
+  </g>
+  <g>
+    <rect x="996" y="770" width="340" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.5"/>
+    <text class="boxt" x="1166" y="798" font-size="13" text-anchor="middle">Azure DevOps</text>
+    <text class="boxs" x="1166" y="820" text-anchor="middle">PR review · release coordination</text>
+    <text class="boxs" x="1166" y="840" text-anchor="middle">dev → staging → prod</text>
+    <text class="boxs" x="1166" y="860" text-anchor="middle">enterprise deployment workflow</text>
+  </g>
+
+  <!-- Arrows from optimization → after -->
+  <path class="edgeg" d="M920,696 C900,730 200,748 199,770" marker-end="url(#ag)"/>
+  <path class="edgeg" d="M920,696 C960,730 477,748 477,770" marker-end="url(#ag)"/>
+  <path class="edge"  d="M920,696 L806,770" marker-end="url(#a)"/>
+  <path class="edge"  d="M920,696 C980,730 1100,748 1166,770" marker-end="url(#a)"/>
+</svg>

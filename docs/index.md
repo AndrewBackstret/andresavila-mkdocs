@@ -17,7 +17,7 @@ hide:
   "url": "https://andresavila.io/",
   "email": "andres@andresavila.io",
   "sameAs": [
-    "https://www.linkedin.com/in/andresavila",
+    "https://www.linkedin.com/in/andres-avilaa/",
     "https://github.com/andresavila"
   ],
   "jobTitle": "Senior Data Engineer",
@@ -36,11 +36,11 @@ hide:
 <div class="hero-eyebrow">Senior Data Engineer</div>
 <div class="hero-divider"></div>
 
-# Build data systems that actually think
+# Build data systems that hold up in production
 
-Specialized in AI-powered cloud pipelines and LLM integration for enterprise teams.
+AI-powered cloud pipelines and LLM integration for enterprise data teams.
 
-[Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+[Book Intro Call :material-arrow-top-right:](https://calendly.com/andres-andresavila/introduction-call){ .md-button .md-button--primary }
 [View Case Studies](portfolio/index.md){ .md-button .md-button--secondary }
 
 </div>
@@ -78,9 +78,9 @@ Specialized in AI-powered cloud pipelines and LLM integration for enterprise tea
 
 ## About me
 
-Hi, I'm Andres — a Senior Data Engineer based in México, with 5+ years designing and delivering high-impact cloud data systems for enterprise companies including Hershey's, EY/Microsoft, and Wizeline.
+Hi, I'm Andres — a Senior Data Engineer based in México, with 5+ years building cloud data systems for companies including Hershey's, EY/Microsoft, Wizeline, and 8am.
 
-I specialize in **AI-powered data systems**: combining robust cloud pipeline engineering (Azure, AWS, Snowflake, dbt) with LLM integration to help teams move from raw data to operational intelligence. My work spans the full data lifecycle — from architecture and ingestion to transformation, orchestration, and business-facing analytics.
+I focus on **AI-powered data systems**: combining cloud pipeline engineering (Azure, AWS, Snowflake, dbt) with LLM integration to help teams turn raw data into reporting and analytics they can rely on. My work spans the full data lifecycle — from architecture and ingestion to transformation, orchestration, and business-facing analytics.
 
 I'm currently open to **Backend Contracts** — long-term engagements with teams that need a senior data engineer without the overhead of a full-time hire.
 
@@ -92,19 +92,19 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
     ---
 
-    I design and build production-grade pipelines on Azure, AWS, and Snowflake. From raw ingestion to semantic modeling with dbt — clean, observable, maintainable infrastructure that scales with your business.
+    I design and build production pipelines on Azure, AWS, and Snowflake — from raw ingestion to semantic modeling with dbt. Clean, observable, maintainable infrastructure.
 
 -   :material-robot:{ .lg .middle } LLM Integration
 
     ---
 
-    I connect your structured data to language models to automate analysis, classification, and reporting. Real production experience — not just demo projects. See [biopanel.io](https://biopanel.io) for a live example.
+    I connect structured data to language models to automate analysis, classification, and reporting — with a live product, [biopanel.io](https://biopanel.io), behind it rather than just demos.
 
 -   :material-chart-timeline-variant:{ .lg .middle } Analytics Engineering
 
     ---
 
-    Semantic layers, metric definitions, and dashboards your entire team can trust. I've built reporting infrastructure used by analytics and data science teams at Fortune 500 companies.
+    Semantic layers, metric definitions, and dashboards your team can trust. I've built reporting infrastructure used by analytics and data science teams at large enterprises.
 
 -   :material-file-document-edit:{ .lg .middle } Data Migration
 
@@ -122,13 +122,20 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
     ---
 
-    AWS Data Engineer Associate · Databricks Certified Data Engineer Professional · Snowflake SnowPro Core · Azure Data Engineer Associate (DP-203) · Fabric Data Engineer Associate (DP-700)
+    Five active cloud data certifications — credentials behind the work, not a substitute for it.
+    <span class="cert-badges">
+    <span class="cert-badge">:fontawesome-brands-aws: AWS DEA-C01</span>
+    <span class="cert-badge">:simple-databricks: Databricks Pro</span>
+    <span class="cert-badge">:simple-snowflake: SnowPro Core</span>
+    <span class="cert-badge">:material-microsoft-azure: Azure DP-203</span>
+    <span class="cert-badge">:material-microsoft: Fabric DP-700</span>
+    </span>
 
--   :material-trending-up:{ .lg .middle } Quantified, enterprise-scale impact
+-   :material-trending-up:{ .lg .middle } Concrete, measurable outcomes
 
     ---
 
-    I don't just build pipelines — I reduce $750K in vendor costs, cut 2,000+ hours of manual work, and optimize runtimes by 67%. Every engagement I've had has a measurable business outcome.
+    $750K in vendor costs removed and 2,000+ hours automated at Hershey's; a 67% runtime reduction at EY/Microsoft; a 32% pipeline speedup at Wizeline. I work toward outcomes I can point to.
 
 -   :material-code-braces:{ .lg .middle } Full-stack when it matters
 
@@ -136,11 +143,11 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
     I built [biopanel.io](https://biopanel.io) end-to-end: FastAPI backend, Celery + Redis async pipeline, PostgreSQL, React frontend. I can talk to your product and engineering teams in the same language.
 
--   :material-handshake:{ .lg .middle } Async-first, enterprise-grade delivery
+-   :material-handshake:{ .lg .middle } Remote-first, clear communication
 
     ---
 
-    I've worked remotely across EY, Microsoft, Hershey's, and Wizeline. Clear communication, weekly updates, detailed documentation — you always know where things stand.
+    I've worked remotely across EY, Microsoft, Hershey's, Wizeline, and 8am. Clear communication, regular updates, and documentation — you always know where things stand.
 
 </div>
 
@@ -232,6 +239,6 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
     I take on a limited number of clients at a time to ensure quality. Book a free 30-minute call to discuss your data challenges and what an engagement could look like.
 
-    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andres-andresavila/introduction-call){ .md-button .md-button--primary }
 
 </div>

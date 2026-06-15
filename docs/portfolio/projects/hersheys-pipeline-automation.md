@@ -25,22 +25,32 @@ hide:
 
 ## Context
 
-Hershey's Mexico Reporting CoE operated a reporting infrastructure heavily dependent on a third-party vendor — expensive, slow to change, and difficult to maintain internally. The data team relied on manual ETL processes that consumed thousands of hours per year, and reporting pipelines were fragile with no observability.
+Hershey's Mexico Reporting CoE ran a reporting setup that depended heavily on a third-party vendor — expensive, slow to change, and hard to maintain internally. A lot of the ETL was manual, consuming thousands of hours a year, and the pipelines had little monitoring.
 
-My mandate: modernize the full data stack, reduce vendor dependency, and build infrastructure the team could own and maintain.
+My focus was to modernize the data stack, reduce vendor dependency, and build infrastructure the team could own and maintain.
 
 ## What I built
 
+<figure class="diagram" markdown="span">
+  [![Hershey's data engineering and analytics platform architecture](../../assets/Heysheys/hersheys-architecture.svg)](../../assets/Heysheys/hersheys-architecture.svg)
+  <figcaption><strong>Platform architecture.</strong> Multi-source ingestion (SAP S/4HANA, SQL Server, vendor files, Nielsen, public macro data) via Azure Data Factory and Power Automate into an ADLS lakehouse (Source → Raw → Clean → Serving), transformed in Databricks/PySpark, served to Power BI. Click to enlarge.</figcaption>
+</figure>
+
 ### ETL Pipeline Automation
 
-Designed and implemented automated ETL pipelines across the full data lifecycle using **Azure Data Factory** and **Databricks with PySpark**. This replaced manual data processing workflows that previously required 2,000+ hours of analyst time annually.
+Designed and built automated ETL pipelines across the data lifecycle using **Azure Data Factory** and **Databricks with PySpark**, replacing manual workflows that previously took 2,000+ hours of analyst time per year.
 
-The pipeline architecture covered:
+The pipelines covered:
 
 - Financial datasets ingestion and normalization
 - Sales and macroeconomic data integration
-- Automated transformation and validation layers
+- Transformation and validation layers
 - Delta Lake storage with partitioning for query performance
+
+<figure class="diagram" markdown="span">
+  [![Hershey's ETL pipeline flow diagram](../../assets/Heysheys/hersheys-flow.svg)](../../assets/Heysheys/hersheys-flow.svg)
+  <figcaption><strong>ETL flow.</strong> Multi-source extraction → raw landing in ADLS (kept as-is for reprocessing and lineage) → schema validation and cleansing in PySpark → a serving zone of pre-aggregated datasets consumed by analytics and data science, with Azure SQL feeding Power BI. Click to enlarge.</figcaption>
+</figure>
 
 ### Vendor Migration — 100+ Reports
 
@@ -88,6 +98,6 @@ Diagnosed and resolved reliability issues across regional reporting pipelines, a
 
     Whether it's vendor dependency, manual ETL, or brittle reporting infrastructure — I've solved these problems at scale. Let's talk.
 
-    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andresavila){ .md-button .md-button--primary }
+    [Book Intro Call :material-arrow-top-right:](https://calendly.com/andres-andresavila/introduction-call){ .md-button .md-button--primary }
 
 </div>
