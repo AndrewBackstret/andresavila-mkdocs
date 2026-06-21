@@ -18,7 +18,7 @@ A selection of projects that show how I approach data engineering — from ETL m
   <p>Full-stack AI platform that extracts biomarkers from blood-test PDFs across different labs, languages, and layouts — without lab-specific parsing rules.</p>
   <div class="case-tags"><span>FastAPI</span><span>Celery</span><span>React</span><span>LLMs</span></div>
   <div class="case-foot">
-    <span class="case-metric">Live in production</span>
+    <span class="case-metric">Built end-to-end</span>
     <span class="case-cta">Read case study →</span>
   </div>
 </a>

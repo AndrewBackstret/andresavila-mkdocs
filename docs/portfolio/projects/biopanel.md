@@ -16,6 +16,14 @@ hide:
 
     **What it does**: Extracts structured biomarker data from blood-test PDFs across different laboratories, languages, and layouts — without lab-specific parsing rules. A user uploads a lab report, the system normalizes the values, flags out-of-range markers, and renders an interactive health dashboard.
 
+## Demo
+
+A 3-minute walkthrough: uploading a lab report, the asynchronous extraction, reviewing and confirming the values, and the resulting health dashboard.
+
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/THE5kNJC-RQ" title="biopanel.io — Product Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## The Problem
 
 Blood test results come in many different PDF formats — different labs, languages, layouts, and reference ranges. The usual extraction approach needs lab-specific parsing rules that break as soon as a format changes.
@@ -109,7 +117,7 @@ The schema is defined as declarative SQLAlchemy models (the single source of tru
 - Extracts biomarkers from PDFs across different labs, languages, and layouts with no layout-specific configuration
 - A typical study processes in about **30–45 seconds**
 - Multi-provider fallback keeps extraction working when a single provider has an outage
-- Running as a live product at [biopanel.io](https://biopanel.io)
+- Built and run end-to-end as a personal product — [biopanel.io](https://biopanel.io)
 
 ## What this demonstrates
 

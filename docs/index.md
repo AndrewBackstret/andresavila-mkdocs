@@ -82,7 +82,16 @@ Hi, I'm Andres — a Senior Data Engineer based in México, with 5+ years buildi
 
 I focus on **AI-powered data systems**: combining cloud pipeline engineering (Azure, AWS, Snowflake, dbt) with LLM integration to help teams turn raw data into reporting and analytics they can rely on. My work spans the full data lifecycle — from architecture and ingestion to transformation, orchestration, and business-facing analytics.
 
-I'm currently open to **Backend Contracts** — long-term engagements with teams that need a senior data engineer without the overhead of a full-time hire.
+<div class="video-feature">
+<div class="video-feature__text">
+<h2 id="see-it-in-action">See it in action</h2>
+<p>A 3-minute walkthrough of <a href="https://biopanel.io">biopanel.io</a> — uploading a lab report, the asynchronous LLM extraction, and the interactive health dashboard it produces.</p>
+</div>
+<button class="video-facade" type="button" data-video="THE5kNJC-RQ" aria-label="Play the biopanel.io demo video">
+  <img src="https://i.ytimg.com/vi/THE5kNJC-RQ/sddefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/THE5kNJC-RQ/hqdefault.jpg'" alt="biopanel.io product demo" loading="lazy">
+  <span class="video-facade__play" aria-hidden="true"></span>
+</button>
+</div>
 
 ## What I can help you with
 
@@ -98,7 +107,7 @@ I'm currently open to **Backend Contracts** — long-term engagements with teams
 
     ---
 
-    I connect structured data to language models to automate analysis, classification, and reporting — with a live product, [biopanel.io](https://biopanel.io), behind it rather than just demos.
+    I connect structured data to language models to automate analysis, classification, and reporting — with a real product I built end-to-end, [biopanel.io](https://biopanel.io), behind the approach.
 
 -   :material-chart-timeline-variant:{ .lg .middle } Analytics Engineering
 
