@@ -905,8 +905,11 @@ body:has(.hero-band) .md-footer__inner {
   margin-bottom: 0;
 }
 
-/* Right column: the facade sits inline, smaller, without the block margin */
-.md-typeset .video-feature .video-facade {
+/* Right column: the facade — and the player that replaces it on click — sit   */
+/* inline, smaller, without the block margin. Both share the column so the      */
+/* layout doesn't shift when the video loads.                                   */
+.md-typeset .video-feature .video-facade,
+.md-typeset .video-feature .video-embed {
   flex: 0 0 42%;
   max-width: 420px;
   margin: 0;
@@ -919,7 +922,8 @@ body:has(.hero-band) .md-footer__inner {
     align-items: stretch;
     gap: 1.2rem;
   }
-  .md-typeset .video-feature .video-facade {
+  .md-typeset .video-feature .video-facade,
+  .md-typeset .video-feature .video-embed {
     flex-basis: auto;
     max-width: none;
   }

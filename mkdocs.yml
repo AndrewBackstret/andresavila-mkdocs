@@ -55,7 +55,7 @@ extra:
       name: Email
 
 extra_css:
-  - stylesheets/extra.css?v=15
+  - stylesheets/extra.css?v=16
   - stylesheets/hero.css?v=12
 
 extra_javascript:
