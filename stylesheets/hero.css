@@ -1,0 +1,202 @@
+/* ── Profile image ───────────────────────────────────────────────────────── */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 4px 24px rgba(46, 106, 152, 0.20);
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  box-shadow: 0 8px 32px rgba(46, 106, 152, 0.35);
+}
+
+/* ── Full-bleed dark bands (hero + stats) ────────────────────────────────── */
+/* Robust edge-to-edge via negative margins — no clippable pseudo-elements.   */
+/* Works because extra.css forces .md-content__inner { margin:0 } (full width, */
+/* symmetric) and .md-main { overflow-x:hidden } clips the scrollbar overflow. */
+.hero-band,
+.stats-band {
+  width: 100vw;
+  margin-left:  calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #0D1A28;
+}
+
+.hero-band {
+  margin-bottom: 0; /* no seam between the two dark bands */
+}
+
+.stats-band {
+  margin-top: 0;
+  border-top: 1px solid #1A3650;
+  border-bottom: 3px solid #2E6A98;
+}
+
+/* Inner content centered within the dark bands */
+.hero-band  > .hero-section,
+.stats-band > .stats-row {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+/* Kill Material's .4rem spacer that shows a white line between nav and hero  */
+/* (scoped to the home page via :has(.hero-band))                            */
+.md-content__inner:has(.hero-band)::before {
+  content: none;
+}
+
+/* Center the home content into the same 1200px column as the hero.           */
+/* The global full-width overrides (for portfolio) use !important, so we do    */
+/* too. The dark bands still break out edge-to-edge from this centered box.    */
+.md-content__inner:has(.hero-band) {
+  max-width: 1000px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0 !important; /* keep hero flush to nav (no white line) */
+  padding-bottom: 2.5rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+/* ── Hero grid layout ────────────────────────────────────────────────────── */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 48px 0 36px;
+}
+
+.text-intro-grid {
+  grid-column: 1 / 2;
+  padding-right: 20px;
+}
+
+.profile-image-grid {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── Hero text colors (on dark background) ───────────────────────────────── */
+.hero-section h1,
+.hero-section .md-typeset h1 {
+  color: #ffffff !important;
+}
+
+.hero-section p {
+  color: #6898BA !important;
+}
+
+.hero-section .md-button:not(.md-button--primary) {
+  border-color: #1A3650 !important;
+  color: #6898BA !important;
+}
+
+.hero-section .md-button:not(.md-button--primary):hover {
+  background: #132335 !important;
+  border-color: #2E6A98 !important;
+  color: #fff !important;
+}
+
+.hero-section .availability-badge {
+  background: #132335;
+  border-color: #2E6A98;
+  color: #6898BA;
+}
+
+/* ── Hero eyebrow + divider ──────────────────────────────────────────────── */
+.hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2E6A98;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-divider {
+  width: 32px;
+  height: 2px;
+  background: #2E6A98;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Stats row (inside .stats-band) ──────────────────────────────────────── */
+.stats-row {
+  display: flex;
+  margin: 0;
+}
+
+.stats-row .stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  border-right: 1px solid #1A3650;
+}
+
+.stats-row .stat-item:last-child {
+  border-right: none;
+}
+
+.stats-row .stat-number {
+  color: #ffffff; /* was #2E6A98 — looked dim on #0D1A28 */
+}
+
+.stats-row .stat-label {
+  color: #6898BA;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0 20px;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .text-intro-grid {
+    grid-row: 2;
+    grid-column: 1;
+    padding-right: 0;
+  }
+
+  .profile-image-grid {
+    grid-row: 1;
+    grid-column: 1;
+    justify-content: center;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+  }
+
+  .stats-row .stat-item {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid #1A3650;
+  }
+}
+
+/* ── Large screens ───────────────────────────────────────────────────────── */
+/* .grid-container width/centering is handled by `.hero-band > .hero-section`. */
+@media screen and (min-width: 1200px) {
+  .profile-image {
+    width: 210px;
+    height: 210px;
+  }
+}

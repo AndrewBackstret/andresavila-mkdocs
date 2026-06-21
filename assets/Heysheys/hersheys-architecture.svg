@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1020" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .layer { fill:#2E6A98; letter-spacing:3px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:12.5px; }
+      .edge  { stroke:#2E6A98; stroke-width:1.8; fill:none; opacity:.6; }
+      .edgef { stroke:#64748b; stroke-width:1.7; fill:none; opacity:.6; }
+      .elab  { fill:#6898BA; font-size:12px; }
+      .call  { fill:#cbd5e1; font-size:12.5px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+      .zone  { fill:#0F1F30; stroke:rgba(46,106,152,.35); stroke-width:1.3; }
+      .zonet { fill:#6898BA; font-size:11px; font-weight:700; letter-spacing:1.5px; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="arrf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+    <marker id="arro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c" opacity=".7"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1020" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">Hershey's — Data Engineering &amp; Analytics Platform</text>
+  <text class="sub" x="71" y="90" font-size="15">Azure Data Factory · Databricks PySpark · ADLS Lakehouse · Power BI · Microsoft Purview</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">HSY</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ===== LAYER 1: SOURCES ===== -->
+  <text class="layer" x="70" y="142">SOURCES</text>
+  <line class="band" x1="188" y1="137" x2="1060" y2="137"/>
+
+  <!-- SAP S/4HANA -->
+  <rect x="70" y="152" width="178" height="86" rx="11" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="159" y="184" font-size="14" text-anchor="middle">SAP S/4HANA</text>
+  <text class="boxs" x="159" y="206" text-anchor="middle">internal ERP</text>
+  <text class="boxs" x="159" y="222" text-anchor="middle">business transactions</text>
+
+  <!-- SQL Server -->
+  <rect x="260" y="152" width="178" height="86" rx="11" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="349" y="184" font-size="14" text-anchor="middle">SQL Server</text>
+  <text class="boxs" x="349" y="206" text-anchor="middle">internal databases</text>
+  <text class="boxs" x="349" y="222" text-anchor="middle">operational data</text>
+
+  <!-- Excel / Vendor files -->
+  <rect x="450" y="152" width="188" height="86" rx="11" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="544" y="184" font-size="14" text-anchor="middle">Excel · Vendor Files</text>
+  <text class="boxs" x="544" y="206" text-anchor="middle">stakeholder exports</text>
+  <text class="boxs" x="544" y="222" text-anchor="middle">retailer portals</text>
+
+  <!-- Nielsen -->
+  <rect x="650" y="152" width="178" height="86" rx="11" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="739" y="184" font-size="14" text-anchor="middle">Nielsen</text>
+  <text class="boxs" x="739" y="206" text-anchor="middle">external market</text>
+  <text class="boxs" x="739" y="222" text-anchor="middle">share data</text>
+
+  <!-- Web: INEGI / Banxico / Bloomberg -->
+  <rect x="840" y="152" width="218" height="86" rx="11" fill="#132335" stroke="rgba(56,189,248,.4)" stroke-width="1.5"/>
+  <text class="boxt" x="949" y="180" font-size="13" text-anchor="middle">INEGI · Banxico</text>
+  <text class="boxt" x="949" y="198" font-size="13" text-anchor="middle">Bloomberg</text>
+  <text class="boxs" x="949" y="219" text-anchor="middle">public macro data</text>
+  <text class="boxs" x="949" y="235" text-anchor="middle">web portals</text>
+
+  <!-- ===== LAYER 2: INGESTION ===== -->
+  <text class="layer" x="70" y="290">INGESTION</text>
+  <line class="band" x1="202" y1="285" x2="1060" y2="285"/>
+
+  <!-- ADF box (spans SAP → Nielsen) -->
+  <rect x="70" y="300" width="750" height="100" rx="13" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+  <text class="boxt" x="445" y="332" font-size="16" text-anchor="middle">Azure Data Factory</text>
+  <text class="boxs" x="445" y="356" text-anchor="middle">pipelines + dataflows · SAP S/4HANA · SQL Server · Excel/Vendor · Nielsen</text>
+  <text class="boxs" x="445" y="376" text-anchor="middle">monitoring + pipeline health alerts · ADF triggers on schedule</text>
+
+  <!-- Power Automate box (spans web sources) -->
+  <rect x="834" y="300" width="224" height="100" rx="13" fill="#132335" stroke="rgba(56,189,248,.4)" stroke-width="1.5"/>
+  <text class="boxt" x="946" y="332" font-size="14" text-anchor="middle">Power Automate</text>
+  <text class="boxs" x="946" y="356" text-anchor="middle">web extraction</text>
+  <text class="boxs" x="946" y="375" text-anchor="middle">scheduled scraping</text>
+  <text class="boxs" x="946" y="393" text-anchor="middle">INEGI · Banxico · Bloomberg</text>
+
+  <!-- Arrows: Sources → Ingestion -->
+  <path class="edge" d="M159,238 L159,300" marker-end="url(#arr)"/>
+  <path class="edge" d="M349,238 L349,300" marker-end="url(#arr)"/>
+  <path class="edge" d="M544,238 L544,300" marker-end="url(#arr)"/>
+  <path class="edge" d="M739,238 L739,300" marker-end="url(#arr)"/>
+  <path class="edge" d="M949,238 L949,300" marker-end="url(#arr)"/>
+
+  <!-- ===== LAYER 3: LAKEHOUSE · ADLS ===== -->
+  <text class="layer" x="70" y="454">LAKEHOUSE · ADLS</text>
+  <line class="band" x1="282" y1="449" x2="1060" y2="449"/>
+
+  <!-- ADLS outer wrapper -->
+  <rect x="70" y="462" width="988" height="128" rx="14" fill="rgba(46,106,152,.05)" stroke="rgba(46,106,152,.3)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text class="elab" x="90" y="480" font-size="10.5" font-weight="600" letter-spacing="2">AZURE DATA LAKE STORAGE (ADLS) · PARQUET → DELTA (transitioning)</text>
+
+  <!-- Source zone -->
+  <rect x="86" y="487" width="210" height="92" rx="10" class="zone"/>
+  <text class="zonet" x="191" y="508" text-anchor="middle">SOURCE</text>
+  <text class="boxs" x="191" y="530" text-anchor="middle">raw landing · as-is</text>
+  <text class="boxs" x="191" y="549" text-anchor="middle">no transformation</text>
+  <text class="boxs" x="191" y="568" text-anchor="middle">Parquet</text>
+
+  <!-- Raw zone -->
+  <rect x="312" y="487" width="210" height="92" rx="10" class="zone"/>
+  <text class="zonet" x="417" y="508" text-anchor="middle">RAW</text>
+  <text class="boxs" x="417" y="530" text-anchor="middle">schema validation</text>
+  <text class="boxs" x="417" y="549" text-anchor="middle">standardized types</text>
+  <text class="boxs" x="417" y="568" text-anchor="middle">Parquet</text>
+
+  <!-- Clean zone -->
+  <rect x="538" y="487" width="210" height="92" rx="10" class="zone"/>
+  <text class="zonet" x="643" y="508" text-anchor="middle">CLEAN</text>
+  <text class="boxs" x="643" y="530" text-anchor="middle">deduplication</text>
+  <text class="boxs" x="643" y="549" text-anchor="middle">enrichment · cleansing</text>
+  <text class="boxs" x="643" y="568" text-anchor="middle">Parquet / Delta</text>
+
+  <!-- Serving zone -->
+  <rect x="764" y="487" width="278" height="92" rx="10" fill="#0F1F30" stroke="rgba(52,211,153,.35)" stroke-width="1.3"/>
+  <text x="903" y="508" text-anchor="middle" fill="#34d399" font-size="11px" font-weight="700" letter-spacing="1.5px">SERVING</text>
+  <text class="boxs" x="903" y="530" text-anchor="middle">aggregated · business-ready</text>
+  <text class="boxs" x="903" y="549" text-anchor="middle">optimized for analytics</text>
+  <text class="boxs" x="903" y="568" text-anchor="middle">Delta · Parquet</text>
+
+  <!-- Zone arrows -->
+  <path class="edge" d="M296,533 L312,533" marker-end="url(#arr)"/>
+  <path class="edge" d="M522,533 L538,533" marker-end="url(#arr)"/>
+  <path class="edge" d="M748,533 L764,533" marker-end="url(#arr)"/>
+
+  <!-- Arrows: Ingestion → ADLS Source zone -->
+  <path class="edge" d="M445,400 L300,462" marker-end="url(#arr)"/>
+  <path class="edge" d="M946,400 L946,462" marker-end="url(#arr)"/>
+
+  <!-- ===== LAYER 4: PROCESSING + GOVERNANCE ===== -->
+  <text class="layer" x="70" y="648">PROCESSING</text>
+  <line class="band" x1="218" y1="643" x2="1060" y2="643"/>
+
+  <!-- Databricks box -->
+  <rect x="70" y="660" width="660" height="108" rx="13" fill="#132335" stroke="rgba(56,189,248,.35)" stroke-width="1.6"/>
+  <text class="boxt" x="400" y="692" font-size="17" text-anchor="middle">Azure Databricks · PySpark</text>
+  <text class="boxs" x="400" y="717" text-anchor="middle">ETL pipelines for macroeconomic variables · business logic transformations</text>
+  <text class="boxs" x="400" y="738" text-anchor="middle">Source → Raw → Clean → Serving · 35% runtime improvement · Agile/Scrum</text>
+
+  <!-- Microsoft Purview box -->
+  <rect x="748" y="660" width="310" height="108" rx="13" fill="#132335" stroke="rgba(167,139,250,.4)" stroke-width="1.5"/>
+  <text class="boxt" x="903" y="692" font-size="16" text-anchor="middle">Microsoft Purview</text>
+  <text class="boxs" x="903" y="717" text-anchor="middle">data lineage tracking</text>
+  <text class="boxs" x="903" y="738" text-anchor="middle">governance · discoverability</text>
+  <text class="boxs" x="903" y="758" text-anchor="middle">catalog of ADLS assets</text>
+
+  <!-- Arrows: ADLS → Databricks -->
+  <path class="edge" d="M400,590 L400,660" marker-end="url(#arr)"/>
+  <path class="edge" d="M903,590 C903,625 903,640 903,660" marker-end="url(#arr)" opacity=".35"/>
+
+  <!-- ===== LAYER 5: SERVING ===== -->
+  <text class="layer" x="70" y="826">SERVING</text>
+  <line class="band" x1="174" y1="821" x2="1060" y2="821"/>
+
+  <!-- Azure SQL box -->
+  <rect x="70" y="838" width="220" height="96" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="180" y="868" font-size="15" text-anchor="middle">Azure SQL</text>
+  <text class="boxs" x="180" y="892" text-anchor="middle">semantic layer</text>
+  <text class="boxs" x="180" y="911" text-anchor="middle">reporting tables</text>
+
+  <!-- Power BI box -->
+  <rect x="310" y="838" width="380" height="96" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="500" y="866" font-size="16" text-anchor="middle">Power BI</text>
+  <text class="boxs" x="500" y="890" text-anchor="middle">market share · manufacturing ops</text>
+  <text class="boxs" x="500" y="909" text-anchor="middle">financial dashboards · 100+ migrated reports</text>
+
+  <!-- DS Team integration -->
+  <rect x="710" y="838" width="348" height="96" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.5"/>
+  <text class="boxt" x="884" y="866" font-size="15" text-anchor="middle">Data Science Team</text>
+  <text class="boxs" x="884" y="890" text-anchor="middle">consumes Clean/Serving tables</text>
+  <text class="boxs" x="884" y="909" text-anchor="middle">predictive models → output tables → Power BI</text>
+
+  <!-- Arrows: Databricks → Serving -->
+  <path class="edge" d="M300,768 C230,800 180,820 180,838" marker-end="url(#arr)"/>
+  <path class="edge" d="M400,768 L500,838" marker-end="url(#arr)"/>
+  <path class="edgef" d="M500,768 L884,838" marker-end="url(#arrf)"/>
+
+  <!-- Arrow: Azure SQL → Power BI -->
+  <path class="edge" d="M290,886 L310,886" marker-end="url(#arr)"/>
+
+  <!-- ===== IMPACT PANEL ===== -->
+  <rect x="1090" y="285" width="390" height="660" rx="16" fill="rgba(52,211,153,.03)" stroke="rgba(52,211,153,.35)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="1285" y="320" text-anchor="middle" fill="#34d399" font-weight="600" font-size="11.5" letter-spacing="1.5">MEASURED IMPACT</text>
+  <line x1="1110" y1="330" x2="1460" y2="330" stroke="rgba(52,211,153,.2)"/>
+
+  <!-- Impact item 1 -->
+  <rect x="1110" y="346" width="350" height="114" rx="11" fill="#132335" stroke="rgba(52,211,153,.3)" stroke-width="1.2"/>
+  <text x="1285" y="376" text-anchor="middle" fill="#34d399" font-size="28" font-weight="700">2,000+</text>
+  <text x="1285" y="400" text-anchor="middle" fill="#f0f9ff" font-size="13" font-weight="600">hours/year saved</text>
+  <text x="1285" y="421" text-anchor="middle" fill="#94a3b8" font-size="12">manual ETL work automated</text>
+  <text x="1285" y="440" text-anchor="middle" fill="#94a3b8" font-size="12">across full data lifecycle</text>
+
+  <!-- Impact item 2 -->
+  <rect x="1110" y="476" width="350" height="114" rx="11" fill="#132335" stroke="rgba(52,211,153,.3)" stroke-width="1.2"/>
+  <text x="1285" y="506" text-anchor="middle" fill="#34d399" font-size="28" font-weight="700">$750K USD</text>
+  <text x="1285" y="530" text-anchor="middle" fill="#f0f9ff" font-size="13" font-weight="600">vendor cost reduction</text>
+  <text x="1285" y="551" text-anchor="middle" fill="#94a3b8" font-size="12">Tableau / Springboard → Power BI</text>
+  <text x="1285" y="570" text-anchor="middle" fill="#94a3b8" font-size="12">eliminated recurring license spend</text>
+
+  <!-- Impact item 3 -->
+  <rect x="1110" y="606" width="350" height="114" rx="11" fill="#132335" stroke="rgba(52,211,153,.3)" stroke-width="1.2"/>
+  <text x="1285" y="636" text-anchor="middle" fill="#34d399" font-size="28" font-weight="700">100+</text>
+  <text x="1285" y="660" text-anchor="middle" fill="#f0f9ff" font-size="13" font-weight="600">reports migrated</text>
+  <text x="1285" y="681" text-anchor="middle" fill="#94a3b8" font-size="12">Tableau/Springboard → Power BI</text>
+  <text x="1285" y="700" text-anchor="middle" fill="#94a3b8" font-size="12">new ETL in Azure Data Factory</text>
+
+  <!-- Impact item 4 -->
+  <rect x="1110" y="736" width="350" height="114" rx="11" fill="#132335" stroke="rgba(52,211,153,.3)" stroke-width="1.2"/>
+  <text x="1285" y="766" text-anchor="middle" fill="#34d399" font-size="28" font-weight="700">35%</text>
+  <text x="1285" y="790" text-anchor="middle" fill="#f0f9ff" font-size="13" font-weight="600">pipeline runtime improvement</text>
+  <text x="1285" y="811" text-anchor="middle" fill="#94a3b8" font-size="12">reliability + execution efficiency</text>
+  <text x="1285" y="830" text-anchor="middle" fill="#94a3b8" font-size="12">regional reporting pipelines</text>
+
+  <!-- HSY Awards callout -->
+  <rect x="1110" y="866" width="350" height="68" rx="10" fill="rgba(251,192,45,.07)" stroke="rgba(251,192,45,.35)" stroke-width="1"/>
+  <text x="1285" y="892" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">🏆 HSY Awards Mexico Nomination</text>
+  <text x="1285" y="912" text-anchor="middle" fill="#94a3b8" font-size="12">outstanding contributions — Mexico reporting</text>
+  <text x="1285" y="926" text-anchor="middle" fill="#94a3b8" font-size="11.5">predictive analytics &amp; market share initiative</text>
+
+  <!-- LEGEND -->
+  <line x1="70" y1="954" x2="1060" y2="954" stroke="#1A3650"/>
+  <g font-size="13">
+    <rect x="70" y="972" width="24" height="13" rx="3" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="sub" x="104" y="983">core pipeline</text>
+    <rect x="250" y="972" width="24" height="13" rx="3" fill="#132335" stroke="rgba(52,211,153,.7)" stroke-width="1.5"/>
+    <text class="sub" x="284" y="983">serving / output</text>
+    <rect x="450" y="972" width="24" height="13" rx="3" fill="#132335" stroke="rgba(56,189,248,.4)" stroke-width="1.5"/>
+    <text class="sub" x="484" y="983">web extraction path</text>
+    <rect x="670" y="972" width="24" height="13" rx="3" fill="#132335" stroke="rgba(167,139,250,.4)" stroke-width="1.5"/>
+    <text class="sub" x="704" y="983">governance</text>
+    <rect x="820" y="972" width="24" height="13" rx="3" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.5"/>
+    <text class="sub" x="854" y="983">external consumers</text>
+  </g>
+</svg>

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 980" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .layer { fill:#2E6A98; letter-spacing:3px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:13px; }
+      .edge  { stroke:#2E6A98; stroke-width:1.8; fill:none; opacity:.6; }
+      .edgef { stroke:#64748b; stroke-width:1.7; fill:none; opacity:.7; }
+      .elab  { fill:#6898BA; font-size:12.5px; }
+      .call  { fill:#cbd5e1; font-size:13px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="arrf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0D1A28"/><stop offset="1" stop-color="#0D1A28"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="980" fill="#0D1A28"/>
+
+  <!-- Header -->
+  <text class="title" x="70" y="66" font-size="38">Biopanel — System Architecture</text>
+  <text class="sub" x="71" y="98" font-size="15">Event-driven GenAI stack · FastAPI · Celery · PostgreSQL/pgvector · PydanticAI · Supabase · Caddy</text>
+  <text class="mark" x="1430" y="60" font-size="17" text-anchor="end">biopanel.io</text>
+  <line x1="70" y1="118" x2="1430" y2="118" stroke="#1A3650"/>
+
+  <!-- ============ CLIENT ============ -->
+  <text class="layer" x="70" y="152">CLIENT</text>
+  <line class="band" x1="170" y1="147" x2="1430" y2="147"/>
+  <g>
+    <rect x="520" y="170" width="460" height="84" rx="13" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+    <text class="boxt" x="750" y="202" font-size="18" text-anchor="middle">Browser · React 18 + Vite SPA</text>
+    <text class="boxs" x="750" y="228" text-anchor="middle">TanStack Query · Recharts · relative /api · JWT in localStorage</text>
+  </g>
+
+  <!-- ============ EDGE ============ -->
+  <text class="layer" x="70" y="300">EDGE</text>
+  <line class="band" x1="150" y1="295" x2="1430" y2="295"/>
+  <g>
+    <rect x="470" y="316" width="520" height="96" rx="13" fill="#132335" stroke="rgba(56,189,248,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="730" y="346" font-size="18" text-anchor="middle">Caddy — Reverse Proxy + Auto-TLS</text>
+    <text class="boxs" x="730" y="371" text-anchor="middle">Let's Encrypt · 3 vhosts (frontend · api · supabase)</text>
+    <text class="boxs" x="730" y="392" text-anchor="middle">serves the static SPA + proxies /api/* → api:8080</text>
+  </g>
+  <g>
+    <rect x="1040" y="316" width="390" height="96" rx="11" fill="rgba(56,189,248,.06)" stroke="rgba(56,189,248,.32)" stroke-width="1" stroke-dasharray="4 4"/>
+    <text class="elab" x="1062" y="346" font-weight="600">DECISION · Same-origin frontend</text>
+    <text class="call" x="1062" y="372">One vhost serves the SPA and proxies</text>
+    <text class="call" x="1062" y="393">the API → no CORS, no build-time URL.</text>
+  </g>
+
+  <!-- ============ APPLICATION ============ -->
+  <text class="layer" x="70" y="458">APPLICATION</text>
+  <line class="band" x1="230" y1="453" x2="1430" y2="453"/>
+  <text class="call" x="1430" y="458" text-anchor="end" fill="#cbd5e1">Sync accept (202) · async process</text>
+  <g>
+    <rect x="300" y="472" width="320" height="106" rx="13" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="460" y="502" font-size="17" text-anchor="middle">FastAPI</text>
+    <text class="boxs" x="460" y="526" text-anchor="middle">accept-and-delegate:</text>
+    <text class="boxs" x="460" y="546" text-anchor="middle">validate → persist event →</text>
+    <text class="boxs" x="460" y="566" text-anchor="middle">enqueue → return 202</text>
+  </g>
+  <g>
+    <rect x="660" y="486" width="170" height="78" rx="13" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="745" y="518" font-size="17" text-anchor="middle">Redis</text>
+    <text class="boxs" x="745" y="540" text-anchor="middle">queue broker</text>
+  </g>
+  <g>
+    <rect x="870" y="472" width="330" height="106" rx="13" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="1035" y="502" font-size="17" text-anchor="middle">Celery Worker</text>
+    <text class="boxs" x="1035" y="526" text-anchor="middle">runs the workflow as a DAG</text>
+    <text class="boxs" x="1035" y="546" text-anchor="middle">of nodes over a shared</text>
+    <text class="boxs" x="1035" y="566" text-anchor="middle">TaskContext</text>
+  </g>
+
+  <!-- ============ DATA & SERVICES ============ -->
+  <text class="layer" x="70" y="640">DATA &amp; SERVICES</text>
+  <line class="band" x1="280" y1="635" x2="1430" y2="635"/>
+  <g>
+    <rect x="230" y="654" width="320" height="124" rx="13" fill="#132335" stroke="rgba(56,189,248,.3)" stroke-width="1.6"/>
+    <text class="boxt" x="390" y="686" font-size="17" text-anchor="middle">Supabase</text>
+    <text class="boxs" x="390" y="712" text-anchor="middle">Auth · GoTrue (JWT HS256)</text>
+    <text class="boxs" x="390" y="734" text-anchor="middle">Storage · lab-reports bucket</text>
+    <text class="boxs" x="390" y="756" text-anchor="middle">Kong API gateway</text>
+  </g>
+  <g>
+    <rect x="620" y="654" width="370" height="124" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.7"/>
+    <text class="boxt" x="805" y="686" font-size="17" text-anchor="middle">PostgreSQL + pgvector</text>
+    <text class="boxs" x="805" y="712" text-anchor="middle">6 tables · SQLAlchemy ORM · Alembic</text>
+    <text class="boxs" x="805" y="734" text-anchor="middle">readings = fact table</text>
+    <text class="boxs" x="805" y="756" text-anchor="middle">pgvector ready for biomarker RAG (future)</text>
+  </g>
+  <g>
+    <rect x="1060" y="654" width="370" height="124" rx="13" fill="#132335" stroke="rgba(251,146,60,.5)" stroke-width="1.7"/>
+    <text class="boxt" x="1245" y="686" font-size="17" text-anchor="middle">LLM Providers</text>
+    <text class="boxs" x="1245" y="712" text-anchor="middle">OpenAI GPT-4o / GPT-4o-mini</text>
+    <text class="boxs" x="1245" y="734" text-anchor="middle">↓ automatic fallback</text>
+    <text class="boxs" x="1245" y="756" text-anchor="middle">Anthropic Claude · PydanticAI FallbackModel</text>
+  </g>
+
+  <!-- ============ EDGES ============ -->
+  <path class="edge" d="M740,254 L740,316" marker-end="url(#arr)"/>
+  <text class="elab" x="752" y="290">HTTPS</text>
+
+  <path class="edge" d="M620,412 C500,440 460,442 460,472" marker-end="url(#arr)"/>
+  <text class="elab" x="470" y="448" text-anchor="start">/api/*</text>
+
+  <path class="edgef" d="M620,519 L660,519" marker-end="url(#arrf)"/>
+  <path class="edgef" d="M830,519 L870,519" marker-end="url(#arrf)"/>
+  <text class="elab" x="850" y="508" text-anchor="middle">task</text>
+
+  <!-- FastAPI -> Supabase (auth) -->
+  <path class="edge" d="M370,578 C360,612 390,628 392,654" marker-end="url(#arr)"/>
+  <text class="elab" x="300" y="624">auth · JWT</text>
+  <!-- FastAPI -> Postgres -->
+  <path class="edge" d="M500,578 C560,612 700,624 740,654" marker-end="url(#arr)"/>
+  <text class="elab" x="612" y="624" text-anchor="middle">read / write</text>
+  <!-- Celery -> Postgres (writes readings) -->
+  <path class="edgef" d="M960,578 C920,612 870,628 858,654" marker-end="url(#arrf)"/>
+  <text class="elab" x="940" y="624">writes Readings</text>
+  <!-- Celery -> LLM -->
+  <path class="edge" d="M1100,578 C1160,612 1230,624 1245,654" marker-end="url(#arr)"/>
+  <text class="elab" x="1200" y="624">extraction</text>
+  <!-- Celery -> Supabase (PDF storage), routed through gap lane -->
+  <path class="edgef" d="M1010,578 L1010,606 L470,606 L470,654" marker-end="url(#arrf)" opacity=".45"/>
+  <text class="elab" x="1018" y="598" fill="#64748b">PDF storage</text>
+
+  <!-- Footer legend -->
+  <line x1="70" y1="846" x2="1430" y2="846" stroke="#1A3650"/>
+  <g font-size="13">
+    <rect x="70"  y="872" width="24" height="13" rx="3" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="sub" x="104" y="883">app core</text>
+    <rect x="220" y="872" width="24" height="13" rx="3" fill="#132335" stroke="rgba(52,211,153,.7)" stroke-width="1.5"/>
+    <text class="sub" x="254" y="883">data layer</text>
+    <rect x="380" y="872" width="24" height="13" rx="3" fill="#132335" stroke="rgba(251,146,60,.7)" stroke-width="1.5"/>
+    <text class="sub" x="414" y="883">external services</text>
+    <line x1="580" y1="879" x2="624" y2="879" class="edge" marker-end="url(#arr)"/>
+    <text class="sub" x="634" y="883">synchronous request</text>
+    <line x1="820" y1="879" x2="864" y2="879" class="edgef" marker-end="url(#arrf)"/>
+    <text class="sub" x="874" y="883">async work (worker)</text>
+  </g>
+</svg>

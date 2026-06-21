@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 860" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .phase { fill:#2E6A98; letter-spacing:2.5px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:12.5px; }
+      .step  { fill:#6898BA; font-weight:700; font-size:12px; }
+      .edge  { stroke:#2E6A98; stroke-width:2; fill:none; opacity:.6; }
+      .edgeo { stroke:#fb923c; stroke-width:1.8; fill:none; opacity:.6; }
+      .edgeg { stroke:#34d399; stroke-width:1.8; fill:none; opacity:.65; }
+      .elab  { fill:#6898BA; font-size:12px; }
+      .call  { fill:#cbd5e1; font-size:12.5px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="a"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c" opacity=".7"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399" opacity=".8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="860" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">8am — Data Migration Pipeline Flow</text>
+  <text class="sub" x="71" y="90" font-size="15">Requirements → extraction → automated validation → staging → transfer · defects caught before final load</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">8am</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ============ PHASE 1: REQUIREMENTS ============ -->
+  <text class="phase" x="70" y="144">1 · REQUIREMENTS → TECHNICAL SPECIFICATION</text>
+  <line class="band" x1="630" y1="139" x2="1430" y2="139"/>
+
+  <g>
+    <rect x="70" y="158" width="290" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="215" y="191" font-size="14" text-anchor="middle">Client Requirements</text>
+    <text class="boxs" x="215" y="214" text-anchor="middle">business rules · data model</text>
+    <text class="boxs" x="215" y="232" text-anchor="middle">scope · acceptance criteria</text>
+  </g>
+  <g>
+    <rect x="400" y="158" width="340" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="570" y="191" font-size="14" text-anchor="middle">Migration Specification</text>
+    <text class="boxs" x="570" y="214" text-anchor="middle">source-to-target field mappings</text>
+    <text class="boxs" x="570" y="232" text-anchor="middle">validation rules · transformation logic · docs</text>
+  </g>
+  <g>
+    <rect x="788" y="158" width="300" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="938" y="191" font-size="14" text-anchor="middle">Docker Environment</text>
+    <text class="boxs" x="938" y="214" text-anchor="middle">containerized components</text>
+    <text class="boxs" x="938" y="232" text-anchor="middle">consistent across all client envs</text>
+  </g>
+  <path class="edge" d="M360,204 L400,204" marker-end="url(#a)"/>
+  <path class="edge" d="M740,204 L788,204" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 2: EXTRACTION ============ -->
+  <text class="phase" x="70" y="306">2 · EXTRACTION — PYTHON / DJANGO WORKFLOWS</text>
+  <line class="band" x1="560" y1="301" x2="1430" y2="301"/>
+
+  <g>
+    <rect x="70" y="320" width="340" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="240" y="352" font-size="14" text-anchor="middle">Python / Django Pipeline</text>
+    <text class="boxs" x="240" y="376" text-anchor="middle">client-specific extraction logic</text>
+    <text class="boxs" x="240" y="396" text-anchor="middle">reads from source systems</text>
+  </g>
+  <g>
+    <rect x="430" y="320" width="320" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="590" y="352" font-size="14" text-anchor="middle">Parameter Store</text>
+    <text class="boxs" x="590" y="376" text-anchor="middle">AWS · secure config management</text>
+    <text class="boxs" x="590" y="396" text-anchor="middle">credentials · env settings per client</text>
+  </g>
+  <g>
+    <rect x="770" y="320" width="318" height="100" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="929" y="352" font-size="14" text-anchor="middle">S3 Staging (AWS)</text>
+    <text class="boxs" x="929" y="376" text-anchor="middle">intermediate file storage</text>
+    <text class="boxs" x="929" y="396" text-anchor="middle">reliable data exchange buffer</text>
+  </g>
+  <path class="edge" d="M410,370 L430,370" marker-end="url(#a)"/>
+  <path class="edge" d="M750,370 L770,370" marker-end="url(#a)"/>
+  <path class="edge" d="M570,250 C570,280 240,300 240,320" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 3: VALIDATION ============ -->
+  <text class="phase" x="70" y="480">3 · AUTOMATED PROFILING &amp; VALIDATION — DEFECT GATE</text>
+  <rect x="70" y="496" width="1360" height="196" rx="16" fill="rgba(251,146,60,.04)" stroke="rgba(251,146,60,.4)" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="750" y="522" text-anchor="middle" fill="#fb923c" font-size="11.5" font-weight="600" letter-spacing="1.5">CATCHES DEFECTS BEFORE FINAL TRANSFER</text>
+
+  <g>
+    <rect x="110" y="530" width="280" height="144" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.4"/>
+    <text class="step" x="250" y="548" text-anchor="middle">STEP 1</text>
+    <text class="boxt" x="250" y="568" font-size="14" text-anchor="middle">Data Profiling</text>
+    <text class="boxs" x="250" y="584" text-anchor="middle">schema &amp; type analysis</text>
+    <text class="boxs" x="250" y="604" text-anchor="middle">null / blank detection</text>
+    <text class="boxs" x="250" y="624" text-anchor="middle">format &amp; range checks</text>
+    <text class="boxs" x="250" y="644" text-anchor="middle">completeness metrics</text>
+  </g>
+  <g>
+    <rect x="440" y="530" width="320" height="144" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.4"/>
+    <text class="step" x="600" y="548" text-anchor="middle">STEP 2</text>
+    <text class="boxt" x="600" y="568" font-size="14" text-anchor="middle">Cleansing &amp; Fixing</text>
+    <text class="boxs" x="600" y="584" text-anchor="middle">automated cleansing routines</text>
+    <text class="boxs" x="600" y="604" text-anchor="middle">apply transformation rules</text>
+    <text class="boxs" x="600" y="624" text-anchor="middle">flag non-auto-fixable defects</text>
+    <text class="boxs" x="600" y="644" text-anchor="middle">DynamoDB tracking log</text>
+  </g>
+  <g>
+    <rect x="820" y="530" width="570" height="144" rx="13" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.4"/>
+    <text class="step" x="1105" y="548" text-anchor="middle">STEP 3</text>
+    <text class="boxt" x="1105" y="568" font-size="14" text-anchor="middle">Validation Gate</text>
+    <text class="boxs" x="1105" y="584" text-anchor="middle">runs client-specific validation rules</text>
+    <text class="boxs" x="1105" y="604" text-anchor="middle">passes → proceed to PostgreSQL staging</text>
+    <text class="boxs" x="1105" y="624" text-anchor="middle">fails → halt + report defects for review</text>
+    <text class="boxs" x="1105" y="644" text-anchor="middle">no defective records reach target system</text>
+  </g>
+  <path class="edge" d="M390,602 L440,602" marker-end="url(#a)"/>
+  <path class="edge" d="M760,602 L820,602" marker-end="url(#a)"/>
+  <text class="elab" x="415" y="593" text-anchor="middle">profile</text>
+  <text class="elab" x="790" y="593" text-anchor="middle">cleansed</text>
+
+  <!-- Arrow from extraction to validation -->
+  <path class="edgeo" d="M240,420 L240,472 L250,496" marker-end="url(#ao)"/>
+  <path class="edgeo" d="M929,420 L929,472 L600,496" marker-end="url(#ao)"/>
+
+  <!-- ============ PHASE 4: STAGING + DELIVERY ============ -->
+  <text class="phase" x="70" y="754">4 · STAGING &amp; TARGET DELIVERY</text>
+  <line class="band" x1="440" y1="749" x2="1430" y2="749"/>
+
+  <g>
+    <rect x="70"  y="766" width="280" height="72" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="210" y="798" font-size="14" text-anchor="middle">PostgreSQL Staging</text>
+    <text class="boxs" x="210" y="820" text-anchor="middle">validated &amp; transformed records</text>
+  </g>
+  <g>
+    <rect x="370" y="766" width="280" height="72" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="510" y="798" font-size="14" text-anchor="middle">Target System Load</text>
+    <text class="boxs" x="510" y="820" text-anchor="middle">final transfer to client target</text>
+  </g>
+  <g>
+    <rect x="670" y="766" width="300" height="72" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="820" y="798" font-size="14" text-anchor="middle">GitHub Actions CI/CD</text>
+    <text class="boxs" x="820" y="820" text-anchor="middle">release control · deployment reliability</text>
+  </g>
+  <g>
+    <rect x="990" y="766" width="350" height="72" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="1165" y="798" font-size="14" text-anchor="middle">Execution Documentation</text>
+    <text class="boxs" x="1165" y="820" text-anchor="middle">migration report · specs · audit trail</text>
+  </g>
+
+  <path class="edgeg" d="M1105,692 C1105,724 210,744 210,766" marker-end="url(#ag)"/>
+  <path class="edge"  d="M490,766 L510,766" marker-end="url(#a)" opacity=".001"/>
+  <path class="edge"  d="M350,802 L370,802" marker-end="url(#a)"/>
+  <path class="edge"  d="M650,802 L670,802" marker-end="url(#a)"/>
+  <path class="edge"  d="M970,802 L990,802" marker-end="url(#a)"/>
+</svg>

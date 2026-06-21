@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 880" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .phase { fill:#2E6A98; letter-spacing:2.5px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:12.5px; }
+      .step  { fill:#6898BA; font-weight:700; font-size:12px; }
+      .edge  { stroke:#2E6A98; stroke-width:2; fill:none; opacity:.6; }
+      .edgeg { stroke:#34d399; stroke-width:1.8; fill:none; opacity:.6; }
+      .elab  { fill:#6898BA; font-size:12px; }
+      .call  { fill:#cbd5e1; font-size:13px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399" opacity=".8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="880" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">Hershey's — ETL Pipeline Flow</text>
+  <text class="sub" x="71" y="90" font-size="15">Multi-source extraction → ADLS lakehouse stages (Source→Raw→Clean→Serving) → analytics &amp; data science</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">HSY</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ============ PHASE 1: EXTRACTION ============ -->
+  <text class="phase" x="70" y="144">1 · EXTRACTION — MULTI-SOURCE INGESTION</text>
+  <line class="band" x1="580" y1="139" x2="1430" y2="139"/>
+
+  <!-- ADF path -->
+  <g>
+    <rect x="70" y="158" width="280" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="210" y="190" font-size="14" text-anchor="middle">Azure Data Factory</text>
+    <text class="boxs" x="210" y="212" text-anchor="middle">SAP S/4HANA · SQL Server</text>
+    <text class="boxs" x="210" y="230" text-anchor="middle">Excel files · Nielsen</text>
+  </g>
+  <g>
+    <rect x="390" y="158" width="280" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="530" y="190" font-size="14" text-anchor="middle">Power Automate</text>
+    <text class="boxs" x="530" y="212" text-anchor="middle">INEGI · Banxico · Bloomberg</text>
+    <text class="boxs" x="530" y="230" text-anchor="middle">scheduled web extraction</text>
+  </g>
+  <g>
+    <rect x="710" y="158" width="310" height="92" rx="12" fill="#132335" stroke="rgba(56,189,248,.32)" stroke-width="1.6"/>
+    <text class="boxt" x="865" y="190" font-size="14" text-anchor="middle">ADF Monitoring</text>
+    <text class="boxs" x="865" y="212" text-anchor="middle">pipeline health alerts</text>
+    <text class="boxs" x="865" y="230" text-anchor="middle">success / failure notifications</text>
+  </g>
+  <path class="edge" d="M350,204 L390,204" marker-end="url(#a)"/>
+  <text class="elab" x="370" y="196" text-anchor="middle">parallel</text>
+
+  <!-- connector from both to next phase -->
+  <path class="edge" d="M530,250 C530,290 350,298 350,330" marker-end="url(#a)"/>
+  <path class="edge" d="M210,250 C210,300 350,310 350,330" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 2: SOURCE LANDING ============ -->
+  <text class="phase" x="70" y="314">2 · SOURCE LANDING — ADLS · NO TRANSFORMATION</text>
+  <line class="band" x1="680" y1="309" x2="1430" y2="309"/>
+  <g>
+    <rect x="70" y="330" width="560" height="96" rx="12" fill="#0F1F30" stroke="rgba(46,106,152,.35)" stroke-width="1.4"/>
+    <text class="boxt" x="350" y="362" font-size="15" text-anchor="middle">Source Zone — Azure Data Lake Storage (ADLS)</text>
+    <text class="boxs" x="350" y="386" text-anchor="middle">raw data landed exactly as extracted · no transformation applied</text>
+    <text class="boxs" x="350" y="406" text-anchor="middle">Parquet format · full audit trail · immutable landing zone</text>
+  </g>
+  <g>
+    <rect x="650" y="330" width="360" height="96" rx="12" fill="#132335" stroke="rgba(56,189,248,.25)" stroke-width="1.3" stroke-dasharray="4 3"/>
+    <text class="elab" x="670" y="358" font-size="11" font-weight="600">DECISION · Why keep raw?</text>
+    <text class="call" x="830" y="378" text-anchor="middle">Preserves source fidelity for</text>
+    <text class="call" x="830" y="396" text-anchor="middle">reprocessing if logic changes.</text>
+    <text class="call" x="830" y="414" text-anchor="middle">Enables full lineage audit.</text>
+  </g>
+
+  <!-- ============ PHASE 3: LAKEHOUSE TRANSFORMATION ============ -->
+  <text class="phase" x="70" y="484">3 · LAKEHOUSE TRANSFORMATION — AZURE DATABRICKS · PYSPARK</text>
+  <rect x="70" y="500" width="1360" height="240" rx="16" fill="rgba(56,189,248,.04)" stroke="rgba(56,189,248,.28)" stroke-width="1.4" stroke-dasharray="6 5"/>
+
+  <!-- RAW node -->
+  <g>
+    <rect x="112" y="534" width="280" height="168" rx="13" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="step" x="252" y="550" text-anchor="middle">RAW ZONE</text>
+    <text class="boxt" x="252" y="575" font-size="15" text-anchor="middle">Schema Validation</text>
+    <text class="boxs" x="252" y="592" text-anchor="middle">PySpark reads Source</text>
+    <text class="boxs" x="252" y="612" text-anchor="middle">enforces data types</text>
+    <text class="boxs" x="252" y="632" text-anchor="middle">rejects malformed rows</text>
+    <text class="boxs" x="252" y="652" text-anchor="middle">Parquet output</text>
+    <text class="boxs" x="252" y="672" text-anchor="middle">partitioned by date</text>
+  </g>
+
+  <!-- CLEAN node -->
+  <g>
+    <rect x="532" y="534" width="280" height="168" rx="13" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="step" x="672" y="550" text-anchor="middle">CLEAN ZONE</text>
+    <text class="boxt" x="672" y="575" font-size="15" text-anchor="middle">Cleanse &amp; Enrich</text>
+    <text class="boxs" x="672" y="592" text-anchor="middle">deduplication logic</text>
+    <text class="boxs" x="672" y="612" text-anchor="middle">null handling</text>
+    <text class="boxs" x="672" y="632" text-anchor="middle">macro variable joins</text>
+    <text class="boxs" x="672" y="652" text-anchor="middle">business rule application</text>
+    <text class="boxs" x="672" y="672" text-anchor="middle">Parquet / Delta</text>
+  </g>
+
+  <!-- SERVING node -->
+  <g>
+    <rect x="960" y="534" width="440" height="168" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="step" x="1180" y="550" text-anchor="middle">SERVING ZONE</text>
+    <text class="boxt" x="1180" y="575" font-size="15" text-anchor="middle">Aggregated &amp; Ready</text>
+    <text class="boxs" x="1180" y="592" text-anchor="middle">pre-aggregated KPIs</text>
+    <text class="boxs" x="1180" y="612" text-anchor="middle">financial, sales &amp; macro datasets</text>
+    <text class="boxs" x="1180" y="632" text-anchor="middle">Delta tables · optimized reads</text>
+    <text class="boxs" x="1180" y="652" text-anchor="middle">consumed by Analytics + DS teams</text>
+    <text class="boxs" x="1180" y="672" text-anchor="middle">write to Azure SQL for Power BI</text>
+  </g>
+
+  <path class="edge" d="M392,618 L532,618" marker-end="url(#a)"/>
+  <path class="edge" d="M812,618 L960,618" marker-end="url(#a)"/>
+  <text class="elab" x="462" y="609" text-anchor="middle">PySpark</text>
+  <text class="elab" x="886" y="609" text-anchor="middle">PySpark</text>
+
+  <!-- Arrow Source Landing → RAW -->
+  <path class="edge" d="M350,426 C350,470 252,492 252,534" marker-end="url(#a)"/>
+
+  <!-- ============ PHASE 4: DELIVERY ============ -->
+  <text class="phase" x="70" y="800">4 · DELIVERY — ANALYTICS &amp; DATA SCIENCE</text>
+  <line class="band" x1="580" y1="795" x2="1430" y2="795"/>
+
+  <g>
+    <rect x="70"  y="812" width="270" height="56" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="205" y="838" font-size="14" text-anchor="middle">Azure SQL → Power BI</text>
+    <text class="boxs" x="205" y="857" text-anchor="middle">market share · manufacturing · financial</text>
+  </g>
+  <g>
+    <rect x="360" y="812" width="290" height="56" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="505" y="838" font-size="14" text-anchor="middle">Predictive Analytics</text>
+    <text class="boxs" x="505" y="857" text-anchor="middle">Serving → model output → Power BI</text>
+  </g>
+  <g>
+    <rect x="670" y="812" width="380" height="56" rx="12" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.6"/>
+    <text class="boxt" x="860" y="838" font-size="14" text-anchor="middle">100+ Migrated Reports</text>
+    <text class="boxs" x="860" y="857" text-anchor="middle" font-size="11">Tableau/Springboard → Power BI · ETL rebuilt in ADF</text>
+  </g>
+
+  <!-- Arrow from Serving → Delivery -->
+  <path class="edge" d="M1180,740 C1180,774 400,782 400,812" marker-end="url(#a)"/>
+  <path class="edgeg" d="M205,740 L205,812" marker-end="url(#ag)"/>
+</svg>

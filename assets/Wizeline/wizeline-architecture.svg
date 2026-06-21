@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 880" font-family="'DM Sans','Inter',system-ui,sans-serif">
+  <defs>
+    <style>
+      .title { font-family:'DM Serif Display',Georgia,serif; fill:#f0f9ff; }
+      .sub   { fill:#94a3b8; }
+      .mark  { fill:#2E6A98; font-weight:700; letter-spacing:.5px; }
+      .layer { fill:#2E6A98; letter-spacing:3px; font-weight:600; font-size:14px; }
+      .boxt  { fill:#f0f9ff; font-weight:600; }
+      .boxs  { fill:#94a3b8; font-size:13px; }
+      .edge  { stroke:#2E6A98; stroke-width:1.8; fill:none; opacity:.6; }
+      .elab  { fill:#6898BA; font-size:12.5px; }
+      .call  { fill:#cbd5e1; font-size:13px; font-style:italic; }
+      .band  { stroke:#1A3650; stroke-width:1; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6A98" opacity=".8"/>
+    </marker>
+    <marker id="arrd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+    <marker id="arro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fb923c" opacity=".6"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="880" fill="#0D1A28"/>
+
+  <!-- HEADER -->
+  <text class="title" x="70" y="60" font-size="36">Wizeline — AI Data Assistant</text>
+  <text class="sub" x="71" y="90" font-size="15">Databricks Genie AI · Streamlit · Databricks Apps · Unity Catalog · PAT Authentication</text>
+  <text class="mark" x="1430" y="56" font-size="16" text-anchor="end">wizeline</text>
+  <line x1="70" y1="108" x2="1430" y2="108" stroke="#1A3650"/>
+
+  <!-- ===== LAYER 1: USERS ===== -->
+  <text class="layer" x="70" y="142">USERS</text>
+  <line class="band" x1="155" y1="137" x2="1060" y2="137"/>
+  <rect x="290" y="154" width="560" height="74" rx="13" fill="#132335" stroke="#2E6A98" stroke-width="1.6"/>
+  <text class="boxt" x="570" y="186" font-size="18" text-anchor="middle">Business Stakeholders · Non-Technical</text>
+  <text class="boxs" x="570" y="210" text-anchor="middle">Sales &amp; ops teams · zero SQL or Databricks expertise required</text>
+
+  <!-- ===== LAYER 2: APPLICATION ===== -->
+  <text class="layer" x="70" y="280">APPLICATION</text>
+  <line class="band" x1="235" y1="275" x2="1060" y2="275"/>
+
+  <!-- Databricks Apps outer wrapper -->
+  <rect x="160" y="290" width="776" height="118" rx="14" fill="rgba(56,189,248,.04)" stroke="rgba(56,189,248,.22)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text fill="#6898BA" font-size="10.5" font-weight="600" letter-spacing="2" x="182" y="308">DATABRICKS APPS · MANAGED INFRASTRUCTURE · AUTO-SCALED</text>
+
+  <!-- Streamlit UI box -->
+  <rect x="184" y="315" width="450" height="82" rx="11" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+  <text class="boxt" x="409" y="345" font-size="16" text-anchor="middle">Streamlit UI</text>
+  <text class="boxs" x="409" y="368" text-anchor="middle">NL input field · result table renderer</text>
+  <text class="boxs" x="409" y="386" text-anchor="middle">CSV download button</text>
+
+  <!-- PAT Auth box -->
+  <rect x="664" y="315" width="250" height="82" rx="11" fill="#132335" stroke="rgba(56,189,248,.3)" stroke-width="1.2"/>
+  <text class="boxt" x="789" y="345" font-size="15" text-anchor="middle">PAT Auth</text>
+  <text class="boxs" x="789" y="368" text-anchor="middle">Databricks personal</text>
+  <text class="boxs" x="789" y="386" text-anchor="middle">access token · Bearer</text>
+
+  <!-- Arrow: Users → App -->
+  <path class="edge" d="M570,228 L570,290" marker-end="url(#arr)"/>
+  <text class="elab" x="583" y="263">NL question</text>
+
+  <!-- ===== LAYER 3: AI ENGINE ===== -->
+  <text class="layer" x="70" y="460">AI ENGINE</text>
+  <line class="band" x1="210" y1="455" x2="1060" y2="455"/>
+
+  <!-- Genie REST API box -->
+  <rect x="160" y="472" width="334" height="104" rx="13" fill="#132335" stroke="rgba(56,189,248,.35)" stroke-width="1.6"/>
+  <text class="boxt" x="327" y="502" font-size="16" text-anchor="middle">Genie AI REST API</text>
+  <text class="boxs" x="327" y="526" text-anchor="middle">POST …/genie/spaces/{id}/conversations</text>
+  <text class="boxs" x="327" y="548" text-anchor="middle">async polling · structured JSON response</text>
+
+  <!-- Genie AI Space box -->
+  <rect x="546" y="472" width="394" height="104" rx="13" fill="#132335" stroke="rgba(52,211,153,.5)" stroke-width="1.7"/>
+  <text class="boxt" x="743" y="502" font-size="16" text-anchor="middle">Genie AI Space</text>
+  <text class="boxs" x="743" y="526" text-anchor="middle">NL → SQL translation · context-aware</text>
+  <text class="boxs" x="743" y="548" text-anchor="middle">scoped to Unity Catalog · returns table result</text>
+
+  <!-- Arrow: App → API -->
+  <path class="edge" d="M409,397 C409,432 270,442 270,472" marker-end="url(#arr)"/>
+  <text class="elab" x="278" y="438">API call</text>
+
+  <!-- Arrow: API → Genie Space -->
+  <path class="edge" d="M494,524 L546,524" marker-end="url(#arr)"/>
+  <text class="elab" x="520" y="515" text-anchor="middle">routes</text>
+
+  <!-- ===== LAYER 4: DATA ===== -->
+  <text class="layer" x="70" y="634">DATA</text>
+  <line class="band" x1="135" y1="629" x2="1060" y2="629"/>
+
+  <!-- Unity Catalog box -->
+  <rect x="160" y="646" width="360" height="96" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="340" y="676" font-size="16" text-anchor="middle">Unity Catalog · Delta Lake</text>
+  <text class="boxs" x="340" y="700" text-anchor="middle">governed tables · fine-grained access</text>
+  <text class="boxs" x="340" y="720" text-anchor="middle">digital adoption &amp; sales metrics</text>
+
+  <!-- SQL Warehouse box -->
+  <rect x="570" y="646" width="380" height="96" rx="13" fill="#132335" stroke="rgba(52,211,153,.4)" stroke-width="1.6"/>
+  <text class="boxt" x="760" y="676" font-size="16" text-anchor="middle">Databricks SQL Warehouse</text>
+  <text class="boxs" x="760" y="700" text-anchor="middle">executes Genie-generated SQL</text>
+  <text class="boxs" x="760" y="720" text-anchor="middle">result set routed back through API</text>
+
+  <!-- Arrow: Genie Space → SQL Warehouse -->
+  <path class="edge" d="M743,576 L760,646" marker-end="url(#arr)"/>
+  <text class="elab" x="768" y="614">generated SQL</text>
+
+  <!-- Arrow: SQL Warehouse reads Unity Catalog (dashed) -->
+  <path d="M570,694 L520,694 L520,742 L520,646" stroke="#2E6A98" stroke-width="1.7" fill="none" opacity=".45" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text class="elab" x="468" y="686">reads</text>
+
+  <!-- ===== POC ALTERNATIVES PANEL ===== -->
+  <rect x="1090" y="256" width="390" height="506" rx="16" fill="rgba(251,146,60,.03)" stroke="rgba(251,146,60,.4)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="1285" y="290" text-anchor="middle" fill="#fb923c" font-weight="600" font-size="11.5" letter-spacing="1.5">POC ALTERNATIVES — EVALUATED</text>
+  <line x1="1110" y1="298" x2="1460" y2="298" stroke="rgba(251,146,60,.2)"/>
+
+  <!-- FAISS box -->
+  <rect x="1112" y="313" width="348" height="106" rx="11" fill="#132335" stroke="rgba(251,146,60,.35)" stroke-width="1.2"/>
+  <text x="1286" y="340" text-anchor="middle" fill="#fcd34d" font-weight="600" font-size="14">FAISS</text>
+  <text class="boxs" x="1286" y="362" text-anchor="middle">In-memory vector store</text>
+  <text class="boxs" x="1286" y="381" text-anchor="middle">custom RAG pipeline · fast ANN search</text>
+  <text x="1286" y="404" text-anchor="middle" fill="#34d399" font-size="11.5" font-weight="600">✓ selected for POC · most cost-efficient</text>
+
+  <!-- Model Serving Endpoints box -->
+  <rect x="1112" y="435" width="348" height="106" rx="11" fill="#132335" stroke="rgba(251,146,60,.35)" stroke-width="1.2"/>
+  <text x="1286" y="462" text-anchor="middle" fill="#fcd34d" font-weight="600" font-size="14">Model Serving Endpoints</text>
+  <text class="boxs" x="1286" y="484" text-anchor="middle">direct access to various LLMs</text>
+  <text class="boxs" x="1286" y="502" text-anchor="middle">custom prompt engineering · max control</text>
+  <text x="1286" y="525" text-anchor="middle" fill="#64748b" font-size="11.5" font-style="italic">evaluated · higher engineering overhead</text>
+
+  <!-- Mosaic AI box -->
+  <rect x="1112" y="557" width="348" height="106" rx="11" fill="#132335" stroke="rgba(251,146,60,.35)" stroke-width="1.2"/>
+  <text x="1286" y="584" text-anchor="middle" fill="#fcd34d" font-weight="600" font-size="14">Mosaic AI · Vector Search</text>
+  <text class="boxs" x="1286" y="606" text-anchor="middle">Databricks-native vector store</text>
+  <text class="boxs" x="1286" y="624" text-anchor="middle">managed embeddings · production-ready</text>
+  <text x="1286" y="647" text-anchor="middle" fill="#64748b" font-size="11.5" font-style="italic">evaluated · higher cost vs. Genie direct</text>
+
+  <!-- Production decision note -->
+  <rect x="1112" y="679" width="348" height="72" rx="10" fill="rgba(46,106,152,.15)" stroke="rgba(46,106,152,.4)" stroke-width="1"/>
+  <text x="1286" y="705" text-anchor="middle" fill="#6898BA" font-size="12.5" font-weight="600">PRODUCTION → Genie AI direct</text>
+  <text x="1286" y="724" text-anchor="middle" fill="#94a3b8" font-size="12">native NL→SQL · no custom infra · lowest cost</text>
+  <text x="1286" y="740" text-anchor="middle" fill="#94a3b8" font-size="12">fastest path to production</text>
+
+  <!-- Dashed connector: AI Engine → POC panel -->
+  <path d="M940,524 C1020,524 1040,392 1090,392" stroke="rgba(251,146,60,.3)" stroke-width="1.3" fill="none" stroke-dasharray="4 4" marker-end="url(#arro)"/>
+  <text x="1050" y="450" fill="rgba(251,146,60,.5)" font-size="11" text-anchor="middle">POC exploration</text>
+
+  <!-- LEGEND -->
+  <line x1="70" y1="812" x2="1060" y2="812" stroke="#1A3650"/>
+  <g font-size="13">
+    <rect x="70" y="830" width="24" height="13" rx="3" fill="#132335" stroke="#2E6A98" stroke-width="1.5"/>
+    <text class="sub" x="104" y="841">core app</text>
+    <rect x="210" y="830" width="24" height="13" rx="3" fill="#132335" stroke="rgba(52,211,153,.7)" stroke-width="1.5"/>
+    <text class="sub" x="244" y="841">data layer</text>
+    <rect x="360" y="830" width="24" height="13" rx="3" fill="#132335" stroke="rgba(251,146,60,.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text class="sub" x="394" y="841">POC alternatives (evaluated, not chosen)</text>
+    <line x1="680" y1="837" x2="724" y2="837" stroke="#2E6A98" stroke-width="1.8" opacity=".6" marker-end="url(#arr)"/>
+    <text class="sub" x="734" y="841">synchronous</text>
+    <line x1="870" y1="837" x2="914" y2="837" stroke="#2E6A98" stroke-width="1.8" opacity=".45" stroke-dasharray="4 3"/>
+    <text class="sub" x="924" y="841">read / internal routing</text>
+  </g>
+</svg>

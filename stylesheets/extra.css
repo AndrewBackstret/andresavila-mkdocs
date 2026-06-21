@@ -1,0 +1,1075 @@
+/* ── Andres Avila Brand — Metallic Ocean V3 ──────────────────────────────────
+   Metallic Blue  #2E6A98  ← primary accent / CTAs
+   Steel Blue     #1A3650  ← surfaces / cards
+   Deep Navy      #132335  ← dark bg secondary
+   Abyss          #0D1A28  ← dark bg primary
+   Ice Blue       #6898BA  ← secondary text / icons
+   ──────────────────────────────────────────────────────────────────────────*/
+
+/* ── Light theme ─────────────────────────────────────────────────────────── */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #2E6A98;
+  --md-primary-fg-color--light: #6898BA;
+  --md-primary-fg-color--dark:  #1A3650;
+  --md-accent-fg-color:         #2E6A98;
+  --md-typeset-a-color:         #2E6A98;
+  --md-default-bg-color:        #F7FAFC;
+  --md-default-bg-color--light: #EBF3FA;
+  --md-default-bg-color--lighter: #F0F5FA;
+}
+
+/* (Dark/slate scheme removed — site is light-only.) */
+
+/* ── Primary button ──────────────────────────────────────────────────────── */
+.md-button--primary {
+  background-color: #2E6A98 !important;
+  border-color:     #2E6A98 !important;
+  color: #fff !important;
+}
+
+.md-button--primary:hover {
+  background-color: #1A3650 !important;
+  border-color:     #1A3650 !important;
+  color: #fff !important;
+}
+
+/* ── Secondary button (outlined blue) ───────────────────────────────────── */
+.md-button--secondary {
+  background-color: transparent !important;
+  border: 2px solid #2E6A98 !important;
+  color: #2E6A98 !important;
+}
+
+.md-button--secondary:hover {
+  background-color: #EBF3FA !important;
+  border-color: #1A3650 !important;
+  color: #1A3650 !important;
+}
+
+/* ── Footer — light gray ─────────────────────────────────────────────────── */
+.md-footer {
+  background-color: #F7FAFC;
+  border-top: 1px solid #E8EEF3;
+  color: #6898BA;
+}
+
+.md-footer-meta {
+  background-color: #F0F5FA;
+  border-top: 1px solid #E8EEF3;
+}
+
+.md-footer__link,
+.md-footer-meta__inner,
+.md-footer-copyright {
+  color: #6898BA !important;
+}
+
+.md-footer__title {
+  color: #0D1A28;
+}
+
+/* ── Stats numbers ───────────────────────────────────────────────────────── */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2E6A98;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.3rem;
+}
+
+/* ── Availability badge ──────────────────────────────────────────────────── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #EBF3FA;
+  border: 1px solid #C5DDF0;
+  color: #2E6A98;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4CAF50;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* (Removed obsolete full-width rule that forced .md-content__inner to max-width:100%
+   and broke the centered reading column on portfolio/article pages.) */
+
+/* ── Feature cards (What I can help / Why work with me) — premium ─────────── */
+.grid.cards > ul {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.7rem !important;
+}
+
+.grid.cards > ul > li {
+  border: 1px solid #E8EEF3 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  padding: 0.9rem 1rem !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.06) !important;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s !important;
+  margin-top: 0 !important;
+}
+
+.grid.cards > ul > li:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 26px rgba(46, 106, 152, 0.13) !important;
+  border-color: #C5DDF0 !important;
+  background: #ffffff !important;
+}
+
+/* Icon tile + title row */
+.grid.cards > ul > li > p:first-child {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  font-weight: 700 !important;
+  color: #0D1A28 !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* Monochrome blue icon tile */
+.grid.cards > ul > li .twemoji.lg.middle,
+.grid.cards > ul > li .lg.middle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 9px !important;
+  background: linear-gradient(135deg, #EBF3FA, #DBE9F6) !important;
+  color: #2E6A98 !important;
+  flex-shrink: 0 !important;
+}
+
+.grid.cards > ul > li .twemoji.lg.middle svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Subtle divider */
+.grid.cards > ul > li hr {
+  border: 0 !important;
+  border-top: 1px solid #EEF3F8 !important;
+  margin: 0.6rem 0 !important;
+}
+
+/* Card body text */
+.grid.cards > ul > li p:not(:first-child) {
+  font-size: 0.74rem !important;
+  color: #33506B !important; /* ~5.5:1 on white */
+  line-height: 1.55 !important;
+}
+
+/* ── Rounded buttons ─────────────────────────────────────────────────────── */
+.md-button {
+  border-radius: 24px !important;
+}
+
+.md-button--primary {
+  border-radius: 24px !important;
+}
+
+.md-button:not(.md-button--primary) {
+  border-radius: 24px !important;
+}
+
+/* ── Secondary button — always visible blue outline ──────────────────────── */
+.md-button:not(.md-button--primary) {
+  background-color: transparent !important;
+  border: 2px solid #2E6A98 !important;
+  color: #2E6A98 !important;
+}
+
+.md-button:not(.md-button--primary):hover {
+  background-color: #EBF3FA !important;
+  border-color: #1A3650 !important;
+  color: #1A3650 !important;
+}
+
+/* ── Testimonials (single column) ────────────────────────────────────────── */
+.grid.cards.testimonials {
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.grid.cards.testimonials > * {
+  margin-top: 0 !important;
+}
+
+.grid.cards.testimonials p:nth-child(2) {
+  margin-top: -0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
+}
+
+/* ── FAQ admonitions — neutral gray, not blue ────────────────────────────── */
+.md-typeset details,
+.md-typeset .admonition {
+  border-color: #E8EEF3 !important;
+  border-left-color: #6898BA !important;
+  background: #FAFCFE !important;
+  box-shadow: none !important;
+}
+
+.md-typeset details > summary,
+.md-typeset .admonition-title {
+  background: #F0F5FA !important;
+  color: #0D1A28 !important;
+  font-weight: 600 !important;
+}
+
+.md-typeset details > summary::before,
+.md-typeset .admonition-title::before {
+  color: #2E6A98 !important;
+}
+
+/* ── FAQ (question) — premium accordion cards ────────────────────────────── */
+.md-typeset details.question {
+  border: 1px solid #E8EEF3 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.05) !important;
+  margin: 0 0 0.8rem !important;
+  overflow: hidden !important;
+  transition: box-shadow 0.2s, border-color 0.2s !important;
+}
+
+.md-typeset details.question:hover {
+  border-color: #C5DDF0 !important;
+  box-shadow: 0 6px 18px rgba(46, 106, 152, 0.10) !important;
+}
+
+.md-typeset details.question > summary {
+  background: #ffffff !important;
+  color: #0D1A28 !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  padding: 1rem 2.8rem 1rem 2.9rem !important;
+  cursor: pointer !important;
+  list-style: none !important;
+}
+
+/* "?" icon in brand blue (no tile) */
+.md-typeset details.question > summary::before {
+  background-color: #2E6A98 !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  top: 0.9rem !important;
+  left: 0.9rem !important;
+}
+
+/* Right-side chevron that rotates when open */
+.md-typeset details.question > summary::after {
+  color: #6898BA !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.md-typeset details.question[open] > summary {
+  border-bottom: 1px solid #EEF3F8 !important;
+}
+
+.md-typeset details.question > p {
+  padding: 0.9rem 1.4rem 1.1rem !important;
+  margin: 0 !important;
+  color: #33506B !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ── CTA full-width card ─────────────────────────────────────────────────── */
+.grid.cards.cta-full {
+  display: block !important;
+}
+
+.grid.cards.cta-full > ul {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+.grid.cards.cta-full > ul > li {
+  border-radius: 12px !important;
+  border: 1px solid #E8EEF3 !important;
+  border-left: 1px solid #E8EEF3 !important;
+  background: #EBF3FA !important;
+  text-align: center !important;
+  padding: 2rem !important;
+}
+
+.grid.cards.cta-full > ul > li > p:first-child {
+  font-size: 1.1rem !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* CTA body copy — darker for readability on the #EBF3FA card */
+.grid.cards.cta-full > ul > li p:not(:first-child) {
+  color: #2A4A66 !important;
+}
+
+/* ── Footer — visible text and icons ─────────────────────────────────────── */
+.md-footer {
+  background-color: #132335 !important;
+  border-top: 1px solid #1A3650 !important;
+}
+
+.md-footer-meta {
+  background-color: #0D1A28 !important;
+}
+
+/* Hide prev/next pagination on the home/landing page (keeps copyright + social) */
+body:has(.hero-band) .md-footer__inner {
+  display: none;
+}
+
+.md-footer__link,
+.md-footer-meta__inner,
+.md-footer-copyright,
+.md-footer-copyright__highlight {
+  color: #6898BA !important;
+}
+
+.md-social__link svg {
+  fill: #6898BA !important;
+}
+
+.md-social__link:hover svg {
+  fill: #fff !important;
+}
+
+.md-footer__title {
+  color: #fff !important;
+}
+
+/* ── Nav logo sizing ─────────────────────────────────────────────────────── */
+.md-header__button.md-logo img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* ── Header / nav — always dark ──────────────────────────────────────────── */
+.md-header {
+  background-color: #0D1A28 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #1A3650 !important;
+}
+
+.md-header__title,
+.md-header__topic,
+.md-header .md-ellipsis {
+  color: #fff !important;
+}
+
+.md-header__button {
+  color: #6898BA !important;
+}
+
+.md-header__button:hover {
+  color: #fff !important;
+}
+
+/* Search input */
+.md-search__input {
+  background-color: #132335 !important;
+  color: #fff !important;
+}
+
+.md-search__input::placeholder {
+  color: #6898BA !important;
+}
+
+/* Navigation tabs — always dark */
+.md-tabs {
+  background-color: #132335 !important;
+  border-bottom: 1px solid #1A3650 !important;
+}
+
+.md-tabs__link {
+  color: #6898BA !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #fff !important;
+}
+
+.md-tabs__indicator {
+  background-color: #2E6A98 !important;
+}
+
+/* ── Layout: full-width containers, readable content column ──────────────── */
+/* Containers stay full so we control the measure at .md-content__inner level. */
+.md-main__inner {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
+
+.md-content {
+  max-width: 100% !important;
+}
+
+/* Default reading column for article/portfolio pages (centered). Home widens   */
+/* this to 1200px via `.md-content__inner:has(.hero-band)` (higher specificity). */
+.md-content__inner {
+  margin: 0 auto !important;
+  max-width: 52rem;
+  padding: 1.8rem 1.2rem 2.5rem;
+}
+
+/* ── Page main background ─────────────────────────────────────────────────── */
+.md-main {
+  background-color: #F7FAFC;
+  overflow-x: hidden;
+}
+
+/* (Feature card background/hover handled in the premium block above.) */
+
+/* ── Admonitions/FAQ on #F7FAFC background ──────────────────────────────── */
+.md-typeset details,
+.md-typeset .admonition {
+  background: #ffffff !important;
+}
+
+/* ── CTA card on #F7FAFC background ─────────────────────────────────────── */
+.grid.cards.cta-full > ul > li {
+  background: #EBF3FA !important;
+  border: 1px solid #C5DDF0 !important;
+}
+
+/* ── Tech stack — chips/pills grouped by category ────────────────────────── */
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.tech-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2E6A98;
+  margin-bottom: 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tech-cat p {
+  margin: 0 !important; /* md wraps the single line in a <p> */
+}
+
+/* .md-typeset prefix beats Material's `.md-typeset ul:not([hidden]){display:flow-root}` */
+.md-typeset .tech-chips ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-typeset .tech-chips li {
+  background: #ffffff;
+  border: 1px solid #C5DDF0;
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.78rem;
+  color: #1A3650;
+  margin: 0 !important;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.md-typeset .tech-chips li::before {
+  content: none !important; /* remove Material list bullet */
+}
+
+.md-typeset .tech-chips li:hover {
+  background: #EBF3FA;
+  border-color: #2E6A98;
+}
+
+/* ── Section headings — short accent line (matches .hero-divider) ─────────── */
+.md-content__inner h2 {
+  margin-top: 2.6rem;
+}
+
+.md-content__inner h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 0.5rem;
+  background: #2E6A98;
+  border-radius: 2px;
+}
+
+/* ── Case Studies index — rich cards (2 per row) ─────────────────────────── */
+/* Index width tuned for a compact 3-up grid. */
+.md-content__inner:has(.case-grid) {
+  max-width: 52rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 900px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.md-typeset .case-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #E8EEF3;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  color: inherit !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.06);
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.md-typeset .case-card:hover {
+  box-shadow: 0 14px 36px rgba(46, 106, 152, 0.15);
+  transform: translateY(-4px);
+  border-color: #C5DDF0;
+}
+
+.case-type {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2E6A98;
+  background: #EBF3FA;
+  border-radius: 12px;
+  padding: 0.2rem 0.55rem;
+}
+
+.md-typeset .case-card h3 {
+  margin: 0.55rem 0 0.35rem;
+  color: #0D1A28;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.md-typeset .case-card p {
+  color: #33506B;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  margin-top: auto; /* push footer area to the card bottom */
+}
+
+.case-tags span {
+  font-size: 0.68rem;
+  color: #1A3650;
+  background: #F0F5FA;
+  border: 1px solid #C5DDF0;
+  border-radius: 14px;
+  padding: 0.18rem 0.55rem;
+}
+
+.case-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  border-top: 1px solid #E8EEF3;
+  padding-top: 0.7rem;
+}
+
+.case-metric {
+  font-weight: 700;
+  color: #2E6A98;
+  font-size: 0.76rem;
+}
+
+.case-cta {
+  color: #2E6A98;
+  font-weight: 600;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.md-typeset .case-card:hover .case-cta {
+  color: #1A3650;
+}
+
+/* ── Article back-link ───────────────────────────────────────────────────── */
+.md-typeset .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2E6A98 !important;
+  text-decoration: none !important;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset .back-link:hover {
+  color: #1A3650 !important;
+}
+
+/* ── "Project Summary" abstract — brand-neutral styling ──────────────────── */
+.md-typeset details.abstract,
+.md-typeset .admonition.abstract {
+  border-color: #E8EEF3 !important;
+  border-left: 3px solid #2E6A98 !important;
+  background: #FAFCFE !important;
+}
+
+.md-typeset .abstract > .admonition-title,
+.md-typeset .abstract > summary {
+  background: #F0F5FA !important;
+  color: #0D1A28 !important;
+}
+
+.md-typeset .abstract > .admonition-title::before,
+.md-typeset .abstract > summary::before {
+  background-color: #2E6A98 !important;
+}
+
+/* ── Article TOC — moved to the LEFT, readable ───────────────────────────── */
+/* On case-study articles (identified by .back-link), the page's TOC sidebar   */
+/* (Material's secondary sidebar) is moved to the left via flex order.          */
+.md-main__inner:has(.back-link) .md-sidebar--secondary {
+  order: -1;
+  padding-left: 2rem;
+}
+
+.md-sidebar--secondary .md-nav__link,
+.md-sidebar--secondary .md-nav__title,
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__title {
+  color: #33506B !important;
+}
+
+.md-sidebar--secondary .md-nav__link--active,
+.md-sidebar--secondary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link--active,
+.md-nav--secondary .md-nav__link:hover {
+  color: #2E6A98 !important;
+}
+
+/* ── Blog post: TOC relocated UNDER the metadata (left column) ───────────── */
+/* The TOC (.md-sidebar--secondary) and the metadata (.md-sidebar--post, nested */
+/* inside .md-content--post) live in different parents, so a small JS moves the */
+/* TOC nav into the metadata sidebar. Here we hide the now-empty right sidebar  */
+/* and style the relocated TOC. See docs/javascripts/blog-toc.js.               */
+.md-main__inner:has(.md-sidebar--post) > .md-sidebar--secondary {
+  display: none;
+}
+
+/* Relocated TOC, sitting below the metadata */
+.md-sidebar--post .md-nav--secondary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E8EEF3;
+}
+
+.md-sidebar--post .md-nav--secondary .md-nav__title {
+  padding-left: 0.6rem;
+}
+
+/* Don't glue the metadata/TOC panel to the left edge */
+.md-content--post {
+  padding-left: 2rem;
+}
+
+/* ── Visible left nav (e.g. blog index) — don't glue it to the edge ───────── */
+.md-sidebar--primary:not([hidden]) {
+  padding-left: 2rem;
+}
+
+/* ── Diagram figures (architecture / flow / data-model SVGs) ──────────────── */
+/* Dark on-brand SVGs shown as visual assets inside case studies. Width matches */
+/* the reading column so the edges line up with the body text; click-to-enlarge */
+/* (the link points to the raw SVG) gives full resolution.                      */
+.md-typeset figure.diagram {
+  margin: 2.2rem 0;
+  text-align: center;
+}
+
+.md-typeset figure.diagram a {
+  display: block;
+  line-height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1A3650;
+  background: #0D1A28;
+  box-shadow: 0 6px 24px rgba(13, 26, 40, 0.18);
+  cursor: zoom-in;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.md-typeset figure.diagram a:hover {
+  border-color: #2E6A98;
+  box-shadow: 0 12px 34px rgba(46, 106, 152, 0.26);
+  transform: translateY(-2px);
+}
+
+.md-typeset figure.diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.md-typeset figure.diagram figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #5C6B7A;
+  text-align: center;
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.md-typeset figure.diagram figcaption strong {
+  color: #1A3650;
+}
+
+/* ── Video embed (responsive 16:9 YouTube iframe) ─────────────────────────── */
+/* Used for product-demo videos inside case studies. Matches the diagram-figure */
+/* framing (rounded, on-brand border + shadow) so it sits in the same visual    */
+/* language. The aspect-ratio box keeps it fluid without layout shift.          */
+.md-typeset .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2.2rem 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1A3650;
+  background: #0D1A28;
+  box-shadow: 0 6px 24px rgba(13, 26, 40, 0.18);
+}
+
+.md-typeset .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ── Video facade (click-to-load thumbnail, home demo) ────────────────────── */
+/* Lightweight poster + play button; clicking it swaps in the real iframe       */
+/* (video-facade.js). Shares the diagram/embed framing so it sits in the same   */
+/* visual language as the rest of the site.                                     */
+.md-typeset .video-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2.2rem 0;
+  padding: 0;
+  border: 1px solid #1A3650;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0D1A28;
+  box-shadow: 0 6px 24px rgba(13, 26, 40, 0.18);
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.md-typeset .video-facade:hover,
+.md-typeset .video-facade:focus-visible {
+  border-color: #2E6A98;
+  box-shadow: 0 12px 34px rgba(46, 106, 152, 0.26);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.md-typeset .video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play button: brand circle + white triangle, centered over the poster */
+.video-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(46, 106, 152, 0.92);
+  box-shadow: 0 4px 18px rgba(13, 26, 40, 0.45);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.video-facade__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.md-typeset .video-facade:hover .video-facade__play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #2E6A98;
+}
+
+/* ── Video feature (home: text left, smaller thumbnail right) ─────────────── */
+.md-typeset .video-feature {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 2rem 0;
+}
+
+.md-typeset .video-feature__text {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.md-typeset .video-feature__text > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset .video-feature__text > :last-child {
+  margin-bottom: 0;
+}
+
+/* Right column: the facade — and the player that replaces it on click — sit   */
+/* inline, smaller, without the block margin. Both share the column so the      */
+/* layout doesn't shift when the video loads.                                   */
+.md-typeset .video-feature .video-facade,
+.md-typeset .video-feature .video-embed {
+  flex: 0 0 42%;
+  max-width: 420px;
+  margin: 0;
+}
+
+/* Stack on narrow viewports */
+@media screen and (max-width: 60em) {
+  .md-typeset .video-feature {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+  }
+  .md-typeset .video-feature .video-facade,
+  .md-typeset .video-feature .video-embed {
+    flex-basis: auto;
+    max-width: none;
+  }
+}
+
+/* ── Recognition note (small certificate thumbnail, right-aligned) ─────────── */
+.md-typeset .cert-note {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  background: #ffffff;
+  border: 1px solid #E8EEF3;
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.6rem 0;
+  box-shadow: 0 1px 3px rgba(13, 26, 40, 0.06);
+}
+
+.md-typeset .cert-note__text {
+  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #33506B;
+}
+
+.md-typeset .cert-note__text p {
+  margin: 0;
+}
+
+.md-typeset .cert-note__img {
+  flex-shrink: 0;
+  display: block;
+  width: 190px;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1A3650;
+  box-shadow: 0 4px 16px rgba(13, 26, 40, 0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: zoom-in;
+}
+
+.md-typeset .cert-note__img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(46, 106, 152, 0.24);
+}
+
+.md-typeset .cert-note__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset .cert-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .md-typeset .cert-note__img {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ── Certification badges (brand icon + label chips) ──────────────────────── */
+.md-typeset .cert-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.md-typeset .cert-badges .cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #F0F5FA;
+  border: 1px solid #C5DDF0;
+  border-radius: 18px;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1A3650;
+  line-height: 1.2;
+}
+
+.md-typeset .cert-badges .cert-badge .twemoji {
+  display: inline-flex;
+}
+
+.md-typeset .cert-badges .cert-badge .twemoji svg {
+  width: 15px;
+  height: 15px;
+  fill: #2E6A98;
+}
+
+/* ── Lightbox (click-to-enlarge diagrams / certificate) ───────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  background: rgba(7, 15, 25, 0.92);
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.is-open {
+  display: flex;
+}
+
+body.lightbox-open {
+  overflow: hidden; /* prevent background scroll while open */
+}
+
+.lightbox-img {
+  max-width: 94vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  border: 1px solid #1A3650;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #2E6A98;
+  background: #132335;
+  color: #ffffff;
+  font-size: 1.7rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.lightbox-close:hover {
+  background: #2E6A98;
+  transform: scale(1.06);
+}
